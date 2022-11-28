@@ -30,7 +30,7 @@ import Register from "./components/register";
 class Root extends Component {
   render() {
     return (
-      <HashRouter basename="/">
+      <Router basename="/">
         <div>
           <Switch>
             {/* <Route exact path="/" component={HomeV1} /> */}
@@ -99,7 +99,7 @@ class Root extends Component {
           pauseOnHover
           theme="light"
         />
-      </HashRouter>
+      </Router>
     );
   }
 }
