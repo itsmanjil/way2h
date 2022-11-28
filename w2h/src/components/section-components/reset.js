@@ -13,6 +13,7 @@ const Reset = () => {
   } = useForm({
     resolver: yupResolver(ResetSchema),
   });
+
   const onSubmitreset = (data) => {
     instance
       .post("password/forgot", data)
@@ -24,6 +25,7 @@ const Reset = () => {
         console.log(error);
       });
   };
+
   return (
     <form onSubmit={handleSubmit(onSubmitreset)} className="ltn__form-box">
       <input

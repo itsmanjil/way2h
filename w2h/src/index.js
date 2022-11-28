@@ -21,7 +21,7 @@ import Faq from "./components/faq";
 import ComingSoon from "./components/coming-soon";
 import Error from "./components/404";
 import Location from "./components/location";
-
+import ResetPassword from "./components/resetpassword";
 import Shop from "./components/shop";
 
 import Login from "./components/login";
@@ -73,8 +73,14 @@ class Root extends Component {
             <Route path="/cart" component={Cart} />
             <Route path="/checkout" component={Checkout} />
             <Route path="/my-account" component={MyAccount} /> */}
-            <Route path="/" component={Login} />
+            <Route
+              exact
+              path="/password/reset/:token"
+              component={ResetPassword}
+            />
+            <Route path="/login" exact component={Login} />
             <Route path="/register" component={Register} />
+
             {/* <Route path="/add-listing" component={AddListing} />
             <Route path="/wishlist" component={Wishlist} />
             <Route path="/order-tracking" component={OrderTracking} />
