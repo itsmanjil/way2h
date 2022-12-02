@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 
 
 
-class Sidebar extends Component {
-  render() {
-   let anchor = '#'
+const Sidebar = () => {
+	let anchor = '#'
    let imagealt = 'image'
    let publicUrl = process.env.PUBLIC_URL+'/'
-    return (
-		<div className="col-lg-4  mb-100">
+  return (
+	<div className="col-lg-4  mb-100">
 			<aside className="sidebar ltn__shop-sidebar">
 			<h3 className="mb-10">Advance Information</h3>
 			<label className="mb-30"><small>About 9,620 results (0.62 seconds) </small></label>
@@ -372,8 +371,7 @@ class Sidebar extends Component {
 			</div>
 			</aside>
 		</div>
-    )
-  }
+  )
 }
 
-export default Sidebar;
+export default Sidebar

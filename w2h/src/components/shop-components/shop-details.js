@@ -2,17 +2,18 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 
-class ShopDetails extends Component {
 
-    render() {
+import React from 'react'
 
-        let publicUrl = process.env.PUBLIC_URL+'/'
-
-    return <div className="ltn__shop-details-area pb-10">
+const ShopDetails = () => {
+	
+	let publicUrl = process.env.PUBLIC_URL+'/'
+  return (
+	<div className="ltn__ShopDetails-area pb-10">
 				<div className="container">
 				<div className="row">
 					<div className="col-lg-8 col-md-12">
-					<div className="ltn__shop-details-inner ltn__page-details-inner mb-60">
+					<div className="ltn__ShopDetails-inner ltn__page-details-inner mb-60">
 						<div className="ltn__blog-meta">
 						<ul>
 							<li className="ltn__blog-category">
@@ -456,7 +457,7 @@ class ShopDetails extends Component {
 							<i className="fa fa-play" />
 						</a>
 						</div>
-						<div className="ltn__shop-details-tab-content-inner--- ltn__shop-details-tab-inner-2 ltn__product-details-review-inner mb-60">
+						<div className="ltn__ShopDetails-tab-content-inner--- ltn__ShopDetails-tab-inner-2 ltn__product-details-review-inner mb-60">
 						<h4 className="title-2">Customer Reviews</h4>
 						<div className="product-ratting">
 							<ul>
@@ -1075,7 +1076,10 @@ class ShopDetails extends Component {
 				</div>
 				</div>
 			</div>
-        }
+        
+  )
 }
 
 export default ShopDetails
+
+

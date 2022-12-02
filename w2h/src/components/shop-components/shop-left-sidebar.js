@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 import Sidebar from './shop-sidebar';
 
-class ShopGridV1 extends Component {
 
-    render() {
 
-        let publicUrl = process.env.PUBLIC_URL+'/'
 
-    return <div>
+const  ShopGridV1 = () => {
+		let publicUrl = process.env.PUBLIC_URL+'/'
+  return (
+	<div>
 			<div className="ltn__product-area ltn__product-gutter">
 				<div className="container">
 					<div className="row">
@@ -988,8 +988,10 @@ class ShopGridV1 extends Component {
 
 
 			</div>
-
-        }
+  )
 }
 
 export default ShopGridV1
+
+
+

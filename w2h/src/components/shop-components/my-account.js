@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import parse from 'html-react-parser';
 
-class MyAccount extends Component {
+import React from 'react'
 
-    render() {
+const MyAccount  = () => {
 
-        let publicUrl = process.env.PUBLIC_URL+'/'
-
-    return <div className="liton__wishlist-area pb-70">
+  return (
+	<div className="liton__wishlist-area pb-70">
 	  <div className="container">
 		<div className="row">
 		  <div className="col-lg-12">
@@ -1091,8 +1089,8 @@ class MyAccount extends Component {
 		</div>
 	  </div>
 	</div>
-	
-        }
+  )
 }
 
 export default MyAccount
+
