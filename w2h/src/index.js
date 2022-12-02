@@ -8,6 +8,8 @@ import {
   Route,
   Switch,
 } from "react-router-dom";
+import HomeV5 from "./components/home-v5";
+
 import ResetPassword from "./components/resetpassword";
 import Shop from "./components/shop";
 
@@ -20,6 +22,8 @@ class Root extends Component {
       <Router basename="/">
         <div>
           <Switch>
+            <Route exact path="/" component={HomeV5} />
+
             <Route path="/shop" component={Shop} />
             <Route
               exact
