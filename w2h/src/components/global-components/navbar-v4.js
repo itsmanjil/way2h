@@ -108,82 +108,7 @@ class NavbarV3 extends Component {
                             <Link to="/">Home</Link>
                           </li>
                           <li className="menu-icon">
-                            <Link to="/about">About</Link>
-                            <ul>
-                              <li>
-                                <Link to="/about">About</Link>
-                              </li>
-                              <li>
-                                <Link to="/service">Services</Link>
-                              </li>
-                              <li>
-                                <Link to="/service-details">
-                                  Service Details
-                                </Link>
-                              </li>
-                              <li>
-                                <Link to="/portfolio">Portfolio</Link>
-                              </li>
-                              <li>
-                                <Link to="/portfolio-v2">Portfolio - 02</Link>
-                              </li>
-                              <li>
-                                <Link to="/portfolio-details">
-                                  Portfolio Details
-                                </Link>
-                              </li>
-                              <li>
-                                <Link to="/team">Team</Link>
-                              </li>
-                              <li>
-                                <Link to="/team-details">Team Details</Link>
-                              </li>
-                              <li>
-                                <Link to="/faq">FAQ</Link>
-                              </li>
-                              <li>
-                                <Link to="/location">Google Map Locations</Link>
-                              </li>
-                            </ul>
-                          </li>
-                          <li className="menu-icon">
-                            <Link to="/shop">Shop</Link>
-                            <ul>
-                              <li>
-                                <Link to="/shop">Shop</Link>
-                              </li>
-                              <li>
-                                <Link to="/shop-grid">Shop Grid</Link>
-                              </li>
-                              <li>
-                                <Link to="/shop-left-sidebar">
-                                  Shop Left sidebar
-                                </Link>
-                              </li>
-                              <li>
-                                <Link to="/shop-right-sidebar">
-                                  Shop Right sidebar
-                                </Link>
-                              </li>
-                              <li>
-                                <Link to="/product-details">Shop Details</Link>
-                              </li>
-                              <li>
-                                <Link to="/cart">Cart</Link>
-                              </li>
-                              <li>
-                                <Link to="/checkout">Checkout</Link>
-                              </li>
-                              <li>
-                                <Link to="/my-account">My Account</Link>
-                              </li>
-                              <li>
-                                <Link to="/login">Sign in</Link>
-                              </li>
-                              <li>
-                                <Link to="/register">Register</Link>
-                              </li>
-                            </ul>
+                            <Link to="/shop">Package</Link>
                           </li>
                           <li>
                             <Link to="/contact">Contact</Link>
@@ -249,41 +174,6 @@ class NavbarV3 extends Component {
               <ul>
                 <li>
                   <a href="#">Home</a>
-                  <ul className="sub-menu">
-                    <li>
-                      <Link to="/">Home Style 01</Link>
-                    </li>
-                    <li>
-                      <Link to="/home-v2">Home Style 02</Link>
-                    </li>
-                    <li>
-                      <Link to="/home-v3">Home Style 03</Link>
-                    </li>
-                    <li>
-                      <Link to="/home-v4">Home Style 04</Link>
-                    </li>
-                    <li>
-                      <Link to="/home-v5">
-                        Home Style 05{" "}
-                        <span className="menu-item-badge">video</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/home-v6">Home Style 06</Link>
-                    </li>
-                    <li>
-                      <Link to="/home-v7">Home Style 07</Link>
-                    </li>
-                    <li>
-                      <Link to="/home-v8">Home Style 08</Link>
-                    </li>
-                    <li>
-                      <Link to="/home-v9">Home Style 09</Link>
-                    </li>
-                    <li>
-                      <Link to="/home-v10">Home Style 10</Link>
-                    </li>
-                  </ul>
                 </li>
                 <li>
                   <Link to="/about">About</Link>

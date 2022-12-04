@@ -16803,7 +16803,7 @@ input.cart-plus-minus-box {
   left: 0;
   -o-object-fit: cover;
   object-fit: cover;
-  width: 100vw;
+  width: 100%;
   min-width: 100%;
   height: 100%;
 }
