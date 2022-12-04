@@ -19,13 +19,12 @@ class NavbarV3 extends Component {
                     <ul>
                       <li>
                         <a href="mailto:info@webmail.com">
-                          <i className="icon-mail" /> info@webmail.com
+                          <i className="icon-mail" /> info@w2h.com
                         </a>
                       </li>
                       <li>
                         <a href="locations.html">
-                          <i className="icon-placeholder" /> 15/A, Nest Tower,
-                          NYC
+                          <i className="icon-placeholder" /> Locations
                         </a>
                       </li>
                     </ul>
@@ -35,40 +34,7 @@ class NavbarV3 extends Component {
                   <div className="top-bar-right text-end">
                     <div className="ltn__top-bar-menu">
                       <ul>
-                        <li>
-                          {/* ltn__language-menu */}
-                          <div className="ltn__drop-menu ltn__currency-menu ltn__language-menu">
-                            <ul>
-                              <li>
-                                <a href="#" className="dropdown-toggle">
-                                  <span className="active-currency">
-                                    English
-                                  </span>
-                                </a>
-                                <ul>
-                                  <li>
-                                    <Link to="#">Arabic</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="#">Bengali</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="#">Chinese</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="#">English</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="#">French</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="#">Hindi</Link>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </div>
-                        </li>
+                        <li>{/* ltn__language-menu */}</li>
                         <li>
                           {/* ltn__social-media */}
                           <div className="ltn__social-media">
@@ -216,127 +182,6 @@ class NavbarV3 extends Component {
                               </li>
                               <li>
                                 <Link to="/register">Register</Link>
-                              </li>
-                            </ul>
-                          </li>
-                          <li className="menu-icon">
-                            <Link to="/blog-grid">News</Link>
-                            <ul>
-                              <li>
-                                <Link to="/blog">News</Link>
-                              </li>
-                              <li>
-                                <Link to="/blog-grid">News Grid</Link>
-                              </li>
-                              <li>
-                                <Link to="/blog-left-sidebar">
-                                  News Left sidebar
-                                </Link>
-                              </li>
-                              <li>
-                                <Link to="/blog-right-sidebar">
-                                  News Right sidebar
-                                </Link>
-                              </li>
-                              <li>
-                                <Link to="/blog-details">News details</Link>
-                              </li>
-                            </ul>
-                          </li>
-                          <li className="menu-icon">
-                            <Link to="#">Pages</Link>
-                            <ul className="mega-menu">
-                              <li>
-                                <a href="#">Inner Pages</a>
-                                <ul>
-                                  <li>
-                                    <Link to="/portfolio">Portfolio</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/portfolio-v2">
-                                      Portfolio - 02
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/portfolio-details">
-                                      Portfolio Details
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/team">Team</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/team-details">Team Details</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/faq">FAQ</Link>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li>
-                                <Link to="#">Inner Pages</Link>
-                                <ul>
-                                  <li>
-                                    <Link to="/history">History</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/add-listing">Add Listing</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/location">
-                                      Google Map Locations
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/404">404</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/contact">Contact</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/coming-soon">Coming Soon</Link>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li>
-                                <Link to="#">Shop Pages</Link>
-                                <ul>
-                                  <li>
-                                    <Link to="/shop">Shop</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/shop-left-sidebar">
-                                      Shop Left sidebar
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/shop-right-sidebar">
-                                      Shop right sidebar
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/shop-grid">Shop Grid</Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/product-details">
-                                      Shop details{" "}
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link to="/cart">Cart</Link>
-                                  </li>
-                                </ul>
-                              </li>
-                              <li>
-                                <Link to="/shop">
-                                  <img
-                                    src={
-                                      publicUrl +
-                                      "assets/img/banner/menu-banner-1.jpg"
-                                    }
-                                    alt="#"
-                                  />
-                                </Link>
                               </li>
                             </ul>
                           </li>

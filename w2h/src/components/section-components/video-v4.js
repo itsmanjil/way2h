@@ -12,7 +12,7 @@ class VideoV4 extends Component {
         <div className="ltn__slide-one-active----- slick-slide-arrow-1----- slick-slide-dots-1----- arrow-white----- ltn__slide-animation-active">
           {/* HTML5 VIDEO */}
           <video autoPlay muted loop id="myVideo">
-            <source src={publicUrl + "assets/media/3.mp4"} type="video/mp4" />
+            <source src={publicUrl + "assets/media/4.mp4"} type="video/mp4" />
           </video>
           <div
             className="ltn__slide-item ltn__slide-item-2 ltn__slide-item-7 bg-image--- bg-overlay-theme-black-10---"

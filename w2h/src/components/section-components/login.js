@@ -21,6 +21,7 @@ const Login = () => {
     instance
       .post("login", data)
       .then(function (response) {
+        localStorage.setItem("token", response.data.token);
         toast.success("Login Success!");
         console.log(response);
       })
