@@ -15,6 +15,9 @@ import Shop from "./components/shop";
 
 import Login from "./components/login";
 import Register from "./components/register";
+import SignIn from "./components/SignIn/SingIn";
+import SignUp from "./components/SignUp/SignUp";
+import sighUpform from "./components/sighUp";
 
 class Root extends Component {
   render() {
@@ -31,7 +34,9 @@ class Root extends Component {
               component={ResetPassword}
             />
             <Route path="/login" exact component={Login} />
+            {/* <Route path="/login" exact component={sighUpform} /> */}
             <Route path="/register" component={Register} />
+            {/* <Route path="/register" component={sighUpform} /> */}
           </Switch>
         </div>
         <ToastContainer
