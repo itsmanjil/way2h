@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Social from "../section-components/social";
 
-import React from "react";
-
 const NavbarV5 = () => {
   let publicUrl = process.env.PUBLIC_URL + "/";
   let imgattr = "logo";
