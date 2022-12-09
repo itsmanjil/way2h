@@ -1,10 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component , useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import parse from 'html-react-parser';
 import Sidebar from './shop-sidebar';
+import axios from 'axios';
 
 const ShopGridV1 = () => {
 	let publicUrl = process.env.PUBLIC_URL+'/'
+	const [myData, setMyData] = useState([]);
+	useEffect(()=>{
+		axios.get("http://localhost:4000/api/package/packages" )
+		.then((res)=>
+		setMyData(res.data))
+	},[])
+	
   return (
 	<div>
 			<div className="ltn__product-area ltn__product-gutter">
@@ -64,31 +72,34 @@ const ShopGridV1 = () => {
 									</div>
 									</div>
 									{/* ltn__product-item */}
-									<div className="col-xl-6 col-sm-6 col-12">
+									{myData.map((post)=>{
+									return(
+										
+											<div className="col-xl-6 col-sm-6 col-12" key={post._id}>
 									<div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
 										<div className="product-img go-top">
-										<Link to="/product-details"><img src={publicUrl+"assets/img/product-3/1.jpg"} alt="#" /></Link>
+										<Link to="/product-details"><img src={post.image} alt="#" /></Link>
 										<div className="real-estate-agent">
 											<div className="agent-img">
-											<Link to="/shop"><img src={publicUrl+"assets/img/blog/author.jpg"} alt="#" /></Link>
+											<Link to="/shop"><img src={post.image} alt="#" /></Link>
 											</div>
 										</div>
 										</div>
 										<div className="product-info">
-										<div className="product-badge">
+										{/* <div className="product-badge">
 											<ul>
 											<li className="sale-badg">For Rent</li>
 											</ul>
-										</div>
-										<h2 className="product-title go-top"><Link to="/product-details">New Apartment Nice View</Link></h2>
+										</div> */}
+										<h2 className="product-title go-top"><Link to="/product-details">{post.title}</Link></h2>
 										<div className="product-img-location go-top">
 											<ul>
 											<li>
-												<Link to="/contact"><i className="flaticon-pin" /> Belmont Gardens, Chicago</Link>
+												<Link to="/contact"><i className="flaticon-pin" /> {post.name}</Link>
 											</li>
 											</ul>
 										</div>
-										<ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
+										{/* <ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
 											<li><span>3 </span>
 											Bed
 											</li>
@@ -98,7 +109,7 @@ const ShopGridV1 = () => {
 											<li><span>3450 </span>
 											Square Ft
 											</li>
-										</ul>
+										</ul> */}
 										<div className="product-hover-action">
 											<ul>
 											<li>
@@ -120,321 +131,15 @@ const ShopGridV1 = () => {
 										</div>
 										<div className="product-info-bottom">
 										<div className="product-price">
-											<span>$34,900<label>/Month</label></span>
+											<span>{post.query}<label></label></span>
 										</div>
 										</div>
 									</div>
 									</div>
-									{/* ltn__product-item */}
-									<div className="col-xl-6 col-sm-6 col-12">
-									<div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-										<div className="product-img go-top">
-										<Link to="/product-details"><img src={publicUrl+"assets/img/product-3/2.jpg"} alt="#" /></Link>
-										<div className="real-estate-agent">
-											<div className="agent-img">
-											<Link to="/shop"><img src={publicUrl+"assets/img/blog/author.jpg"} alt="#" /></Link>
-											</div>
-										</div>
-										</div>
-										<div className="product-info">
-										<div className="product-badge">
-											<ul>
-											<li className="sale-badg">For Sale</li>
-											</ul>
-										</div>
-										<h2 className="product-title go-top"><Link to="/product-details">New Apartment Nice View</Link></h2>
-										<div className="product-img-location go-top">
-											<ul>
-											<li>
-												<Link to="/contact"><i className="flaticon-pin" /> Belmont Gardens, Chicago</Link>
-											</li>
-											</ul>
-										</div>
-										<ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-											<li><span>3 </span>
-											Bed
-											</li>
-											<li><span>2 </span>
-											Bath
-											</li>
-											<li><span>3450 </span>
-											Square Ft
-											</li>
-										</ul>
-										<div className="product-hover-action">
-											<ul>
-											<li>
-												<a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-												<i className="flaticon-expand" />
-												</a>
-											</li>
-											<li>
-												<a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-												<i className="flaticon-heart-1" /></a>
-											</li>
-											<li className="go-top">
-												<Link to="/product-details" title="Product Details">
-												<i className="flaticon-add" />
-												</Link>
-											</li>
-											</ul>
-										</div>
-										</div>
-										<div className="product-info-bottom">
-										<div className="product-price">
-											<span>$34,900<label>/Month</label></span>
-										</div>
-										</div>
-									</div>
-									</div>
-									{/* ltn__product-item */}
-									<div className="col-xl-6 col-sm-6 col-12">
-									<div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-										<div className="product-img go-top">
-										<Link to="/product-details"><img src={publicUrl+"assets/img/product-3/3.jpg"} alt="#" /></Link>
-										<div className="real-estate-agent">
-											<div className="agent-img">
-											<Link to="/shop"><img src={publicUrl+"assets/img/blog/author.jpg"} alt="#" /></Link>
-											</div>
-										</div>
-										</div>
-										<div className="product-info">
-										<div className="product-badge">
-											<ul>
-											<li className="sale-badg">For Rent</li>
-											</ul>
-										</div>
-										<h2 className="product-title go-top"><Link to="/product-details">New Apartment Nice View</Link></h2>
-										<div className="product-img-location go-top">
-											<ul>
-											<li>
-												<Link to="/contact"><i className="flaticon-pin" /> Belmont Gardens, Chicago</Link>
-											</li>
-											</ul>
-										</div>
-										<ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-											<li><span>3 </span>
-											Bed
-											</li>
-											<li><span>2 </span>
-											Bath
-											</li>
-											<li><span>3450 </span>
-											Square Ft
-											</li>
-										</ul>
-										<div className="product-hover-action">
-											<ul>
-											<li>
-												<a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-												<i className="flaticon-expand" />
-												</a>
-											</li>
-											<li>
-												<a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-												<i className="flaticon-heart-1" /></a>
-											</li>
-											<li className="go-top">
-												<Link to="/product-details" title="Product Details">
-												<i className="flaticon-add" />
-												</Link>
-											</li>
-											</ul>
-										</div>
-										</div>
-										<div className="product-info-bottom">
-										<div className="product-price">
-											<span>$34,900<label>/Month</label></span>
-										</div>
-										</div>
-									</div>
-									</div>
-									{/* ltn__product-item */}
-									<div className="col-xl-6 col-sm-6 col-12">
-									<div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-										<div className="product-img go-top">
-										<Link to="/product-details"><img src={publicUrl+"assets/img/product-3/4.jpg"} alt="#" /></Link>
-										<div className="real-estate-agent">
-											<div className="agent-img">
-											<Link to="/shop"><img src={publicUrl+"assets/img/blog/author.jpg"} alt="#" /></Link>
-											</div>
-										</div>
-										</div>
-										<div className="product-info">
-										<div className="product-badge">
-											<ul>
-											<li className="sale-badg">For Rent</li>
-											</ul>
-										</div>
-										<h2 className="product-title go-top"><Link to="/product-details">New Apartment Nice View</Link></h2>
-										<div className="product-img-location go-top">
-											<ul>
-											<li>
-												<Link to="/contact"><i className="flaticon-pin" /> Belmont Gardens, Chicago</Link>
-											</li>
-											</ul>
-										</div>
-										<ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-											<li><span>3 </span>
-											Bed
-											</li>
-											<li><span>2 </span>
-											Bath
-											</li>
-											<li><span>3450 </span>
-											Square Ft
-											</li>
-										</ul>
-										<div className="product-hover-action">
-											<ul>
-											<li>
-												<a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-												<i className="flaticon-expand" />
-												</a>
-											</li>
-											<li>
-												<a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-												<i className="flaticon-heart-1" /></a>
-											</li>
-											<li className="go-top">
-												<Link to="/product-details" title="Product Details">
-												<i className="flaticon-add" />
-												</Link>
-											</li>
-											</ul>
-										</div>
-										</div>
-										<div className="product-info-bottom">
-										<div className="product-price">
-											<span>$34,900<label>/Month</label></span>
-										</div>
-										</div>
-									</div>
-									</div>
-									{/* ltn__product-item */}
-									<div className="col-xl-6 col-sm-6 col-12">
-									<div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-										<div className="product-img go-top">
-										<Link to="/product-details"><img src={publicUrl+"assets/img/product-3/5.jpg"} alt="#" /></Link>
-										<div className="real-estate-agent">
-											<div className="agent-img">
-											<Link to="/shop"><img src={publicUrl+"assets/img/blog/author.jpg"} alt="#" /></Link>
-											</div>
-										</div>
-										</div>
-										<div className="product-info">
-										<div className="product-badge">
-											<ul>
-											<li className="sale-badg">For Rent</li>
-											</ul>
-										</div>
-										<h2 className="product-title go-top"><Link to="/product-details">New Apartment Nice View</Link></h2>
-										<div className="product-img-location go-top">
-											<ul>
-											<li>
-												<Link to="/contact"><i className="flaticon-pin" /> Belmont Gardens, Chicago</Link>
-											</li>
-											</ul>
-										</div>
-										<ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-											<li><span>3 </span>
-											Bed
-											</li>
-											<li><span>2 </span>
-											Bath
-											</li>
-											<li><span>3450 </span>
-											Square Ft
-											</li>
-										</ul>
-										<div className="product-hover-action">
-											<ul>
-											<li>
-												<a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-												<i className="flaticon-expand" />
-												</a>
-											</li>
-											<li>
-												<a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-												<i className="flaticon-heart-1" /></a>
-											</li>
-											<li className="go-top">
-												<Link to="/product-details" title="Product Details">
-												<i className="flaticon-add" />
-												</Link>
-											</li>
-											</ul>
-										</div>
-										</div>
-										<div className="product-info-bottom">
-										<div className="product-price">
-											<span>$34,900<label>/Month</label></span>
-										</div>
-										</div>
-									</div>
-									</div>
-									{/* ltn__product-item */}
-									<div className="col-xl-6 col-sm-6 col-12">
-									<div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-										<div className="product-img go-top">
-										<Link to="/product-details"><img src={publicUrl+"assets/img/product-3/6.jpg"} alt="#" /></Link>
-										<div className="real-estate-agent">
-											<div className="agent-img">
-											<Link to="/shop"><img src={publicUrl+"assets/img/blog/author.jpg"} alt="#" /></Link>
-											</div>
-										</div>
-										</div>
-										<div className="product-info">
-										<div className="product-badge">
-											<ul>
-											<li className="sale-badg">For Rent</li>
-											</ul>
-										</div>
-										<h2 className="product-title go-top"><Link to="/product-details">New Apartment Nice View</Link></h2>
-										<div className="product-img-location go-top">
-											<ul>
-											<li>
-												<Link to="/contact"><i className="flaticon-pin" /> Belmont Gardens, Chicago</Link>
-											</li>
-											</ul>
-										</div>
-										<ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-											<li><span>3 </span>
-											Bed
-											</li>
-											<li><span>2 </span>
-											Bath
-											</li>
-											<li><span>3450 </span>
-											Square Ft
-											</li>
-										</ul>
-										<div className="product-hover-action">
-											<ul>
-											<li>
-												<a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-												<i className="flaticon-expand" />
-												</a>
-											</li>
-											<li>
-												<a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-												<i className="flaticon-heart-1" /></a>
-											</li>
-											<li className="go-top">
-												<Link to="/product-details" title="Product Details">
-												<i className="flaticon-add" />
-												</Link>
-											</li>
-											</ul>
-										</div>
-										</div>
-										<div className="product-info-bottom">
-										<div className="product-price">
-											<span>$34,900<label>/Month</label></span>
-										</div>
-										</div>
-									</div>
-									</div>
+									)
+
+										
+									})}
 									{/*  */}
 								</div>
 								</div>
@@ -451,346 +156,7 @@ const ShopGridV1 = () => {
 										</form>
 									</div>
 									</div>
-									{/* ltn__product-item */}
-									<div className="col-lg-12">
-									<div className="ltn__product-item ltn__product-item-4 ltn__product-item-5">
-										<div className="product-img go-top">
-										<Link to="/product-details"><img src={publicUrl+"assets/img/product-3/1.jpg"} alt="#" /></Link>
-										</div>
-										<div className="product-info">
-										<div className="product-badge-price">
-											<div className="product-badge">
-											<ul>
-												<li className="sale-badg">For Rent</li>
-											</ul>
-											</div>
-											<div className="product-price">
-											<span>$34,900<label>/Month</label></span>
-											</div>
-										</div>
-										<h2 className="product-title go-top"><Link to="/product-details">New Apartment Nice View</Link></h2>
-										<div className="product-img-location go-top">
-											<ul>
-											<li>
-												<Link to="/contact"><i className="flaticon-pin" /> Belmont Gardens, Chicago</Link>
-											</li>
-											</ul>
-										</div>
-										<ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-											<li><span>3 </span>
-											Bed
-											</li>
-											<li><span>2 </span>
-											Bath
-											</li>
-											<li><span>3450 </span>
-											Square Ft
-											</li>
-										</ul>
-										</div>
-										<div className="product-info-bottom">
-										<div className="real-estate-agent">
-											<div className="agent-img">
-											<Link to="/shop"><img src={publicUrl+"assets/img/blog/author.jpg"} alt="#" /></Link>
-											</div>
-											<div className="agent-brief">
-											<h6><Link to="/team-details">William Seklo</Link></h6>
-											<small>Estate Agents</small>
-											</div>
-										</div>
-										<div className="product-hover-action">
-											<ul>
-											<li>
-												<a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-												<i className="flaticon-expand" />
-												</a>
-											</li>
-											<li>
-												<a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-												<i className="flaticon-heart-1" /></a>
-											</li>
-											<li className="go-top">
-												<Link to="/product-details" title="Product Details">
-												<i className="flaticon-add" />
-												</Link>
-											</li>
-											</ul>
-										</div>
-										</div>
-									</div>
-									</div>
-									{/* ltn__product-item */}
-									<div className="col-lg-12">
-									<div className="ltn__product-item ltn__product-item-4 ltn__product-item-5">
-										<div className="product-img go-top">
-										<Link to="/product-details"><img src={publicUrl+"assets/img/product-3/2.jpg"} alt="#" /></Link>
-										</div>
-										<div className="product-info">
-										<div className="product-badge-price">
-											<div className="product-badge">
-											<ul>
-												<li className="sale-badg">For Rent</li>
-											</ul>
-											</div>
-											<div className="product-price">
-											<span>$34,900<label>/Month</label></span>
-											</div>
-										</div>
-										<h2 className="product-title go-top"><Link to="/product-details">New Apartment Nice View</Link></h2>
-										<div className="product-img-location go-top">
-											<ul>
-											<li>
-												<Link to="/contact"><i className="flaticon-pin" /> Belmont Gardens, Chicago</Link>
-											</li>
-											</ul>
-										</div>
-										<ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-											<li><span>3 </span>
-											Bed
-											</li>
-											<li><span>2 </span>
-											Bath
-											</li>
-											<li><span>3450 </span>
-											Square Ft
-											</li>
-										</ul>
-										</div>
-										<div className="product-info-bottom">
-										<div className="real-estate-agent">
-											<div className="agent-img">
-											<Link to="/shop"><img src={publicUrl+"assets/img/blog/author.jpg"} alt="#" /></Link>
-											</div>
-											<div className="agent-brief">
-											<h6><Link to="/team-details">William Seklo</Link></h6>
-											<small>Estate Agents</small>
-											</div>
-										</div>
-										<div className="product-hover-action">
-											<ul>
-											<li>
-												<a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-												<i className="flaticon-expand" />
-												</a>
-											</li>
-											<li>
-												<a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-												<i className="flaticon-heart-1" /></a>
-											</li>
-											<li className="go-top">
-												<Link to="/product-details" title="Product Details">
-												<i className="flaticon-add" />
-												</Link>
-											</li>
-											</ul>
-										</div>
-										</div>
-									</div>
-									</div>
-									{/* ltn__product-item */}
-									<div className="col-lg-12">
-									<div className="ltn__product-item ltn__product-item-4 ltn__product-item-5">
-										<div className="product-img go-top">
-										<Link to="/product-details"><img src={publicUrl+"assets/img/product-3/3.jpg"} alt="#" /></Link>
-										</div>
-										<div className="product-info">
-										<div className="product-badge-price">
-											<div className="product-badge">
-											<ul>
-												<li className="sale-badg">For Rent</li>
-											</ul>
-											</div>
-											<div className="product-price">
-											<span>$34,900<label>/Month</label></span>
-											</div>
-										</div>
-										<h2 className="product-title go-top"><Link to="/product-details">New Apartment Nice View</Link></h2>
-										<div className="product-img-location go-top">
-											<ul>
-											<li>
-												<Link to="/contact"><i className="flaticon-pin" /> Belmont Gardens, Chicago</Link>
-											</li>
-											</ul>
-										</div>
-										<ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-											<li><span>3 </span>
-											Bed
-											</li>
-											<li><span>2 </span>
-											Bath
-											</li>
-											<li><span>3450 </span>
-											Square Ft
-											</li>
-										</ul>
-										</div>
-										<div className="product-info-bottom">
-										<div className="real-estate-agent">
-											<div className="agent-img">
-											<Link to="/shop"><img src={publicUrl+"assets/img/blog/author.jpg"} alt="#" /></Link>
-											</div>
-											<div className="agent-brief">
-											<h6><Link to="/team-details">William Seklo</Link></h6>
-											<small>Estate Agents</small>
-											</div>
-										</div>
-										<div className="product-hover-action">
-											<ul>
-											<li>
-												<a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-												<i className="flaticon-expand" />
-												</a>
-											</li>
-											<li>
-												<a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-												<i className="flaticon-heart-1" /></a>
-											</li>
-											<li className="go-top">
-												<Link to="/product-details" title="Product Details">
-												<i className="flaticon-add" />
-												</Link>
-											</li>
-											</ul>
-										</div>
-										</div>
-									</div>
-									</div>
-									{/* ltn__product-item */}
-									<div className="col-lg-12">
-									<div className="ltn__product-item ltn__product-item-4 ltn__product-item-5">
-										<div className="product-img go-top">
-										<Link to="/product-details"><img src={publicUrl+"assets/img/product-3/4.jpg"} alt="#" /></Link>
-										</div>
-										<div className="product-info">
-										<div className="product-badge-price">
-											<div className="product-badge">
-											<ul>
-												<li className="sale-badg">For Rent</li>
-											</ul>
-											</div>
-											<div className="product-price">
-											<span>$34,900<label>/Month</label></span>
-											</div>
-										</div>
-										<h2 className="product-title go-top"><Link to="/product-details">New Apartment Nice View</Link></h2>
-										<div className="product-img-location go-top">
-											<ul>
-											<li>
-												<Link to="/contact"><i className="flaticon-pin" /> Belmont Gardens, Chicago</Link>
-											</li>
-											</ul>
-										</div>
-										<ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-											<li><span>3 </span>
-											Bed
-											</li>
-											<li><span>2 </span>
-											Bath
-											</li>
-											<li><span>3450 </span>
-											Square Ft
-											</li>
-										</ul>
-										</div>
-										<div className="product-info-bottom">
-										<div className="real-estate-agent">
-											<div className="agent-img">
-											<Link to="/shop"><img src={publicUrl+"assets/img/blog/author.jpg"} alt="#" /></Link>
-											</div>
-											<div className="agent-brief">
-											<h6><Link to="/team-details">William Seklo</Link></h6>
-											<small>Estate Agents</small>
-											</div>
-										</div>
-										<div className="product-hover-action">
-											<ul>
-											<li>
-												<a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-												<i className="flaticon-expand" />
-												</a>
-											</li>
-											<li>
-												<a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-												<i className="flaticon-heart-1" /></a>
-											</li>
-											<li className="go-top">
-												<Link to="/product-details" title="Product Details">
-												<i className="flaticon-add" />
-												</Link>
-											</li>
-											</ul>
-										</div>
-										</div>
-									</div>
-									</div>
-									{/* ltn__product-item */}
-									<div className="col-lg-12">
-									<div className="ltn__product-item ltn__product-item-4 ltn__product-item-5">
-										<div className="product-img go-top">
-										<Link to="/product-details"><img src={publicUrl+"assets/img/product-3/5.jpg"} alt="#" /></Link>
-										</div>
-										<div className="product-info">
-										<div className="product-badge-price">
-											<div className="product-badge">
-											<ul>
-												<li className="sale-badg">For Rent</li>
-											</ul>
-											</div>
-											<div className="product-price">
-											<span>$34,900<label>/Month</label></span>
-											</div>
-										</div>
-										<h2 className="product-title go-top"><Link to="/product-details">New Apartment Nice View</Link></h2>
-										<div className="product-img-location go-top">
-											<ul>
-											<li>
-												<Link to="/contact"><i className="flaticon-pin" /> Belmont Gardens, Chicago</Link>
-											</li>
-											</ul>
-										</div>
-										<ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
-											<li><span>3 </span>
-											Bed
-											</li>
-											<li><span>2 </span>
-											Bath
-											</li>
-											<li><span>3450 </span>
-											Square Ft
-											</li>
-										</ul>
-										</div>
-										<div className="product-info-bottom">
-										<div className="real-estate-agent">
-											<div className="agent-img">
-											<Link to="/shop"><img src={publicUrl+"assets/img/blog/author.jpg"} alt="#" /></Link>
-											</div>
-											<div className="agent-brief">
-											<h6><Link to="/team-details">William Seklo</Link></h6>
-											<small>Estate Agents</small>
-											</div>
-										</div>
-										<div className="product-hover-action">
-											<ul>
-											<li>
-												<a href="#" title="Quick View" data-bs-toggle="modal" data-bs-target="#quick_view_modal">
-												<i className="flaticon-expand" />
-												</a>
-											</li>
-											<li>
-												<a href="#" title="Wishlist" data-bs-toggle="modal" data-bs-target="#liton_wishlist_modal">
-												<i className="flaticon-heart-1" /></a>
-											</li>
-											<li className="go-top">
-												<Link to="/product-details" title="Product Details">
-												<i className="flaticon-add" />
-												</Link>
-											</li>
-											</ul>
-										</div>
-										</div>
-									</div>
-									</div>
+								
 									{/*  */}
 								</div>
 								</div>
