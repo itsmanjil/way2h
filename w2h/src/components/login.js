@@ -8,10 +8,10 @@ import Footer from "./global-components/footer";
 const LoginV1 = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <PageHeader headertitle="Account" subheader="Login" />
       <Login />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

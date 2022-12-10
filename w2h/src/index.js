@@ -12,18 +12,20 @@ import HomeV5 from "./components/home-v5";
 
 import ResetPassword from "./components/resetpassword";
 import Shop from "./components/shop";
-
+import Navbar from "./components/global-components/navbar-v4";
 import Login from "./components/login";
 import Register from "./components/register";
 import SignIn from "./components/SignIn/SingIn";
 import SignUp from "./components/SignUp/SignUp";
 import sighUpform from "./components/sighUp";
+import Footer from "./components/global-components/footer";
 
 class Root extends Component {
   render() {
     return (
       <Router basename="/">
         <div>
+          <Navbar CustomClass="ltn__header-transparent gradient-color-2" />
           <Switch>
             <Route exact path="/" component={HomeV5} />
 
@@ -38,6 +40,7 @@ class Root extends Component {
             <Route path="/register" component={Register} />
             {/* <Route path="/register" component={sighUpform} /> */}
           </Switch>
+          <Footer />
         </div>
         <ToastContainer
           position="bottom-right"

@@ -10,11 +10,11 @@ const Shop_V1 = () => {
   return (
     <div>
       {/* <Navbar /> */}
-      <Navbar CustomClass="ltn__header-transparent gradient-color-2" />
+      {/* <Navbar CustomClass="ltn__header-transparent gradient-color-2" /> */}
 
       <PageHeader headertitle="Shop" />
       <ShogGrid />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

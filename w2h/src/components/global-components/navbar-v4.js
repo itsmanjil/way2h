@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Social from "../section-components/social";
 
@@ -6,6 +7,21 @@ const NavbarV3 = () => {
   let publicUrl = process.env.PUBLIC_URL + "/";
   let imgattr = "logo";
   let anchor = "#";
+
+  const [tokenStore, setTokenStore] = useState();
+  const token = localStorage.getItem("token")
+    ? localStorage.getItem("token")
+    : null;
+
+  useEffect(() => {
+    if (token) {
+      setTokenStore(localStorage.getItem("token"));
+    }
+  }, [tokenStore]);
+
+  console.log("token", tokenStore);
+  //
+
   return (
     <div>
       <header className="ltn__header-area ltn__header-5 ltn__header-logo-and-mobile-menu-in-mobile ltn__header-logo-and-mobile-menu ltn__header-transparent gradient-color-2">
@@ -110,7 +126,18 @@ const NavbarV3 = () => {
                           <Link to="/contact">Contact</Link>
                         </li>
                         <li className="special-link">
-                          <Link to="/login">Sign in</Link>
+                          {tokenStore !== null ? (
+                            <button
+                              onClick={() => {
+                                localStorage.removeItem("token");
+                                setTokenStore(null);
+                              }}
+                            >
+                              Log Out
+                            </button>
+                          ) : (
+                            <Link to="/login">Sign in</Link>
+                          )}
                         </li>
                       </ul>
                     </div>

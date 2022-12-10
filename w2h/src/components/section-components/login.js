@@ -7,7 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { schemaSignIn } from "../../schema/signInSchema";
 import { instance } from "../../utils/axiosInstance/AxiosInstance";
 import Reset from "./reset";
-
+import { useHistory } from "react-router-dom";
 const Login = () => {
   const {
     register,
@@ -17,21 +17,24 @@ const Login = () => {
   } = useForm({
     resolver: yupResolver(schemaSignIn),
   });
+  let history = useHistory();
   const onSubmit = (data) => {
     instance
       .post("login", data)
       .then(function (response) {
-        localStorage.setItem("token", response.data.token);
         toast.success("Login Success!");
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("_id", response.data.user._id);
+        history.push({
+          pathname: "/",
+        });
         console.log(response);
       })
       .catch(function (error) {
         console.log(error);
       });
   };
-
   console.log(watch("email")); // watch input value by passing the name of it
-
   return (
     <div>
       <div className="ltn__login-area pb-65">
@@ -153,5 +156,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;

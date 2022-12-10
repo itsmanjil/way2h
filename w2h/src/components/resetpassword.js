@@ -4,6 +4,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { instance } from "../utils/axiosInstance/AxiosInstance";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
+import PageHeader from "./global-components/page-header";
+import { useHistory } from "react-router-dom";
 
 const ResetPassword = () => {
   const {
@@ -15,24 +18,31 @@ const ResetPassword = () => {
     resolver: yupResolver(updatepasswordSchema),
   });
 
+  let history = useHistory();
   const tokenRest = useParams().token;
+
   const resetPasswordSubmit = (data) => {
     instance
       .put(`password/reset/${tokenRest}`, data)
-      .then(function (response) {
+      .then((response) => {
         toast.success("passowrd updated Success!");
-        console.log(response);
+        // console.log(response);
+        history.push({
+          pathname: "/",
+        });
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.log(error);
+        toast.error(error.response.data.message);
       });
   };
 
   return (
     <Fragment>
+      <PageHeader headertitle="Reset Password" />
       <div className="resetPasswordContainer">
         <div className="resetPasswordBox">
-          <h2 className="resetPasswordHeading">Update Password</h2>
+          {/* <h2 className="resetPasswordHeading">Update Password</h2> */}
 
           <form
             className="resetPasswordForm"

@@ -7,11 +7,11 @@ import Footer from "./global-components/footer";
 const RegisterV1 = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       <PageHeader headertitle="Account" subheader="Register" />
       <Register />
       {/* <CallToActionV1 /> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
