@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Social from "../section-components/social";
-import Backdrop from "@mui/material/Backdrop";
-import CircularProgress from "@mui/material/CircularProgress";
-import Button from "@mui/material/Button";
 
-const Navbar = () => {
+
+const Navbar = (props) => {
   let publicUrl = process.env.PUBLIC_URL + "/";
   const isLoggedIn = props.isLoggedIn;
   console.log(isLoggedIn);
