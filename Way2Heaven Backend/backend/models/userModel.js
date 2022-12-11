@@ -29,13 +29,11 @@ const userSchema = new mongoose.Schema({
   avatar: {
     public_id: {
       type: String,
-      default:"images"
-    
+      default: "images",
     },
     url: {
       type: String,
-      default:"images"
-  
+      default: "images",
     },
   },
   createdAt: {
@@ -46,6 +44,7 @@ const userSchema = new mongoose.Schema({
   resetPasswordToken: String,
   resetPasswordExpire: Date,
 });
+
 userSchema.pre("save", async function (next) {
   if (!this.isModified("password")) {
     next();
@@ -76,7 +75,8 @@ userSchema.methods.getResetPasswordToken = function () {
     .update(resetToken)
     .digest("hex");
 
-    this.resetPasswordExpire=Date.now()+15*60*1000;
-    return resetToken;
+  this.resetPasswordExpire = Date.now() + 15 * 60 * 1000;
+  return resetToken;
 };
 module.exports = mongoose.model("User", userSchema);
+// mexports =

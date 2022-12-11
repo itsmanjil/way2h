@@ -65,7 +65,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
 
   //get reset pasword token
   const resetToken = user.getResetPasswordToken();
-  
+
   await user.save({ validateBeforeSave: false });
 
   const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
@@ -100,10 +100,16 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
     .update(req.params.token)
     .digest("hex");
 
+  const resetPasswordExpire = Date.now();
+  console.log("resetToken", resetPasswordToken);
+  console.log("resetToken expire", resetPasswordExpire);
+
   const user = await User.findOne({
     resetPasswordToken,
     resetPasswordExpire: { $gt: Date.now() },
   });
+
+  console.log("user 99", req.params.token);
 
   if (!user) {
     return next(
@@ -112,19 +118,20 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
         400
       )
     );
+  } else {
+    if (req.body.password !== req.body.confirmPassword) {
+      return next(new ErrorHandler("Password is invalid", 400));
+    }
+
+    console.log(req.body.password);
+    user.password = req.body.password;
+    user.resetPasswordToken = undefined;
+    user.resetPasswordExpire = undefined;
+
+    await user.save();
+
+    sendToken(user, 200, res);
   }
-
-  if (req.body.password !== req.body.confirmPassword) {
-    return next(new ErrorHandler("Password is invalid", 400));
-  }
-
-  user.password = req.body.password;
-  user.resetPasswordToken = undefined;
-  user.resetPasswordExpire = undefined;
-
-  await user.save();
-
-  sendToken(user, 200, res);
 });
 
 //get user details
@@ -134,9 +141,14 @@ exports.getUserDetails = catchAsyncErrors(async (req, res, next) => {
 
   res.status(200).json({
     success: true,
-    q:[{name:user.name,email:user.email,role:user.role,images:user.avatar
-    }],
-
+    q: [
+      {
+        name: user.name,
+        email: user.email,
+        role: user.role,
+        images: user.avatar,
+      },
+    ],
   });
 });
 
@@ -342,4 +354,3 @@ exports.deleteReview = catchAsyncErrors(async (req, res, next) => {
   );
   res.status(200).json({ success: true });
 });
-
