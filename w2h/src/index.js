@@ -19,6 +19,8 @@ import SignIn from "./components/SignIn/SingIn";
 import SignUp from "./components/SignUp/SignUp";
 import sighUpform from "./components/sighUp";
 import Footer from "./components/global-components/footer";
+import MyaccountV1 from "./components/my-account";
+import ProfilePage from "./components/shop-components/edit_profile";
 
 class Root extends Component {
   render() {
@@ -39,7 +41,10 @@ class Root extends Component {
             {/* <Route path="/login" exact component={sighUpform} /> */}
             <Route path="/register" component={Register} />
             {/* <Route path="/register" component={sighUpform} /> */}
-          </Switch>
+            <Route path="/my-account" exact component={MyaccountV1}/>
+            <Route path="/edit-profile" exact component={ProfilePage}/>
+
+            </Switch>
           <Footer />
         </div>
         <ToastContainer

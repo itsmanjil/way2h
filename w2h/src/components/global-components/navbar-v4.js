@@ -125,6 +125,9 @@ const NavbarV3 = () => {
                         <li>
                           <Link to="/contact">Contact</Link>
                         </li>
+                        <li className="menu-icon">
+                          <Link to="/my-account">My Account</Link>
+                        </li>
                         <li className="special-link">
                           {tokenStore !== null ? (
                             <button
