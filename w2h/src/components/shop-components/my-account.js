@@ -1,34 +1,9 @@
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import parse from "html-react-parser";
-const axios = require("axios");
-import React, { Fragment, useEffect, useState } from "react";
-import { instance } from "../../utils/axiosInstance/AxiosInstance";
-const logout = () => {
-  localStorage.clear();
-  window.location.href = "/";
-};
+
+// import React from 'react'
+
 const MyAccount = () => {
-  let publicUrl = process.env.PUBLIC_URL + "/";
-  const [q, setUser] = useState([]);
-  const id = localStorage.getItem("_id");
-  console.log(id);
-  const token = localStorage.getItem("token");
-  useEffect(() => {
-    instance
-      .get(`me/${id}`, {
-        headers: {
-          Authorization: `bearer ${token}`,
-        },
-      })
-      .then((res) => {
-        setUser(res.data.q);
-        //   console.log("Profile data" + JSON.stringify(res.data.q));
-        console.log(res.data.q);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [token]);
   return (
     <div className="liton__wishlist-area pb-70">
       <div className="container">
@@ -51,25 +26,33 @@ const MyAccount = () => {
                         <a data-bs-toggle="tab" href="#ltn_tab_1_2">
                           Profiles <i className="fas fa-user" />
                         </a>
+                        <a data-bs-toggle="tab" href="#ltn_tab_1_3">
+                          address <i className="fas fa-map-marker-alt" />
+                        </a>
+                        <a data-bs-toggle="tab" href="#ltn_tab_1_4">
+                          Account Details <i className="fas fa-user" />
+                        </a>
+                        <a data-bs-toggle="tab" href="#ltn_tab_1_5">
+                          My Properties <i className="fa-solid fa-list" />
+                        </a>
                         <a data-bs-toggle="tab" href="#ltn_tab_1_6">
                           Favorited Properties{" "}
                           <i className="fa-solid fa-heart" />
+                        </a>
+                        <a data-bs-toggle="tab" href="#ltn_tab_1_7">
+                          Add Property{" "}
+                          <i className="fa-solid fa-map-location-dot" />
                         </a>
                         <a data-bs-toggle="tab" href="#ltn_tab_1_8">
                           Payments{" "}
                           <i className="fa-solid fa-money-check-dollar" />
                         </a>
-                        {/* <a data-bs-toggle="tab" href="#"> */}
-                        <Link to="/edit-profile">Edit</Link>
-                        <button
-                          onClick={logout}
-                          style={{ background: "transparent" }}
-                        >
-                          Logout
-                        </button>
-                        <i className="fa-solid fa-right-from-bracket"></i>
-                        {/* </a> */}
-                        {/* <button onClick={logout}>Logout</button> */}
+                        <a data-bs-toggle="tab" href="#ltn_tab_1_9">
+                          Change Password <i className="fa-solid fa-lock" />
+                        </a>
+                        <a href="login.html">
+                          Logout <i className="fas fa-sign-out-alt" />
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -99,77 +82,130 @@ const MyAccount = () => {
                       <div className="tab-pane fade" id="ltn_tab_1_2">
                         <div className="ltn__myaccount-tab-content-inner">
                           {/* comment-area */}
-                          {q.map((post) => {
-                            const { name, email, role, images } = post;
-                            return (
-                              <div className="ltn__comment-area mb-50">
-                                <div className="ltn-author-introducing clearfix">
-                                  <div className="author-img">
-                                    <img
-                                      src="https://flxt.tmsimg.com/assets/p16787843_i_h9_ab.jpg"
-                                      style={{
-                                        position: "relative",
-                                        height: "200px",
-                                        borderRadius: "50%",
-                                      }}
-                                      alt="Author Image"
-                                    />
+                          <div className="ltn__comment-area mb-50">
+                            <div className="ltn-author-introducing clearfix">
+                              <div className="author-img">
+                                <img
+                                  src={publicUrl + "assets/img/blog/author.jpg"}
+                                  alt="Author Image"
+                                />
+                              </div>
+                              <div className="author-info">
+                                <h6>Agent of Property</h6>
+                                <h2>Rosalina D. William</h2>
+                                <div className="footer-address">
+                                  <ul>
+                                    <li>
+                                      <div className="footer-address-icon">
+                                        <i className="icon-placeholder" />
+                                      </div>
+                                      <div className="footer-address-info">
+                                        <p>Brooklyn, New York, United States</p>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div className="footer-address-icon">
+                                        <i className="icon-call" />
+                                      </div>
+                                      <div className="footer-address-info">
+                                        <p>
+                                          <a href="tel:+0123-456789">
+                                            +0123-456789
+                                          </a>
+                                        </p>
+                                      </div>
+                                    </li>
+                                    <li>
+                                      <div className="footer-address-icon">
+                                        <i className="icon-mail" />
+                                      </div>
+                                      <div className="footer-address-info">
+                                        <p>
+                                          <a href="mailto:example@example.com">
+                                            example@example.com
+                                          </a>
+                                        </p>
+                                      </div>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div className="ltn__form-box contact-form-box box-shadow white-bg">
+                              <h4 className="title-2">Get A Quote</h4>
+                              <form
+                                id="contact-form"
+                                action="mail.php"
+                                method="post"
+                              >
+                                <div className="row">
+                                  <div className="col-md-6">
+                                    <div className="input-item input-item-name ltn__custom-icon">
+                                      <input
+                                        type="text"
+                                        name="name"
+                                        placeholder="Enter your name"
+                                      />
+                                    </div>
                                   </div>
-                                  <div className="author-info">
-                                    <h2>Name:</h2>
-                                    <p
-                                      style={{
-                                        fontFamily: "cursive",
-                                        fontSize: "30px",
-                                        fontWeight: "bold",
-                                        position: "absolute",
-                                        top: "34px",
-                                        left: "385px",
-                                      }}
-                                    >
-                                      {name}
-                                    </p>
-                                    <div className="footer-address">
-                                      <ul>
-                                        <li>
-                                          <div className="footer-address-icon">
-                                            <i className="icon-user" />
-                                          </div>
-                                          <div className="footer-address-info">
-                                            <p
-                                              style={{
-                                                fontsize: "70px",
-                                                fontFamily: "cursive",
-                                                fontWeight: "bold",
-                                              }}
-                                            >
-                                              Role:{role}
-                                            </p>
-                                          </div>
-                                        </li>
-                                        <li>
-                                          <div className="footer-address-icon">
-                                            <i className="icon-mail" />
-                                          </div>
-                                          <div className="footer-address-info">
-                                            <p
-                                              style={{
-                                                fontsize: "30px",
-                                                fontFamily: "cursive",
-                                                fontWeight: "bold",
-                                              }}
-                                            >
-                                              {email}
-                                            </p>
-                                          </div>
-                                        </li>
-                                      </ul>
+                                  <div className="col-md-6">
+                                    <div className="input-item input-item-email ltn__custom-icon">
+                                      <input
+                                        type="email"
+                                        name="email"
+                                        placeholder="Enter email address"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="col-md-6">
+                                    <div className="input-item">
+                                      <select className="nice-select">
+                                        <option>Select Service Type</option>
+                                        <option>Property Management </option>
+                                        <option>Mortgage Service </option>
+                                        <option>Consulting Service</option>
+                                        <option>Home Buying</option>
+                                        <option>Home Selling</option>
+                                        <option>Escrow Services</option>
+                                      </select>
+                                    </div>
+                                  </div>
+                                  <div className="col-md-6">
+                                    <div className="input-item input-item-phone ltn__custom-icon">
+                                      <input
+                                        type="text"
+                                        name="phone"
+                                        placeholder="Enter phone number"
+                                      />
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                            );
-                          })}
+                                <div className="input-item input-item-textarea ltn__custom-icon">
+                                  <textarea
+                                    name="message"
+                                    placeholder="Enter message"
+                                    defaultValue={""}
+                                  />
+                                </div>
+                                <p>
+                                  <label className="input-info-save mb-0">
+                                    <input type="checkbox" name="agree" /> Save
+                                    my name, email, and website in this browser
+                                    for the next time I comment.
+                                  </label>
+                                </p>
+                                <div className="btn-wrapper mt-0">
+                                  <button
+                                    className="btn theme-btn-1 btn-effect-1 text-uppercase"
+                                    type="submit"
+                                  >
+                                    get a free service
+                                  </button>
+                                </div>
+                                <p className="form-messege mb-0 mt-20" />
+                              </form>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div className="tab-pane fade" id="ltn_tab_1_3">
@@ -201,7 +237,7 @@ const MyAccount = () => {
                               <h4>
                                 Shipping Address{" "}
                                 <small>
-                                  <Link to="/edit-profile">edit</Link>
+                                  <Link to="#">edit</Link>
                                 </small>
                               </h4>
                               <address>
@@ -1864,4 +1900,5 @@ const MyAccount = () => {
     </div>
   );
 };
+
 export default MyAccount;
