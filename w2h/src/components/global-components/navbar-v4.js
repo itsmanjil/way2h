@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Social from "../section-components/social";
 
 const NavbarV3 = () => {
+  // publicUrl is the path to the public directory
   let publicUrl = process.env.PUBLIC_URL + "/";
   let imgattr = "logo";
   let anchor = "#";
