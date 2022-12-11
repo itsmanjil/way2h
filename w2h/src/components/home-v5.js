@@ -16,7 +16,7 @@ import Footer from "./global-components/footer";
 const Home_V5 = () => {
   return (
     <div>
-      <Navbar CustomClass="ltn__header-transparent gradient-color-2" />
+      {/* <Navbar CustomClass="ltn__header-transparent gradient-color-2" /> */}
       <VideoV4 />
       {/* <AboutV3 /> */}
       <Featuresv1 customClass="ltn__feature-area section-bg-1 pt-120 pb-90 mb-120---" />
@@ -25,7 +25,7 @@ const Home_V5 = () => {
       <Category />
       <CallToActionV1 />
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

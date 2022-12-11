@@ -10,17 +10,18 @@ const NavbarV3 = () => {
   let anchor = "#";
 
   const [tokenStore, setTokenStore] = useState();
-  const token = localStorage.getItem("token")
-    ? localStorage.getItem("token")
-    : null;
 
   useEffect(() => {
+    const token = localStorage.getItem("token")
+      ? localStorage.getItem("token")
+      : null;
+
     if (token) {
       setTokenStore(localStorage.getItem("token"));
     }
   }, [tokenStore]);
 
-  console.log("token", tokenStore);
+  // console.log("token", tokenStore);
   //
 
   return (
@@ -130,7 +131,9 @@ const NavbarV3 = () => {
                           <Link to="/my-account">My Account</Link>
                         </li>
                         <li className="special-link">
-                          {tokenStore !== null ? (
+                          {tokenStore === undefined || tokenStore === null ? (
+                            <Link to="/login">Sign in</Link>
+                          ) : (
                             <button
                               onClick={() => {
                                 localStorage.removeItem("token");
@@ -139,8 +142,6 @@ const NavbarV3 = () => {
                             >
                               Log Out
                             </button>
-                          ) : (
-                            <Link to="/login">Sign in</Link>
                           )}
                         </li>
                       </ul>
