@@ -5,8 +5,36 @@ import Sidebar from "./shop-sidebar";
 
 const ShopGridV1 = () => {
   let publicUrl = process.env.PUBLIC_URL + "/";
+  const [myData, setMyData] = useState([]);
+  const [obj, setObj] = useState([]);
+  const [query, setQuery] = useState("");
+  const [order, setorder] = useState("ASC");
+  const [sort, setSort] = useState({ sort: "rating", order: "desc" });
+  const [filterGenre, setFilterGenre] = useState([]);
+  const [page, setPage] = useState(1);
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    // axios.get("http://localhost:4000/api/package/packages" )
+    // .then((res)=>
+    // setMyData(res.data))
+    const getAllMovies = async () => {
+      try {
+        const url = `${"http://localhost:5000/api/package/getallpackage"}?page=${page}&sort=${
+          sort.sort
+        },${sort.order}&genre=${filterGenre.toString()}&search=${search}`;
+        const { data } = await axios.get(url);
+        setObj(data?.movies);
+        console.log("DATA", data.movies);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getAllMovies();
+  }, [sort, filterGenre, page, search]);
   return (
     <div>
+      <h1>Shsbahdbop</h1>
       <div className="ltn__product-area ltn__product-gutter">
         <div className="container">
           <div className="row">

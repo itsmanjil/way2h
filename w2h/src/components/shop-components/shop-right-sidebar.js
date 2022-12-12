@@ -12,7 +12,6 @@ const ShopGridV1 = () => {
   const [obj, setObj] = useState([]);
   const [query, setQuery] = useState("");
   const [order, setorder] = useState("ASC");
-
   const [sort, setSort] = useState({ sort: "rating", order: "desc" });
   const [filterGenre, setFilterGenre] = useState([]);
   const [page, setPage] = useState(1);
