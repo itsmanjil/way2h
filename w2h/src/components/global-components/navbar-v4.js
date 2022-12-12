@@ -88,7 +88,7 @@ const NavbarV3 = () => {
         </div>
         {/* ltn__header-top-area end */}
         {/* ltn__header-middle-area start */}
-        <div className="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-black">
+        <div className="ltn__header-middle-area ltn__header-sticky ltn__sticky-bg-green">
           <div className="container">
             <div className="row">
               <div className="col">
@@ -127,9 +127,13 @@ const NavbarV3 = () => {
                         <li>
                           <Link to="/contact">Contact</Link>
                         </li>
+
                         <li className="menu-icon">
-                          <Link to="/my-account">My Account</Link>
+                          {tokenStore !== null && (
+                            <Link to="/my-account">My Account</Link>
+                          )}
                         </li>
+
                         <li className="special-link">
                           {tokenStore === undefined || tokenStore === null ? (
                             <Link to="/login">Sign in</Link>

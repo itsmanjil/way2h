@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import parse from "html-react-parser";
 import Sidebar from "./shop-sidebar";
 import axios from "axios";
-// import Pagination from "../pagination/index";
+import Pagination from "../pagination/index";
 const base_url = process.env.REACT_APP_API_URL;
 
 const ShopGridV1 = () => {
@@ -143,7 +143,107 @@ const ShopGridV1 = () => {
                         </div>
                       </div>
                       {/* ltn__product-item */}
-
+                      {obj
+                        ?.filter((post) =>
+                          post.title.toLowerCase().includes(query)
+                        )
+                        .map((post) => {
+                          console.log("abc", post.image);
+                          return (
+                            <div
+                              className="col-xl-6 col-sm-6 col-12"
+                              key={post._id}
+                            >
+                              <div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
+                                <div className="product-img go-top">
+                                  <Link to="/product-details">
+                                    <img src={post.image} alt="#" />
+                                  </Link>
+                                  <div className="real-estate-agent">
+                                    <div className="agent-img">
+                                      <Link to="/shop">
+                                        <img src={post.image} alt="#" />
+                                      </Link>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="product-info">
+                                  {/* <div className="product-badge">
+											<ul>
+											<li className="sale-badg">For Rent</li>
+											</ul>
+										</div> */}
+                                  <h2 className="product-title go-top">
+                                    <Link to="/product-details">
+                                      {post.title}
+                                    </Link>
+                                  </h2>
+                                  <div className="product-img-location go-top">
+                                    <ul>
+                                      <li>
+                                        <Link to="/contact">
+                                          <i className="flaticon-pin" />{" "}
+                                          {post.name}
+                                        </Link>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  {/* <ul className="ltn__list-item-2--- ltn__list-item-2-before--- ltn__plot-brief">
+											<li><span>3 </span>
+											Bed
+											</li>
+											<li><span>2 </span>
+											Bath
+											</li>
+											<li><span>3450 </span>
+											Square Ft
+											</li>
+										</ul> */}
+                                  <div className="product-hover-action">
+                                    <ul>
+                                      <li>
+                                        <a
+                                          href="#"
+                                          title="Quick View"
+                                          data-bs-toggle="modal"
+                                          data-bs-target="#quick_view_modal"
+                                        >
+                                          <i className="flaticon-expand" />
+                                        </a>
+                                      </li>
+                                      <li>
+                                        <a
+                                          href="#"
+                                          title="Wishlist"
+                                          data-bs-toggle="modal"
+                                          data-bs-target="#liton_wishlist_modal"
+                                        >
+                                          <i className="flaticon-heart-1" />
+                                        </a>
+                                      </li>
+                                      <li className="go-top">
+                                        <Link
+                                          to="/product-details"
+                                          title="Product Details"
+                                        >
+                                          <i className="flaticon-add" />
+                                        </Link>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div className="product-info-bottom">
+                                  <div className="product-price">
+                                    <span>
+                                      {post.query}
+                                      <label></label>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
                       {/*  */}
                     </div>
                   </div>
@@ -300,18 +400,13 @@ const ShopGridV1 = () => {
 								</ul>
 							</div>
 							</div> */}
-              {/* <Pagination 
-							page={page}
-							limit={obj.limit ? obj.limit:0}
-							total = {obj.total ? obj.total:0}
-							setPage={(page)=>setPage(page)}
-							 */}
-              {/* <Pagination 
-							 page={page} 
-							 limit = {obj.limit? obj.limit:0}
-							 total = {obj.total ? obj.total:0}
-							 setPage = {(page)=> setPage(page)}
-							 /> */}
+
+              <Pagination
+                page={page}
+                limit={obj.limit ? obj.limit : 0}
+                total={obj.total ? obj.total : 0}
+                setPage={(page) => setPage(page)}
+              />
 
               {/* /> */}
             </div>

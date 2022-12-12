@@ -12,7 +12,7 @@ const Shop_V1 = () => {
       {/* <Navbar /> */}
       {/* <Navbar CustomClass="ltn__header-transparent gradient-color-2" /> */}
 
-      <PageHeader headertitle="Shop" />
+      <PageHeader headertitle="Package" />
       <ShogGrid />
       {/* <Footer /> */}
     </div>
