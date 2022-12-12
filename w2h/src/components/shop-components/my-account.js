@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 // import React from 'react'
 
 const MyAccount = () => {
+  let publicUrl = process.env.PUBLIC_URL + "/";
+
   return (
     <div className="liton__wishlist-area pb-70">
       <div className="container">
