@@ -292,6 +292,11 @@
   opacity: 0.9;
 }
 
+#p-activities {
+	padding-left: 1000px;
+}
+
+
 #by {
   margin-block-start: 0px;
   margin-inline-start: 20px;

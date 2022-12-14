@@ -168,6 +168,7 @@ export default AddActivity;
 const AddActivityContainer = styled.div`
   margin: 3rem auto;
   padding: 4rem;
+  padding-left: 1000rem;
   width: 75.25rem;
   margin: 3rem auto;
   padding: 4rem;

@@ -36,16 +36,15 @@ const Activities = () => {
 
       <MainContainer>
         <div className="info">
-          <div className="container">
+          <div className="container ">
             <input
-              id="search-input"
+              id="search-input form1 p-activities "
               type="search"
-              id="form1"
               class="form-outline form-control"
               style={{
                 width: "400px",
                 marginlnlineStart: "14%",
-                marginLeft: "990px",
+                marginLeft: "1990px",
                 marginTop: "-50px",
                 background: "#ADD8E6",
               }}
@@ -78,8 +77,8 @@ const Activities = () => {
               </div>
             </div>
           </div>
-          <div className="container">
-            <Row xs={1} md={3} className="g-4" id="by" className="rounded">
+          <div className="container p-activities">
+            <Row xs={1} md={3} className="g-4 rounded " id="by p-activities">
               {filterdActivity.map((activity) => (
                 <Col>
                   <div className="card-group py-3">

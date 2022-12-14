@@ -106,7 +106,7 @@ class NavbarV3 extends Component {
                             <Link to="/">Home</Link>
                           </li>
                           <li className="menu-icon">
-                            <Link to="/about">About</Link>
+                            <Link>About</Link>
                             <ul>
                               <li>
                                 <Link to="/aboutus">About</Link>
