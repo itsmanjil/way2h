@@ -339,8 +339,10 @@
   width: 150px;
   font-size: 15px;
   margin: center;
-  margin-inline-start: 240%;
-  height: 33px;
+  /* margin-inline-start: 240%; */
+  height: 38px;
+  
+
 }
 
 
