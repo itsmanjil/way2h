@@ -29,7 +29,6 @@ export default class CardItemsT extends Component {
     });
   }
 
-
   filterData(posts, searchkey) {
     const result = posts.filter(
       (post) =>
@@ -54,7 +53,7 @@ export default class CardItemsT extends Component {
       <div>
         <Header />
         <div className="infotr bodytravelpackage">
-          <div className="bodytravelpackage" className="container" id="bbimg">
+          <div className="bodytravelpackage container" id="bbimg">
             <div>
               <br />
               <div class="row text-center text-lg-start">
@@ -62,7 +61,6 @@ export default class CardItemsT extends Component {
                   <a href="#" class="d-block mb-1 h-5">
                     <img
                       class="img-fluid img-thumbnail"
-                     
                       src=" https://www.worldtravelguide.net/wp-content/uploads/2019/03/shu-Sri-Lanka-Train-to-Kandy-253468045-430x246.jpg"
                       alt=""
                     />
@@ -120,57 +118,54 @@ export default class CardItemsT extends Component {
                 </div>
               </div>
               <hr />
-           <p className="mb-2">   Sri Lanka, formerly known as Ceylon, and officially the Democratic
-              Socialist Republic of Sri Lanka, is an island country in South
-              Asia. It lies in the Indian Ocean, southwest of the Bay of Bengal,
-              and southeast of the Arabian Sea; it is separated from the Indian
-              subcontinent by the Gulf of Mannar and the Palk Strait Sri Lanka,
-              an island south of India crams an extraordinary variety of places
-              to visit within its modest size. Lapped up by the Indian Ocean,
-              the coastline is lined with idyllic – and often refreshingly
-              undeveloped – beaches, while the mainland boasts a compelling
-              variety of landscapes ranging from wildlife-rich lowland jungles
-              to the misty highlands of the hills, swathed in tea plantations.
-              We love nature, adventure and road trips. Read on to travel with
-              us and let us show you the magical side of the places that we
-              visit.
+              <p className="mb-2">
+                {" "}
+                Sri Lanka, formerly known as Ceylon, and officially the
+                Democratic Socialist Republic of Sri Lanka, is an island country
+                in South Asia. It lies in the Indian Ocean, southwest of the Bay
+                of Bengal, and southeast of the Arabian Sea; it is separated
+                from the Indian subcontinent by the Gulf of Mannar and the Palk
+                Strait Sri Lanka, an island south of India crams an
+                extraordinary variety of places to visit within its modest size.
+                Lapped up by the Indian Ocean, the coastline is lined with
+                idyllic – and often refreshingly undeveloped – beaches, while
+                the mainland boasts a compelling variety of landscapes ranging
+                from wildlife-rich lowland jungles to the misty highlands of the
+                hills, swathed in tea plantations. We love nature, adventure and
+                road trips. Read on to travel with us and let us show you the
+                magical side of the places that we visit.
+              </p>
 
-           </p>
-        
-              <div     class="d-flex flex-row align-items-center mb-2"
-              style={{
-                backgroundColor: "hsla(101, 27%, 53%, 0.27)",
-                paddingBottom: "5px",
-                paddingTop: "7px",
-                
-              }}
-            >
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              
-              <h1><b>Our Travel Packages</b></h1>
-           
-                    <input
-                      id="search-input"
-                      type="search"
-                      id="form1"
-                      class="form-outline form-control"
-                      style={{width:"400px",marginInlineStart:"29%"}}
-                      placeholder="Search Package"
-                      onChange={this.handleSearchArea}
-                    />
-                 
-                  <button
-                    id="search-button"
-                    type="button"
-                    class="btn btn-primary"
-                  >
-                    <i class="fas fa-search"></i>
-                  </button>
-            </div>
-           
-           
-           
+              <div
+                class="d-flex flex-row align-items-center mb-2"
+                style={{
+                  backgroundColor: "hsla(101, 27%, 53%, 0.27)",
+                  paddingBottom: "5px",
+                  paddingTop: "7px",
+                }}
+              >
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <h1>
+                  <b>Our Travel Packages</b>
+                </h1>
+                <input
+                  id="search-inpu form1t"
+                  type="search"
+                  class="form-outline form-control"
+                  style={{ width: "400px", marginInlineStart: "29%" }}
+                  placeholder="Search Package"
+                  onChange={this.handleSearchArea}
+                />
+                <button
+                  id="search-button"
+                  type="button"
+                  class="btn btn-primary"
+                >
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+
               <hr />
               <Row xs={1} md={1} className="g-4" id="by" class="rounded">
                 {this.state.posts.map((posts, idx) => (
@@ -190,28 +185,25 @@ export default class CardItemsT extends Component {
                             {idx + 1}. &nbsp;{posts.packageName}
                           </a>
                         </h1>
-                       
-                       
+
                         <div class="d-flex">
                           <div class="form-outline mr-4">
-                      
-                          <time class="postcard__subtitle small smalltr" datetime="2020-05-25 12:00:00">
-                            <i class="fas fa-calendar-alt mr-2"></i>
-                            {posts.date}
-                          </time> 
-                     
-                            </div>
-                            <div class="form-outline ">
-                            
-                          <Reactstars edit={false}  size={20} value={Math.floor(posts.reviewsAvg)}/>
-                            </div>
-                            </div>
-                       
-
-
-
-
-
+                            <time
+                              class="postcard__subtitle small smalltr"
+                              datetime="2020-05-25 12:00:00"
+                            >
+                              <i class="fas fa-calendar-alt mr-2"></i>
+                              {posts.date}
+                            </time>
+                          </div>
+                          <div class="form-outline ">
+                            <Reactstars
+                              edit={false}
+                              size={20}
+                              value={Math.floor(posts.reviewsAvg)}
+                            />
+                          </div>
+                        </div>
 
                         <div class="postcard__bar"></div>
                         <div class="postcard__preview-txt">
@@ -219,7 +211,6 @@ export default class CardItemsT extends Component {
                         </div>
                         <br />
                         {posts.destination}
-                 
 
                         <ul class="postcard__tagbox">
                           <li class="tag__item">
@@ -238,7 +229,7 @@ export default class CardItemsT extends Component {
                               {posts.vehical}
                             </a>
                           </li>
-                  
+
                           <li>
                             <button
                               type="button"
