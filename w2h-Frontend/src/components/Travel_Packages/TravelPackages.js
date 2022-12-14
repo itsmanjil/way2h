@@ -54,7 +54,7 @@ export default class CardItemsT extends Component {
       <div>
         <Header />
         <div className="infotr bodytravelpackage">
-          <div className="bodytravelpackage" className="container" id="bbimg">
+          <div className="bodytravelpackage"  id="bbimg">
             <div>
               <br />
               <div class="row text-center text-lg-start">
@@ -120,7 +120,7 @@ export default class CardItemsT extends Component {
                 </div>
               </div>
               <hr />
-           <p className="mb-2">   Sri Lanka, formerly known as Ceylon, and officially the Democratic
+           {/* <p className="mb-2">   Sri Lanka, formerly known as Ceylon, and officially the Democratic
               Socialist Republic of Sri Lanka, is an island country in South
               Asia. It lies in the Indian Ocean, southwest of the Bay of Bengal,
               and southeast of the Arabian Sea; it is separated from the Indian
@@ -136,7 +136,7 @@ export default class CardItemsT extends Component {
               visit.
 
            </p>
-        
+         */}
               <div     class="d-flex flex-row align-items-center mb-2"
               style={{
                 backgroundColor: "hsla(101, 27%, 53%, 0.27)",
@@ -153,7 +153,6 @@ export default class CardItemsT extends Component {
                     <input
                       id="search-input"
                       type="search"
-                      id="form1"
                       class="form-outline form-control"
                       style={{width:"400px",marginInlineStart:"29%"}}
                       placeholder="Search Package"
@@ -168,7 +167,6 @@ export default class CardItemsT extends Component {
                     <i class="fas fa-search"></i>
                   </button>
             </div>
-           
            
            
               <hr />

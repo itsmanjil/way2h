@@ -35,7 +35,7 @@ const NavbarV3 = () => {
                   <ul>
                     <li>
                       <a href="mailto:info@webmail.com">
-                        <i className="icon-mail" /> info@w2h.com
+                        <i className="icon-mail" />info@w2h.com
                       </a>
                     </li>
                     <li>
@@ -57,7 +57,7 @@ const NavbarV3 = () => {
                           <ul>
                             <li>
                               <a href="#" title="Facebook">
-                                <i className="fab fa-facebook-f" />
+                                <i className="fab fa-facebook-f"/>
                               </a>
                             </li>
                             <li>
@@ -118,10 +118,10 @@ const NavbarV3 = () => {
                     <div className="ltn__main-menu">
                       <ul>
                         <li className="menu-icon">
-                          <Link to="/">Home</Link>
+                          <a href="/travelpackages">Home</a>
                         </li>
                         <li className="menu-icon">
-                          <Link to="/shop">Package</Link>
+                          <Link to="/travelpackages">Package</Link>
                         </li>
                         <li>
                           <Link to="/contact">Contact</Link>

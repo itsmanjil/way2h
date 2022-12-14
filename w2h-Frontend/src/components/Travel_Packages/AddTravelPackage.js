@@ -58,7 +58,6 @@ const CreatePackage = () => {
   return (
     <div>
       <HeaderAdmin />
-
       <div className="infoadmin">
         <div className="bodyaa" id="bodytbc">
           <div>
