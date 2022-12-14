@@ -209,7 +209,7 @@ class NavbarV3 extends Component {
 							</li>
 								<li><Link to="/contact">Contact</Link></li>
 								<li className="special-link">
-									<Link to="/add-listing">Add Listing</Link>
+									<Link to="/register">SignIn/SignUp</Link>
 								</li>
 								</ul>
 							</div>
