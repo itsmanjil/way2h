@@ -41,7 +41,7 @@ class FeaturesV1 extends Component {
                     destination, including maps, travel advisories, and weather
                     forecasts
                   </p>
-                  <Link className="ltn__service-btn" to="/shop">
+                  <Link className="ltn__service-btn" to="travelpackages">
                     Find A Destination <i className="flaticon-right-arrow" />
                   </Link>
                 </div>
@@ -65,7 +65,7 @@ class FeaturesV1 extends Component {
                     tickets for flights, hotels, car rentals, tours, and other
                     services.
                   </p>
-                  <Link className="ltn__service-btn" to="/shop">
+                  <Link className="ltn__service-btn" to="/travelpackages">
                     Find A Destination <i className="flaticon-right-arrow" />
                   </Link>
                 </div>
@@ -89,7 +89,7 @@ class FeaturesV1 extends Component {
                     offers on airline tickets, hotel stays, car rentals, and
                     other services.
                   </p>
-                  <Link className="ltn__service-btn" to="/shop">
+                  <Link className="ltn__service-btn" to="/travelpackages">
                     Find A Destination <i className="flaticon-right-arrow" />
                   </Link>
                 </div>

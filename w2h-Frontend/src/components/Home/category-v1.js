@@ -31,7 +31,7 @@ class CategoryV1 extends Component {
           <div className="row ltn__category-slider-active--- slick-arrow-1 justify-content-center">
             <div className="col-lg-3 col-md-4 col-sm-6 col-6">
               <div className="ltn__category-item ltn__category-item-5 text-center">
-                <Link to="/shop">
+                <Link to="/all">
                   <span className="category-icon">
                     <FaHiking />
                     {/* <i class="fa-solid fa-person-walking-luggage"></i> */}
@@ -45,7 +45,7 @@ class CategoryV1 extends Component {
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 col-6">
               <div className="ltn__category-item ltn__category-item-5 text-center">
-                <Link to="/shop">
+                <Link to="/all">
                   <span className="category-icon">
                     <GiMountainClimbing />
 
@@ -60,7 +60,7 @@ class CategoryV1 extends Component {
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 col-6">
               <div className="ltn__category-item ltn__category-item-5 text-center">
-                <Link to="/shop">
+                <Link to="/all">
                   <span className="category-icon">
                     <MdOutlineHotel />
                   </span>
@@ -73,7 +73,7 @@ class CategoryV1 extends Component {
             </div>
             <div className="col-lg-3">
               <div className="ltn__category-item ltn__category-item-5 text-center">
-                <Link to="/shop">
+                <Link to="/all">
                   <span className="category-icon">
                     <FaDraft2Digital />
                   </span>
@@ -86,7 +86,7 @@ class CategoryV1 extends Component {
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 col-6">
               <div className="ltn__category-item ltn__category-item-5 text-center">
-                <Link to="/shop">
+                <Link to="/all">
                   <span className="category-icon">
                     <GiWaterfall />
                   </span>
@@ -99,7 +99,7 @@ class CategoryV1 extends Component {
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 col-6">
               <div className="ltn__category-item ltn__category-item-5 text-center">
-                <Link to="/shop">
+                <Link to="/all">
                   <span className="category-icon">
                     <GiByzantinTemple />
                   </span>
@@ -112,7 +112,7 @@ class CategoryV1 extends Component {
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 col-6">
               <div className="ltn__category-item ltn__category-item-5 text-center">
-                <Link to="/shop">
+                <Link to="/all">
                   <span className="category-icon">
                     <GiPoolDive />
                   </span>
@@ -125,7 +125,7 @@ class CategoryV1 extends Component {
             </div>
             <div className="col-lg-3 col-md-4 col-sm-6 col-6">
               <div className="ltn__category-item ltn__category-item-5 text-center">
-                <Link to="/shop">
+                <Link to="/all">
                   <span className="category-icon">
                     <MdFlightTakeoff />
                   </span>

@@ -6,6 +6,7 @@ import { Col } from "react-bootstrap";
 import axios from "axios";
 import Header from "../Header";
 import Footer from "../Footer";
+import Pageheader from "../Travel_Packages/page-header";
 
 const Activities = () => {
   const [posts, setPosts] = useState([]);
@@ -25,14 +26,14 @@ const Activities = () => {
   return (
     <div>
       <Header />
+      <Pageheader headertitle="Activities" />
 
       <MainContainer>
         <div className="info">
           <div className="container">
             <input
-              id="search-input"
+              id="search-input form1"
               type="search"
-              id="form1"
               class="form-outline form-control"
               style={{
                 width: "400px",
@@ -45,7 +46,7 @@ const Activities = () => {
               onChange={(e) => setSearch(e.target.value)}
             />
 
-            <Row xs={1} md={3} className="g-4" id="by" className="rounded">
+            <Row xs={1} md={3} className="g-4 rounded" id="by">
               {filterdActivity.map((activity) => (
                 <Col>
                   <div className="card-group py-3">
