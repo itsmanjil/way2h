@@ -1,47 +1,47 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Header from "../Header";
 import Footer from "../Footer";
-import AddRating from "./PackageAddRating";
-// import Header from "../Header";
+import AddRating from './PackageAddRating';
 
 export default class PackageDetails extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      post: {},
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     post: {},
+  //   };
+  // }
 
-  componentDidMount() {
-    const id = this.props.match.params.id;
-    axios
-      .get(`http://localhost:8070/travelpackages/admin/${id}`)
-      .then((res) => {
-        if (res.data.success) {
-          this.setState({
-            post: res.data.post,
-          });
-        }
-      });
-  }
+  // componentDidMount() {
+  //   const id = this.props.match.params.id;
+  //   axios
+  //     .get(`http://localhost:8070/travelpackages/admin/${id}`)
+  //     .then((res) => {
+  //       if (res.data.success) {
+  //         this.setState({
+  //           post: res.data.post,
+  //         });
+  //       }
+  //     });
+  // }
 
   render() {
-    const {
-      _id,
-      packageName,
-      destination,
-      discription,
-      date,
-      noofdays,
-      noofnights,
-      vehical,
-      perperson,
-      packageImage,
-    } = this.state.post;
+    // const {
+    //   _id,
+    //   packageName,
+    //   destination,
+    //   discription,
+    //   date,
+    //   noofdays,
+    //   noofnights,
+    //   vehical,
+    //   perperson,
+    //   packageImage,
+    // } = this.state.post;
 
     return (
       <div className="boodydetails">
-        {/* <Header /> */}
+        <Header />
         <div className="infotr boodydetails">
           <div className="container">
             <div className={{ paddingBottom: "10px" }}>
@@ -194,8 +194,10 @@ export default class PackageDetails extends Component {
             </div>
           </div>
         </div>
-        <Footer />
+        
+      </div> */}
       </div>
+      
     );
   }
 }
