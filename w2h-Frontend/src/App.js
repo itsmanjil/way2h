@@ -88,7 +88,7 @@ function App() {
   return (
     <Router>
       <div>
-        <NavbarV3 />
+        {/* <NavbarV3 /> */}
         <Route path="/" exact component={Home_V5}></Route>
         <Route
           path="/bookingpackage/:id"
