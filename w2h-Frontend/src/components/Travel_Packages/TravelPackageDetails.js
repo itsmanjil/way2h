@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Header from "../Header";
 import Footer from "../Footer";
-import AddRating from './PackageAddRating';
+import AddRating from "./PackageAddRating";
+// import Header from "../Header";
 
 export default class PackageDetails extends Component {
   constructor(props) {
@@ -41,13 +41,18 @@ export default class PackageDetails extends Component {
 
     return (
       <div className="boodydetails">
-        <Header />
+        {/* <Header /> */}
         <div className="infotr boodydetails">
           <div className="container">
-            <div className={{paddingBottom:"10px"}}><hr/></div>
-            <ul class="postcard__tagbox" style={{ fontSize: "16px" ,marginTop:"40px" }}>
+            <div className={{ paddingBottom: "10px" }}>
+              <hr />
+            </div>
+            <ul
+              class="postcard__tagbox"
+              style={{ fontSize: "16px", marginTop: "40px" }}
+            >
               <li>
-                <small class="text-muted" style={{ marginInlineStart: "2%"}}>
+                <small class="text-muted" style={{ marginInlineStart: "2%" }}>
                   <button
                     type="submit"
                     class="btn btn-primary"
@@ -116,20 +121,29 @@ export default class PackageDetails extends Component {
                 </p>
               </div>
 
-
-<div class="modal custom-fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content" style={{width:"400px",height:"200px",alignContent:"center"}}>
-      
-      <div >
-      <AddRating id={_id}/>
-    
-      </div>
-     
-    </div>
-  </div>
-</div>
-
+              <div
+                class="modal custom-fade"
+                id="exampleModalCenter"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div
+                    class="modal-content"
+                    style={{
+                      width: "400px",
+                      height: "200px",
+                      alignContent: "center",
+                    }}
+                  >
+                    <div>
+                      <AddRating id={_id} />
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div class="card-footer" style={{ backgroundColor: "#ADADAD" }}>
                 <ul class="postcard__tagbox" style={{ fontSize: "16px" }}>
@@ -146,12 +160,16 @@ export default class PackageDetails extends Component {
                     {vehical}{" "}
                   </li>
 
-
-            
-                  <li style={{marginLeft:"12%",paddingBottom: "5px"}} >
-                  <button style={{width:"200px"}} type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
-                    <b>Give Rating</b>
-</button>
+                  <li style={{ marginLeft: "12%", paddingBottom: "5px" }}>
+                    <button
+                      style={{ width: "200px" }}
+                      type="button"
+                      class="btn btn-success"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                    >
+                      <b>Give Rating</b>
+                    </button>
                   </li>
 
                   <li style={{ marginLeft: "18%", paddingBottom: "5px" }}>

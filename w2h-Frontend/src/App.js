@@ -82,11 +82,13 @@ import EditTPackage from "./components/Travel_Packages/EditPackage2";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import pay from "./components/Kavindu/pay";
 import Home_V5 from "./components/Home/home-v5";
+import NavbarV3 from "./components/navbar-v4";
 
 function App() {
   return (
     <Router>
       <div>
+        <NavbarV3 />
         <Route path="/" exact component={Home_V5}></Route>
         <Route
           path="/bookingpackage/:id"

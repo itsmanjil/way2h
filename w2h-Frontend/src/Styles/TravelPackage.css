@@ -126,7 +126,7 @@
   font-size: 21px;
   border: 5px;
   border-radius: 5px;
-  color: #bcf5e7;
+  color: #d75b0e;
   cursor: pointer;
 }
 .editt {
@@ -299,10 +299,10 @@
   margin-block-end: 20px;
 }
 .cdbody {
-  background: rgb(103, 255, 196);
+  background: rgb(112, 112, 112);
   background: linear-gradient(
     16deg,
-    rgba(103, 255, 196, 0.3738881657632549) 0%,
+    rgba(80, 80, 80, 0.374) 0%,
     rgba(255, 255, 255, 0.6098432219430302) 46%,
     rgba(255, 238, 160, 0.3373713118306706) 100%
   );
@@ -320,8 +320,8 @@
   background: linear-gradient(
     16deg,
     rgba(49, 3, 3, 0.2222027725048279) 0%,
-    rgba(128, 191, 98, 0.6182701882351651) 46%,
-    rgba(196, 196, 196, 0.2559106376733673) 100%
+    rgba(255, 255, 255, 0.618) 46%,
+    rgba(196, 196, 196, 0.587) 100%
   );
 }
 

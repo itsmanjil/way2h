@@ -5,6 +5,7 @@ import "../../Styles/TravelPackage.css";
 import Header from "../Header";
 import Footer from "../Footer";
 import Reactstars from "react-rating-stars-component";
+import Pageheader from "./page-header";
 
 export default class CardItemsT extends Component {
   constructor(props) {
@@ -52,6 +53,75 @@ export default class CardItemsT extends Component {
     return (
       <div>
         <Header />
+        <Pageheader headertitle="Package" />
+        <div className="ltn__shop-options">
+          <ul className="justify-content-start">
+            {/* <li>
+              <div className="ltn__grid-list-tab-menu ">
+                <div className="nav">
+                  <a
+                    className="active show"
+                    data-bs-toggle="tab"
+                    href="#liton_product_grid"
+                  >
+                    <i className="fas fa-th-large" />
+                  </a>
+                  <a data-bs-toggle="tab" href="#liton_product_list">
+                    <i className="fas fa-list" />
+                  </a>
+                </div>
+              </div>
+            </li> */}
+            <li className="d-none pl-3">
+              <div className="showing-product-number text-right">
+                <span>Showing 1–12 of 18 results</span>
+              </div>
+            </li>
+            <li>
+              <div className="short-by text-center">
+                <select
+                  className="nice-select"
+                  onChange={(e) => sorting(e.target.value)}
+                  // value ={ selects} onChange={e=>sorting("title")}
+                >
+                  <option value="">Default Sorting</option>
+                  <option value="title">Sort by popularity</option>
+                  <option>Sort by new arrivals</option>
+                  <option>Sort by price: low to high</option>
+                  <option>Sort by price: high to low</option>
+                </select>
+              </div>
+            </li>
+            <li>
+              <div className="short-by text-center">
+                <select className="nice-select">
+                  <option>Per Page: 12</option>
+                  <option>Per Page: 20</option>
+                  <option>Per Page: 30</option>
+                  <option>Per Page: 50</option>
+                  <option>Per Page: 100</option>
+                </select>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div className="col-lg-12">
+          {/* Search Widget */}
+          <div className="ltn__search-widget mb-30">
+            <form action="#">
+              <input
+                type="text"
+                name="search"
+                placeholder="Search package"
+                onChange={this.handleSearchArea}
+              />
+              <button type="submit">
+                <i className="fas fa-search" />
+              </button>
+            </form>
+          </div>
+        </div>
+
         <div className="infotr bodytravelpackage">
           <div className="bodytravelpackage container" id="bbimg">
             <div>
@@ -62,31 +132,31 @@ export default class CardItemsT extends Component {
               <div
                 class="d-flex flex-row align-items-center mb-2"
                 style={{
-                  backgroundColor: "hsla(101, 27%, 53%, 0.27)",
+                  backgroundColor: "hsla(100, 27%, 53%, 0.27)",
                   paddingBottom: "5px",
                   paddingTop: "7px",
                 }}
               >
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <h1>
+                {/* <h1>
                   <b>Our Travel Packages</b>
-                </h1>
-                <input
+                </h1> */}
+                {/* <input
                   id="search-input form1"
                   type="search"
                   class="form-outline form-control"
                   style={{ width: "400px", marginInlineStart: "29%" }}
                   placeholder="Search Package"
                   onChange={this.handleSearchArea}
-                />
-                <button
+                /> */}
+                {/* <button
                   id="search-button"
                   type="button"
                   class="btn btn-primary"
                 >
                   <i class="fas fa-search"></i>
-                </button>
+                </button> */}
               </div>
 
               <hr />
