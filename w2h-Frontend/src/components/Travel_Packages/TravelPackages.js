@@ -56,85 +56,8 @@ export default class CardItemsT extends Component {
           <div className="bodytravelpackage container" id="bbimg">
             <div>
               <br />
-              <div class="row text-center text-lg-start">
-                <div class="col-lg-2 col-md-2 col-6">
-                  <a href="#" class="d-block mb-1 h-5">
-                    <img
-                      class="img-fluid img-thumbnail"
-                      src=" https://www.worldtravelguide.net/wp-content/uploads/2019/03/shu-Sri-Lanka-Train-to-Kandy-253468045-430x246.jpg"
-                      alt=""
-                    />
-                  </a>
-                </div>
-
-                <div class="col-lg-2 col-md-2 col-6">
-                  <a href="#" class="d-block mb-1 h-10">
-                    <img
-                      class="img-fluid img-thumbnail"
-                      src="https://www.worldtravelguide.net/wp-content/uploads/2019/03/shu-Sri-Lanka-Aerial-view-of-Unawatuna-1281093679-430x246.jpg"
-                      alt=""
-                    />
-                  </a>
-                </div>
-
-                <div class="col-lg-2 col-md-2 col-6">
-                  <a href="#" class="d-block mb-1 h-10">
-                    <img
-                      class="img-fluid img-thumbnail"
-                      src="https://www.worldtravelguide.net/wp-content/uploads/2019/03/shu-Sri-Lanka-Tea-plantations-in-Nuwara-Eliya-263078249-430x246.jpg"
-                      alt=""
-                    />
-                  </a>
-                </div>
-
-                <div class="col-lg-2 col-md-2 col-6">
-                  <a href="#" class="d-block mb-1 h-10">
-                    <img
-                      class="img-fluid img-thumbnail"
-                      src="https://www.worldtravelguide.net/wp-content/uploads/2019/05/shu-UK-England-London-Waterfall-at-Kyoto-Garden-1340178161-430x246-1.jpg"
-                      alt=""
-                    />
-                  </a>
-                </div>
-
-                <div class="col-lg-2 col-md-2 col-6">
-                  <a href="#" class="d-block mb-1 h-10">
-                    <img
-                      class="img-fluid img-thumbnail"
-                      src="https://www.worldtravelguide.net/wp-content/uploads/2021/08/shu-CostaRica-ManuelAntonio_1553348390-430.jpg"
-                      alt=""
-                    />
-                  </a>
-                </div>
-
-                <div class="col-lg-2 col-md-2 col-6">
-                  <a href="#" class="d-block mb-1 h-10">
-                    <img
-                      class="img-fluid img-thumbnail"
-                      src="https://www.worldtravelguide.net/wp-content/uploads/2019/03/shu-Sri-Lanka-Train-to-Kandy-253468045-430x246.jpg"
-                      alt=""
-                    />
-                  </a>
-                </div>
-              </div>
+              <div class="row text-center text-lg-start"></div>
               <hr />
-              <p className="mb-2">
-                {" "}
-                Sri Lanka, formerly known as Ceylon, and officially the
-                Democratic Socialist Republic of Sri Lanka, is an island country
-                in South Asia. It lies in the Indian Ocean, southwest of the Bay
-                of Bengal, and southeast of the Arabian Sea; it is separated
-                from the Indian subcontinent by the Gulf of Mannar and the Palk
-                Strait Sri Lanka, an island south of India crams an
-                extraordinary variety of places to visit within its modest size.
-                Lapped up by the Indian Ocean, the coastline is lined with
-                idyllic – and often refreshingly undeveloped – beaches, while
-                the mainland boasts a compelling variety of landscapes ranging
-                from wildlife-rich lowland jungles to the misty highlands of the
-                hills, swathed in tea plantations. We love nature, adventure and
-                road trips. Read on to travel with us and let us show you the
-                magical side of the places that we visit.
-              </p>
 
               <div
                 class="d-flex flex-row align-items-center mb-2"
@@ -167,7 +90,7 @@ export default class CardItemsT extends Component {
               </div>
 
               <hr />
-              <Row xs={1} md={1} className="g-4" id="by" class="rounded">
+              <Row xs={1} md={2} className="g-4" id="by" class="rounded">
                 {this.state.posts.map((posts, idx) => (
                   <div class="container py-1">
                     <article class="postcard postcardtr dark blue">
@@ -180,10 +103,7 @@ export default class CardItemsT extends Component {
                       </a>
                       <div class="postcard__text">
                         <h1 class="postcard__title blue">
-                          <a href="#">
-                            {" "}
-                            {idx + 1}. &nbsp;{posts.packageName}
-                          </a>
+                          <a href="#"> {posts.packageName}</a>
                         </h1>
 
                         <div class="d-flex">
@@ -206,11 +126,11 @@ export default class CardItemsT extends Component {
                         </div>
 
                         <div class="postcard__bar"></div>
-                        <div class="postcard__preview-txt">
+                        {/* <div class="postcard__preview-txt">
                           {posts.discription}
-                        </div>
+                        </div> */}
                         <br />
-                        {posts.destination}
+                        {/* {posts.destination} */}
 
                         <ul class="postcard__tagbox">
                           <li class="tag__item">
@@ -229,26 +149,24 @@ export default class CardItemsT extends Component {
                               {posts.vehical}
                             </a>
                           </li>
-
-                          <li>
-                            <button
-                              type="button"
-                              class="btn btn-primary abv"
-                              id="cardbtn2"
-                            >
-                              <a
-                                href={`/travelpackages/travelpackage/${posts.id}`}
-                                style={{
-                                  textDecoration: "none",
-                                  color: "white",
-                                }}
-                              >
-                                View Details &nbsp;
-                                <i class="fas fa-hand-point-right"> </i>
-                              </a>
-                            </button>
-                          </li>
                         </ul>
+
+                        <button
+                          type="button"
+                          class="btn btn-primary abv d-flex"
+                          id="cardbtn2"
+                        >
+                          <a
+                            href={`/travelpackages/travelpackage/${posts.id}`}
+                            style={{
+                              textDecoration: "none",
+                              color: "white",
+                            }}
+                          >
+                            View Details &nbsp;
+                            <i class="fas fa-hand-point-right"> </i>
+                          </a>
+                        </button>
                       </div>
                     </article>
                   </div>
