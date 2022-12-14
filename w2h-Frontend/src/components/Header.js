@@ -5,7 +5,7 @@ import img1 from "../Images/logo.png";
 function Header() {
   return (
     <div class="wrapper">
-      <div class="sidebar">
+      {/* <div class="sidebar">
         <ul>
           <i
             class="fas fa-plane-departure"
@@ -86,7 +86,7 @@ function Header() {
             <i class="fab fa-instagram"></i>
           </a>
         </div>
-      </div>
+      </div> */}
       <div class="main_content">
         <header class="fixed-top">
           <div class="header">

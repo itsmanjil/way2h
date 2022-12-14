@@ -114,13 +114,13 @@
   padding-top: 3em;
   position: relative;
   bottom: 0;
-  margin-inline-start: 180px;
+  margin-inline-start: 0px;
   min-height: 120px;
   
 }
-.ftr {
-  margin-inline-start: 13%;
-}
+/* .ftr {
+  margin-inline-start: 0
+} */
 
 .ftr li {
   color: rgb(138, 138, 138);
@@ -245,7 +245,6 @@ margin-top: 4px;
 .ftclose:hover {
   color: #fff
 }
-
 
 .ftbtn-primary {
   color: #5165ff;

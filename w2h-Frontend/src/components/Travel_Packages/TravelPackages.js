@@ -150,7 +150,7 @@ export default class CardItemsT extends Component {
                   <b>Our Travel Packages</b>
                 </h1>
                 <input
-                  id="search-inpu form1t"
+                  id="search-input form1"
                   type="search"
                   class="form-outline form-control"
                   style={{ width: "400px", marginInlineStart: "29%" }}

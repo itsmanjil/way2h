@@ -316,7 +316,7 @@
 }
 
 .bodytravelpackage {
-  background: rgb(49, 3, 3);
+  background: blue;
   background: linear-gradient(
     16deg,
     rgba(49, 3, 3, 0.2222027725048279) 0%,
@@ -328,7 +328,7 @@
 .infotr {
   color: #252525;
   margin-top:100px ;
-  margin-inline-start: 180px;
+  margin-inline-start: 0px;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");

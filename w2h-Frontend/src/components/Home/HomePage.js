@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../../Styles/Stylehome.css";
+import NavbarV3 from "../navbar-v4";
 
 import imag1 from "../../Images/z1.jpg";
 import imag2 from "../../Images/z2.jpg";
@@ -71,7 +72,6 @@ function Slider(props) {
         }
       >
         <img className="imgxx" src={d.src} alt={d.caption} />
-
         <div className="textxx">{d.caption}</div>
       </div>
     );
@@ -108,6 +108,8 @@ export default class HomePage extends Component {
     });
   }
 
+
+
   componentDidMount() {
     this.timer = setInterval(() => this.autoPlay(), 3000);
   }
@@ -133,7 +135,6 @@ export default class HomePage extends Component {
     return (
       <div>
         <Header />
-
         <div class="info">
           <div className="container-fluid " id="bodyhome">
             <div className="App">
