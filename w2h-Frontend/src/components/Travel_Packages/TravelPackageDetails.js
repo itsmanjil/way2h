@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Footer from "../Footer";
-import AddRating from "./PackageAddRating";
-// import Header from "../Header";
+import Header from "../Header";
+import AddRating from './PackageAddRating';
+import "../../Styles/TravelPackage.css";
+import NavbarV3 from "../navbar-v4";
+
+
 
 export default class PackageDetails extends Component {
   constructor(props) {
@@ -40,8 +43,9 @@ export default class PackageDetails extends Component {
     } = this.state.post;
 
     return (
-      <div className="boodydetails">
+      <div>
         <Header />
+      {/* <div className="boodydetails">
         <div className="infotr boodydetails">
           <div className="container">
             <div className={{ paddingBottom: "10px" }}>
@@ -102,48 +106,23 @@ export default class PackageDetails extends Component {
                   <b> {discription} </b>{" "}
                 </p>
 
-                <p>
-                  We are the Best Travel Company in Sri Lanka. Since 2018, Us
-                  the "Dream travellers" has been committed to bring the
-                  travellers the best experience and value for their travel
-                  arrangements. We are passionate about travel and providing
-                  corporate travellers high-touch services to facilitate their
-                  travel needs and sharing the world's wonders best experience
-                  on the leisure travel side. On behalf of that we offer
-                  valuable and time reliable offers for the best prices for our
-                  customers.Sri Lanka Local Tours tailor-makes unique Sri Lanka
-                  tours, sightseeing adventures and interesting trips s tarting
-                  from the gateway cities of Sri Lanka to help travelers explore
-                  Sri Lanka on their way. We are a passionate team of one
-                  hundred avid travelers who love to share our experiences of
-                  Sri Lanka with those looking for a more authentic travel
-                  experience.
-                </p>
+               
               </div>
 
-              <div
-                class="modal custom-fade"
-                id="exampleModalCenter"
-                tabindex="-1"
-                role="dialog"
-                aria-labelledby="exampleModalCenterTitle"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div
-                    class="modal-content"
-                    style={{
-                      width: "400px",
-                      height: "200px",
-                      alignContent: "center",
-                    }}
-                  >
-                    <div>
-                      <AddRating id={_id} />
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+<div class="modal custom-fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content" style={{width:"400px",height:"200px",alignContent:"center"}}>
+      
+      <div >
+      <AddRating id={_id}/>
+    
+      </div>
+     
+    </div>
+  </div>
+</div>
+
 
               <div class="card-footer" style={{ backgroundColor: "#ADADAD" }}>
                 <ul class="postcard__tagbox" style={{ fontSize: "16px" }}>
@@ -194,7 +173,8 @@ export default class PackageDetails extends Component {
             </div>
           </div>
         </div>
-        <Footer />
+        
+      </div> */}
       </div>
     );
   }
