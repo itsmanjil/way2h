@@ -4,7 +4,7 @@ import "../Styles/AdminHeader.css";
 function HeaderAdmin() {
   return (
     <div>
-      <div class="sidebar-container sidebar-containeradh" style={{height:"100vh",width:"230px",position:"absolute",lineHeight:"-20"}}>
+      <div class="sidebar-container sidebar-containeradh" style={{height:"124vh",width:"230px",position:"absolute",lineHeight:"-10"}}>
         <div class="sidebar-logo sidebar-logoadh">
           <i
             class="fas fa-plane-departure"
@@ -16,7 +16,7 @@ function HeaderAdmin() {
             }}
           ></i>
         </div>
-        <ul class="sidebar-navigation sidebar-navigationadh" style={{position:"absolute",lineHeight:"3.5"}}>
+        <ul class="sidebar-navigation sidebar-navigationadh" style={{position:"absolute",lineHeight:"3.9"}}>
           <center>
             {" "}
             <h2

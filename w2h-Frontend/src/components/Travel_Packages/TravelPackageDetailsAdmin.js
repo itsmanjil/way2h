@@ -74,6 +74,7 @@ const PackageDetailsAdmin = () => {
           >
             <div class="row no-gutters">
               <div class="col-md-4 mr-4">
+                
                 <img
                   style={{
                     marginInlineStart: "6%",
@@ -94,6 +95,7 @@ const PackageDetailsAdmin = () => {
                   <h5 class="card-title">
                     <b>PACKAGE NAME :- </b>
                     {tpackage.packageName}
+                 
                   </h5>
                   <p class="card-text">
                     <small class="text-muted"> {tpackage.destination} </small>

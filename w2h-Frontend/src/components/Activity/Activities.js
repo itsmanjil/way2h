@@ -78,7 +78,7 @@ const Activities = () => {
               </div>
             </div>
           </div>
-          <div className="container p-activities">
+          <div className="container p-activities" style={{position:"absolute",left:"226px",top:"190px"}}>
             <Row xs={1} md={3} className="g-4 rounded " id="by p-activities">
               {filterdActivity.map((activity) => (
                 <Col>

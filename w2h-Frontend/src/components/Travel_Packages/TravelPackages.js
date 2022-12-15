@@ -138,6 +138,7 @@ export default class CardItemsT extends Component {
                   backgroundColor: "hsla(100, 27%, 53%, 0.27)",
                   paddingBottom: "5px",
                   paddingTop: "7px",
+                  
                 }}
               >
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -164,8 +165,10 @@ export default class CardItemsT extends Component {
 
               <hr />
               <Row xs={1} md={2} className="g-4" id="by" class="rounded">
+
                 {this.state.posts.map((posts, idx) => (
-                  <div class="container py-1">
+                  
+                  <div class="container py-1" >
                     <article class="postcard postcardtr dark blue">
                       <a class="postcard__img_link">
                         <img
