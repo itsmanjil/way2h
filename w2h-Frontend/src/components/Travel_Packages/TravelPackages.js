@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Button, Row } from "react-bootstrap";
 import "../../Styles/TravelPackage.css";
-import Header from "../Header";
+// import Header from "../Header";
+import NavbarV3 from "../navbar-v4";
 import Footer from "../Footer";
 import Reactstars from "react-rating-stars-component";
 import Pageheader from "./page-header";
@@ -52,8 +53,10 @@ export default class CardItemsT extends Component {
   render() {
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
+        <NavbarV3 />
         <Pageheader headertitle="Package" />
+
         <div className="ltn__shop-options">
           <ul className="justify-content-start">
             {/* <li>

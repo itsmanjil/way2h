@@ -94,12 +94,10 @@ export default class AllPackagesAdmin extends Component {
                   <i class="fas fa-book mr-2"></i>Booking Details
                 </a>
               </button>
-             
               <input
-                id="search-input"
+                id="search-input form1"
                 type="search"
-                id="form1"
-                style={{marginLeft:"530px"}}
+                style={{ marginLeft: "530px" }}
                 placeholder="Search Package"
                 onChange={this.handleSearchArea}
               />

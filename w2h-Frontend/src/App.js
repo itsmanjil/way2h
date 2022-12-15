@@ -87,8 +87,9 @@ import NavbarV3 from "./components/navbar-v4";
 function App() {
   return (
     <Router>
+      {/* <NavbarV3 /> */}
+
       <div>
-        {/* <NavbarV3 /> */}
         <Route path="/" exact component={Home_V5}></Route>
         <Route
           path="/bookingpackage/:id"
