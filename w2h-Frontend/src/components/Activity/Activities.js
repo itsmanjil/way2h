@@ -42,19 +42,20 @@ const Activities = () => {
               type="search"
               class="form-outline form-control"
               style={{
-                width: "400px",
+                width: "200px",
                 marginlnlineStart: "14%",
-                marginLeft: "1990px",
-                marginTop: "-50px",
+                marginLeft: "1190px",
+                marginTop: "-70px",
                 background: "#ADD8E6",
+                position:"absolute"
               }}
               placeholder="Search Activity"
               onChange={(e) => setSearch(e.target.value)}
             />
 
-            <div className="row my-3">
-              <div className="col-sm-2">
-                <Link to="/add-activity" className="btn btn-outline-secondary">
+            <div className="row my-10"style={{position:"relative",top:"-65px"}}>
+              <div className="col-sm-6"  >
+                <Link to="/add-activity" className="btn btn-outline-secondary" style={{left:"440px"}}>
                   <i class="fas fa-plus">&nbsp;Add New Activity</i>
                 </Link>
               </div>

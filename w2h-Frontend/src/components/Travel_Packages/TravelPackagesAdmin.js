@@ -4,6 +4,7 @@ import "../../Styles/TravelPackage.css";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import HeaderAdmin from "../HeaderAdmin";
+import "../../Styles/AdminHeader.css";
 export default class AllPackagesAdmin extends Component {
   constructor(props) {
     super(props);
@@ -64,6 +65,7 @@ export default class AllPackagesAdmin extends Component {
           style={{
             backgroundImage:
               "url('https://www.teahub.io/photos/full/236-2363540_world-map-travel-background.jpg')",
+              
           }}
         >
           <div className="container">
