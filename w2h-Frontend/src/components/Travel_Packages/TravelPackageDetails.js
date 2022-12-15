@@ -4,7 +4,10 @@ import axios from "axios";
 import Footer from "../Footer";
 import AddRating from "./PackageAddRating";
 import NavbarV3 from "../navbar-v4";
-import "../../Styles/css/traveldetail.css";
+// import "../../Styles/css/traveldetail.css";
+import "../../Styles/TravelPackage.css";
+
+import Pageheader from "./page-header";
 
 export default class PackageDetails extends Component {
   constructor(props) {
@@ -42,171 +45,178 @@ export default class PackageDetails extends Component {
     } = this.state.post;
 
     return (
-      <div className="boodydetails">
+      <div>
         <NavbarV3 />
-        {/* <Header /> */}
-        <div className="infotr boodydetails">
-          <div className="container">
-            <div className={{ paddingBottom: "10px" }}>
-              <hr />
-            </div>
-            <ul
-              className="postcard__tagbox"
-              style={{ fontSize: "16px", marginTop: "40px" }}
-            >
-              <li>
-                <small
-                  className="text-muted"
-                  style={{ marginInlineStart: "2%" }}
-                >
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                    style={{ width: "100px" }}
+        <Pageheader />
+
+        <div className="boodydetails">
+          {/* <Header /> */}
+          <div className="infotr boodydetails">
+            <div className="container">
+              <div className={{ paddingBottom: "10px" }}>
+                <hr />
+              </div>
+              <ul
+                className="postcard__tagbox"
+                style={{ fontSize: "16px", marginTop: "40px" }}
+              >
+                <li>
+                  <small
+                    className="text-muted"
+                    style={{ marginInlineStart: "2%" }}
                   >
-                    <a
-                      href="/travelpackages"
-                      style={{ textDecoration: "none", color: "white" }}
+                    <button
+                      type="submit"
+                      className="btn btn-primary"
+                      style={{ width: "100px" }}
                     >
-                      <i className="fas fa-angle-left mr-2"></i>Back
-                    </a>
-                  </button>
-                </small>{" "}
-              </li>
-              <div style={{ marginInlineStart: "59%" }}>
-                <li className="tag__item">
-                  <i className="fab fa-cc-visa mr-2"></i>Visa Payment
+                      <a
+                        href="/travelpackages"
+                        style={{ textDecoration: "none", color: "white" }}
+                      >
+                        <i className="fas fa-angle-left mr-2"></i>Back
+                      </a>
+                    </button>
+                  </small>{" "}
                 </li>
-                <li className="tag__item">
-                  <i className="fas fa-paper-plane mr-2"></i>Full Option
-                </li>
-                <li className="tag__item play blue">
-                  {" "}
-                  <i className="fas fa-hands mr-2"></i>Security{" "}
-                </li>
-              </div>
-            </ul>
-            <hr />
-            <br />
-
-            <div className="card">
-              <img
-                style={{ height: "580px" }}
-                className="card-img-top"
-                src={`/uploads/${packageImage}`}
-                alt="..."
-              />
-              <div className="card-body" style={{ backgroundColor: "#DDE8E8" }}>
-                <h5 className="card-title"> {packageName}</h5>
-                <p className="card-text"> {date} </p>
-                <p className="card-text">
-                  <i className="fas fa-long-arrow-alt-right mr-2"></i>
-                  <b> {destination} </b>{" "}
-                </p>
-                <p className="card-text">
-                  <i className="fas fa-long-arrow-alt-right mr-2"></i>
-                  <b> {discription} </b>{" "}
-                </p>
-
-                <p>
-                  We are the Best Travel Company in Sri Lanka. Since 2018, Us
-                  the "Dream travellers" has been committed to bring the
-                  travellers the best experience and value for their travel
-                  arrangements. We are passionate about travel and providing
-                  corporate travellers high-touch services to facilitate their
-                  travel needs and sharing the world's wonders best experience
-                  on the leisure travel side. On behalf of that we offer
-                  valuable and time reliable offers for the best prices for our
-                  customers.Sri Lanka Local Tours tailor-makes unique Sri Lanka
-                  tours, sightseeing adventures and interesting trips s tarting
-                  from the gateway cities of Sri Lanka to help travelers explore
-                  Sri Lanka on their way. We are a passionate team of one
-                  hundred avid travelers who love to share our experiences of
-                  Sri Lanka with those looking for a more authentic travel
-                  experience.
-                </p>
-              </div>
-
-              <div
-                className="modal custom-fade"
-                id="exampleModalCenter"
-                tabindex="-1"
-                role="dialog"
-                aria-labelledby="exampleModalCenterTitle"
-                aria-hidden="true"
-              >
-                <div
-                  className="modal-dialog modal-dialog-centered"
-                  role="document"
-                >
-                  <div
-                    className="modal-content"
-                    style={{
-                      width: "400px",
-                      height: "200px",
-                      alignContent: "center",
-                    }}
-                  >
-                    <div>
-                      <AddRating id={_id} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className="card-footer"
-                style={{ backgroundColor: "#ADADAD" }}
-              >
-                <ul className="postcard__tagbox" style={{ fontSize: "16px" }}>
+                <div style={{ marginInlineStart: "59%" }}>
                   <li className="tag__item">
-                    <i className="fas fa-tag mr-2"></i>PP Rs.&nbsp;{perperson}
+                    <i className="fab fa-cc-visa mr-2"></i>Visa Payment
                   </li>
                   <li className="tag__item">
-                    <i className="fas fa-clock mr-2"></i>
-                    {noofdays}&nbsp;{noofnights}
+                    <i className="fas fa-paper-plane mr-2"></i>Full Option
                   </li>
                   <li className="tag__item play blue">
                     {" "}
-                    <i className="fas fa-car mr-2"></i>
-                    {vehical}{" "}
+                    <i className="fas fa-hands mr-2"></i>Security{" "}
                   </li>
+                </div>
+              </ul>
+              <hr />
+              <br />
 
-                  <li style={{ marginLeft: "12%", paddingBottom: "5px" }}>
-                    <button
-                      style={{ width: "200px" }}
-                      type="button"
-                      className="btn btn-success"
-                      data-toggle="modal"
-                      data-target="#exampleModalCenter"
+              <div className="card">
+                <img
+                  style={{ height: "580px" }}
+                  className="card-img-top"
+                  src={`/uploads/${packageImage}`}
+                  alt="..."
+                />
+                <div
+                  className="card-body"
+                  style={{ backgroundColor: "#DDE8E8" }}
+                >
+                  <h5 className="card-title"> {packageName}</h5>
+                  <p className="card-text"> {date} </p>
+                  <p className="card-text">
+                    <i className="fas fa-long-arrow-alt-right mr-2"></i>
+                    <b> {destination} </b>{" "}
+                  </p>
+                  <p className="card-text">
+                    <i className="fas fa-long-arrow-alt-right mr-2"></i>
+                    <b> {discription} </b>{" "}
+                  </p>
+
+                  <p>
+                    We are the Best Travel Company in Sri Lanka. Since 2018, Us
+                    the "Dream travellers" has been committed to bring the
+                    travellers the best experience and value for their travel
+                    arrangements. We are passionate about travel and providing
+                    corporate travellers high-touch services to facilitate their
+                    travel needs and sharing the world's wonders best experience
+                    on the leisure travel side. On behalf of that we offer
+                    valuable and time reliable offers for the best prices for
+                    our customers.Sri Lanka Local Tours tailor-makes unique Sri
+                    Lanka tours, sightseeing adventures and interesting trips s
+                    tarting from the gateway cities of Sri Lanka to help
+                    travelers explore Sri Lanka on their way. We are a
+                    passionate team of one hundred avid travelers who love to
+                    share our experiences of Sri Lanka with those looking for a
+                    more authentic travel experience.
+                  </p>
+                </div>
+
+                <div
+                  className="modal custom-fade"
+                  id="exampleModalCenter"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="exampleModalCenterTitle"
+                  aria-hidden="true"
+                >
+                  <div
+                    className="modal-dialog modal-dialog-centered"
+                    role="document"
+                  >
+                    <div
+                      className="modal-content"
+                      style={{
+                        width: "400px",
+                        height: "200px",
+                        alignContent: "center",
+                      }}
                     >
-                      <b>Give Rating</b>
-                    </button>
-                  </li>
+                      <div>
+                        <AddRating id={_id} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-                  <li style={{ marginLeft: "18%", paddingBottom: "5px" }}>
-                    <small className="text-muted">
+                <div
+                  className="card-footer"
+                  style={{ backgroundColor: "#ADADAD" }}
+                >
+                  <ul className="postcard__tagbox" style={{ fontSize: "16px" }}>
+                    <li className="tag__item">
+                      <i className="fas fa-tag mr-2"></i>PP Rs.&nbsp;{perperson}
+                    </li>
+                    <li className="tag__item">
+                      <i className="fas fa-clock mr-2"></i>
+                      {noofdays}&nbsp;{noofnights}
+                    </li>
+                    <li className="tag__item play blue">
                       {" "}
+                      <i className="fas fa-car mr-2"></i>
+                      {vehical}{" "}
+                    </li>
+
+                    <li style={{ marginLeft: "12%", paddingBottom: "5px" }}>
                       <button
-                        type="submit"
-                        className="btn btn-danger"
-                        style={{ width: "300px", fontSize: "20px" }}
+                        style={{ width: "200px" }}
+                        type="button"
+                        className="btn btn-success"
+                        data-toggle="modal"
+                        data-target="#exampleModalCenter"
                       >
-                        <a
-                          href={`/bookingpackage/${_id}`}
-                          style={{ textDecoration: "none", color: "white" }}
-                        >
-                          Book Package
-                        </a>
+                        <b>Give Rating</b>
                       </button>
-                    </small>{" "}
-                  </li>
-                </ul>
+                    </li>
+
+                    <li style={{ marginLeft: "18%", paddingBottom: "5px" }}>
+                      <small className="text-muted">
+                        {" "}
+                        <button
+                          type="submit"
+                          className="btn btn-danger"
+                          style={{ width: "300px", fontSize: "20px" }}
+                        >
+                          <a
+                            href={`/bookingpackage/${_id}`}
+                            style={{ textDecoration: "none", color: "white" }}
+                          >
+                            Book Package
+                          </a>
+                        </button>
+                      </small>{" "}
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
     );
   }
