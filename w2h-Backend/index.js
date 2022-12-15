@@ -54,6 +54,9 @@ app.use("/access", deleteuserrouter);
 const hotelBookingRouter = require("./routes/HotelBooking");
 app.use("/hotelbooking", hotelBookingRouter);
 
+const commentRouter = require("./routes/comment");
+app.use("/comment", commentRouter);
+
 const packageBookingRouter = require("./routes/Packagebooking.js");
 app.use("/packagebooking", packageBookingRouter);
 

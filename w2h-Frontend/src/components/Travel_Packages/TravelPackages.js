@@ -6,6 +6,7 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Reactstars from "react-rating-stars-component";
 import Pageheader from "./page-header";
+import PackageDetailed from "./details";
 
 export default class CardItemsT extends Component {
   constructor(props) {
@@ -223,11 +224,13 @@ export default class CardItemsT extends Component {
 
                         <button
                           type="button"
-                          class="btn btn-primary abv d-flex"
+                          className="btn btn-primary abv d-flex"
                           id="cardbtn2"
+              
                         >
                           <a
                             href={`/travelpackages/travelpackage/${posts.id}`}
+                            // href="/travel"
                             style={{
                               textDecoration: "none",
                               color: "white",

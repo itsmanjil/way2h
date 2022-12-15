@@ -7,11 +7,13 @@ import Featuresv1 from "./features-v1";
 import VideoV1 from "./video-v1";
 import Category from "./category-v1";
 import NavbarV3 from "../navbar-v4";
+import Header from "../Header";
 
 const Home_V5 = () => {
   return (
     <div>
-      <NavbarV3 CustomClass="ltn__header-transparent gradient-color-2"  />
+      {/* <NavbarV3 CustomClass="ltn__header-transparent gradient-color-2"  /> */}
+      <Header />
       {/* <Navbar CustomClass="ltn__header-transparent gradient-color-2" /> */}
       <VideoV4 />
       {/* <AboutV3 /> */}

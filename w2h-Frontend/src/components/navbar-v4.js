@@ -109,7 +109,8 @@ class NavbarV3 extends Component {
                             <Link to="/about">About</Link>
                             <ul>
                               <li>
-                                <Link to="/aboutus">About</Link>
+                                {/* <Link to="/aboutus">About</Link> */}
+                                <Link to="/travelpackaged">About</Link>
                               </li>
                               <li>
                                 <Link to="/services">Services</Link>

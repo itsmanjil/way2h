@@ -83,13 +83,14 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import pay from "./components/Kavindu/pay";
 import Home_V5 from "./components/Home/home-v5";
 import NavbarV3 from "./components/navbar-v4";
+import PackageDetailed from "./components/Travel_Packages/details";
 
 function App() {
   return (
     <Router>
       <div>
-        <NavbarV3 />
         <Route path="/" exact component={Home_V5}></Route>
+        {/* <Route path="/" exact component={PackageDetailed}></Route> */}
         <Route
           path="/bookingpackage/:id"
           exact

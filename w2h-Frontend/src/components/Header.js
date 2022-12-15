@@ -1,11 +1,11 @@
 import React from "react";
 // import "../Styles/HeaderFooter.css";
 // import img1 from "../Images/logo.png";
-// import NavbarV3 from "./navbar-v4";
+import NavbarV3 from "./navbar-v4";
 
 function Header() {
   return (
-    <div class="wrapper">
+    <div className="wrapper">
       {/* <div class="sidebar">
         <ul>
           <i
@@ -88,7 +88,7 @@ function Header() {
           </a>
         </div>
       </div> */}
-      {/* <div class="main_content"> */}
+      <div class="main_content">
       {/* <header class="fixed-top">
           <div class="header">
             <div>
@@ -149,10 +149,10 @@ function Header() {
             </div>
           </div>
         </header> */}
-      {/* <header class="fixed-top"> */}
-      {/* <NavbarV3 /> */}
-      {/* </header> */}
-      {/* </div> */}
+      <header className="fixed-top">
+      <NavbarV3 />
+      </header>
+      </div>
     </div>
   );
 }
