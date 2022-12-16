@@ -76,6 +76,7 @@ export default function RegisterUser({}) {
       );
       console.log(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
+      localStorage.setItem("token", response.data.userInfo.token);
 
       history.push("/profile");
 

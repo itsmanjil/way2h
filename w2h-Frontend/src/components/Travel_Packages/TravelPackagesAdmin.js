@@ -4,6 +4,7 @@ import "../../Styles/TravelPackage.css";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import HeaderAdmin from "../HeaderAdmin";
+import "../../Styles/AdminHeader.css";
 export default class AllPackagesAdmin extends Component {
   constructor(props) {
     super(props);
@@ -64,6 +65,7 @@ export default class AllPackagesAdmin extends Component {
           style={{
             backgroundImage:
               "url('https://www.teahub.io/photos/full/236-2363540_world-map-travel-background.jpg')",
+
           }}
         >
           <div className="container">
@@ -83,6 +85,7 @@ export default class AllPackagesAdmin extends Component {
                 >
                   <i class="fas fa-plus mr-2"></i>Add New Package
                 </a>
+                
               </button>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -94,12 +97,10 @@ export default class AllPackagesAdmin extends Component {
                   <i class="fas fa-book mr-2"></i>Booking Details
                 </a>
               </button>
-             
               <input
-                id="search-input"
+                id="search-input form1"
                 type="search"
-                id="form1"
-                style={{marginLeft:"530px"}}
+                style={{ marginLeft: "530px" }}
                 placeholder="Search Package"
                 onChange={this.handleSearchArea}
               />
@@ -108,7 +109,7 @@ export default class AllPackagesAdmin extends Component {
               </button>
             </div>
             <hr />
-            <Row xs={1} md={3} className="g-4 " id="by" class="rounded">
+            <Row xs={1} md={3} className="g-4 " id="by" class="rounded" >
               {this.state.posts.map((posts, index) => (
                 <Col key={index}>
                   <div
@@ -116,10 +117,12 @@ export default class AllPackagesAdmin extends Component {
                     style={{
                       backgroundColor: "hsl(0,0%,100%,0.9)",
                       borderColor: "black",
+
                     }}
                   >
-                    <div class="card-body">
-                      <h5 class="card-title">
+                   
+                    <div class="card-body"  >
+                      <h5 class="card-title" >
                         {index + 1}.&nbsp; <b>{posts.packageName}</b>
                       </h5>
                       <h6 class="card-subtitle mb-2 text-muted">

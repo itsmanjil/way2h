@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Button, Row } from "react-bootstrap";
 import "../../Styles/TravelPackage.css";
-import Header from "../Header";
+// import Header from "../Header";
+import NavbarV3 from "../navbar-v4";
 import Footer from "../Footer";
 import Reactstars from "react-rating-stars-component";
 import Pageheader from "./page-header";
@@ -53,8 +54,10 @@ export default class CardItemsT extends Component {
   render() {
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
+        <NavbarV3 />
         <Pageheader headertitle="Package" />
+
         <div className="ltn__shop-options">
           <ul className="justify-content-start">
             {/* <li>
@@ -136,6 +139,7 @@ export default class CardItemsT extends Component {
                   backgroundColor: "hsla(100, 27%, 53%, 0.27)",
                   paddingBottom: "5px",
                   paddingTop: "7px",
+                  
                 }}
               >
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -162,8 +166,10 @@ export default class CardItemsT extends Component {
 
               <hr />
               <Row xs={1} md={2} className="g-4" id="by" class="rounded">
+
                 {this.state.posts.map((posts, idx) => (
-                  <div class="container py-1">
+                  
+                  <div class="container py-1" >
                     <article class="postcard postcardtr dark blue">
                       <a class="postcard__img_link">
                         <img

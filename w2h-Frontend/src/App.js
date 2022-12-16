@@ -88,6 +88,8 @@ import PackageDetailed from "./components/Travel_Packages/details";
 function App() {
   return (
     <Router>
+      {/* <NavbarV3 /> */}
+
       <div>
         <Route path="/" exact component={Home_V5}></Route>
         {/* <Route path="/" exact component={PackageDetailed}></Route> */}

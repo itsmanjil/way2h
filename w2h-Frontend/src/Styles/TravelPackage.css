@@ -1,5 +1,6 @@
 book Package
 
+
 .bodyaa {
   background-image: url("../Images/tp1.jpg");
   background-repeat: no-repeat;
@@ -292,11 +293,17 @@ book Package
   opacity: 0.9;
 }
 
+#p-activities {
+	padding-left: 1000px;
+}
+
+
 #by {
   margin-block-start: 0px;
   margin-inline-start: 20px;
   margin-inline-end: 20px;
   margin-block-end: 20px;
+  padding-left: 160px;
 }
 .cdbody {
   background: rgb(112, 112, 112);
@@ -501,3 +508,5 @@ a:hover {
 .postcard:hover {
   box-shadow: 0px 0px 5px 5px #6e6e6e;
 }
+
+

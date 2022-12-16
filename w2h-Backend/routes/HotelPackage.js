@@ -6,7 +6,7 @@ const router =express.Router();
 
 const storage=multer.diskStorage({
     destination:(req,file,callback)=>{
-        callback(null,"../Travel-management-Frontend/public/uploads");
+        callback(null,"../w2h-Frontend/public/uploads");
     },
     filename:(req,file,callback)=>{
         callback(null,file.originalname);

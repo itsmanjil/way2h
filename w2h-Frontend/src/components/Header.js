@@ -1,15 +1,15 @@
 import React from "react";
 // import "../Styles/HeaderFooter.css";
 // import img1 from "../Images/logo.png";
-import NavbarV3 from "./navbar-v4";
+// import NavbarV3 from "./navbar-v4";
 
 function Header() {
   return (
-    <div className="wrapper">
+    <div class="wrapper">
       {/* <div class="sidebar">
         <ul>
           <i
-            class="fas fa-plane-departure"
+            className="fas fa-plane-departure"
             style={{
               textDecoration: "none",
               color: "rgba(116, 116, 116, 0)",
@@ -22,7 +22,7 @@ function Header() {
           <li>
             {" "}
             <a href="/" style={{ textDecoration: "none", color: "white" }}>
-              <i class="fas fa-home"></i>Home
+              <i className="fas fa-home"></i>Home
             </a>
           </li>
           <li>
@@ -30,7 +30,7 @@ function Header() {
               href="/travelpackages"
               style={{ textDecoration: "none", color: "white" }}
             >
-              <i class="fas fa-car"></i>Travel Package
+              <i className="fas fa-car"></i>Travel Package
             </a>
           </li>
           <li>
@@ -38,12 +38,12 @@ function Header() {
               href="/hotelpackage"
               style={{ textDecoration: "none", color: "white" }}
             >
-              <i class="fas fa-bed"></i>Room Package
+              <i className="fas fa-bed"></i>Room Package
             </a>
           </li>
           <li>
             <a href="/all" style={{ textDecoration: "none", color: "white" }}>
-              <i class="fas fa-running"></i>Activity
+              <i className="fas fa-running"></i>Activity
             </a>
           </li>
           <li>
@@ -51,7 +51,7 @@ function Header() {
               href="/equipment"
               style={{ textDecoration: "none", color: "white" }}
             >
-              <i class="fas fa-campground"></i>Equipment
+              <i className="fas fa-campground"></i>Equipment
             </a>
           </li>
           <li>
@@ -59,7 +59,7 @@ function Header() {
               href="/guide/all"
               style={{ textDecoration: "none", color: "white" }}
             >
-              <i class="fas fa-home"></i>Guides
+              <i className="fas fa-home"></i>Guides
             </a>
           </li>
           <li>
@@ -67,28 +67,28 @@ function Header() {
               href="/feedback"
               style={{ textDecoration: "none", color: "white" }}
             >
-              <i class="fas fa-comments"></i>FeedBack
+              <i className="fas fa-comments"></i>FeedBack
             </a>
           </li>
           <li>
             <a href="/add" style={{ textDecoration: "none", color: "white" }}>
-              <i class="fas fa-exclamation-circle"></i>Inquiry
+              <i className="fas fa-exclamation-circle"></i>Inquiry
             </a>
           </li>
         </ul>
-        <div class="social_media">
+        <div className="social_media">
           <a href="#">
-            <i class="fab fa-facebook-f"></i>
+            <i className="fab fa-facebook-f"></i>
           </a>
           <a href="#">
-            <i class="fab fa-twitter"></i>
+            <i className="fab fa-twitter"></i>
           </a>
           <a href="#">
-            <i class="fab fa-instagram"></i>
+            <i className="fab fa-instagram"></i>
           </a>
         </div>
       </div> */}
-      <div class="main_content">
+      {/* <div class="main_content"> */}
       {/* <header class="fixed-top">
           <div class="header">
             <div>
@@ -118,7 +118,7 @@ function Header() {
                   }}
                 >
                   {" "}
-                  <i class="fas fa-user-alt"></i>{" "}
+                  <i className="fas fa-user-alt"></i>{" "}
                 </a>
               </div>
             </div>
@@ -132,27 +132,30 @@ function Header() {
                 <a></a>
               </li>
 
-              <li class="menupp">
-                <a class="actively" href="/aboutus">
+              <li className="menupp">
+                <a className="actively" href="/aboutus">
                   About Us
                 </a>
               </li>
-              <li class="menupp">
+              <li className="menupp">
                 <a href="/services">Services</a>
               </li>
-              <li class="menupp">
+              <li className="menupp">
                 <a href="/contactus">Contact Us</a>
               </li>
-              <li class="menupp">
+              <li className="menupp">
                 <a href="/gallery">Gallery</a>{" "}
               </li>
             </div>
           </div>
+        </header>
+        {/* <header className="fixed-top">
+          <NavbarV3 />
         </header> */}
-      <header className="fixed-top">
-      <NavbarV3 />
-      </header>
-      </div>
+      {/* <header class="fixed-top"> */}
+      {/* <NavbarV3 /> */}
+      {/* </header> */}
+      {/* </div> */}
     </div>
   );
 }

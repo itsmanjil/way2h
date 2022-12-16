@@ -36,26 +36,26 @@ const Activities = () => {
 
       <MainContainer>
         <div className="info">
-          <div className="container">
+          <div className="container ">
             <input
-              id="search-input"
+              id="search-input form1 p-activities "
               type="search"
-              id="form1"
               class="form-outline form-control"
               style={{
-                width: "400px",
+                width: "200px",
                 marginlnlineStart: "14%",
-                marginLeft: "990px",
-                marginTop: "-50px",
+                marginLeft: "1190px",
+                marginTop: "-70px",
                 background: "#ADD8E6",
+                position:"absolute"
               }}
               placeholder="Search Activity"
               onChange={(e) => setSearch(e.target.value)}
             />
 
-            <div className="row my-3">
-              <div className="col-sm-2">
-                <Link to="/add-activity" className="btn btn-outline-secondary">
+            <div className="row my-10"style={{position:"relative",top:"-65px"}}>
+              <div className="col-sm-6"  >
+                <Link to="/add-activity" className="btn btn-outline-secondary" style={{left:"440px"}}>
                   <i class="fas fa-plus">&nbsp;Add New Activity</i>
                 </Link>
               </div>
@@ -78,8 +78,8 @@ const Activities = () => {
               </div>
             </div>
           </div>
-          <div className="container">
-            <Row xs={1} md={3} className="g-4" id="by" className="rounded">
+          <div className="container p-activities" style={{position:"absolute",left:"226px",top:"190px"}}>
+            <Row xs={1} md={3} className="g-4 rounded " id="by p-activities">
               {filterdActivity.map((activity) => (
                 <Col>
                   <div className="card-group py-3">

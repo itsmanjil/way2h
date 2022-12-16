@@ -62,7 +62,7 @@ const EditActivity = (props) => {
   }, []);
 
   return (
-    <div>
+    <div >
       <div
         className="background"
         style={{
@@ -72,7 +72,7 @@ const EditActivity = (props) => {
       >
         <HeaderAdmin />
         <AddActivityContainer>
-          <div className="info">
+          <div className="info" style={{position:"relative",left:"70px",top:"-230px",lineHeight:"0.5"}}>
             <div className="container" style={{ background: "#78866B" }}>
               &nbsp;&nbsp;
               <h1>Update Activity </h1>

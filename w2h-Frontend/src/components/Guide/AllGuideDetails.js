@@ -64,7 +64,7 @@ export default class AllGuideDetails extends Component{
                 <div className="container">      
                     <br/>
                     <div>
-                        <div className="input-group" style={{marginLeft:1045}} >
+                        <div className="input-group" style={{marginLeft:13}} >
                             <div className="form-outline">
                                 <input 
                                     id="search-input" 
