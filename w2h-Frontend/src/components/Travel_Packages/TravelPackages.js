@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Button, Row } from "react-bootstrap";
 import "../../Styles/TravelPackage.css";
-// import Header from "../Header";
+import Header from "../Header";
 import NavbarV3 from "../navbar-v4";
 import Footer from "../Footer";
 import Reactstars from "react-rating-stars-component";
 import Pageheader from "./page-header";
-import PackageDetailed from "./details";
+import { Link } from "react-router-dom";
+import "../../assets/css/style.css"
 
 export default class CardItemsT extends Component {
   constructor(props) {
@@ -32,6 +33,24 @@ export default class CardItemsT extends Component {
     });
   }
 
+  // sorting = (col)=>{
+  //   	console.log("hello")
+  //   	if(order === "ASC"){
+  //   		const sorted = [...this.state.posts].sort((a,b)=>
+  //   			a[col].toLowerCase() > b[col].toLowerCase() ? 1: -1
+  //   		);
+  //   		setMyData(sorted);
+  //   		setorder("DSC")
+  //   	}
+  //   	if(order === "DSC"){
+  //   		const sorted = [...myData].sort((a,b)=>
+  //   			a[col].toLowerCase() < b[col].toLowerCase() ? 1: -1
+  //   		);
+  //   		setMyData(sorted);
+  //   		setorder("ASC")
+  //   	}
+  //   }
+
   filterData(posts, searchkey) {
     const result = posts.filter(
       (post) =>
@@ -40,6 +59,20 @@ export default class CardItemsT extends Component {
     );
     this.setState({ posts: result });
   }
+
+
+  // sorting(){
+  //   let userSortValue = document.getElementById("sort");
+  //   let sort_value = userSortValue.options[userSortValue.selectedIndex].value;
+  //   // console.log(sort_value)
+  //   if(sort_value === "ascending"){
+  //     const newSortData = this.state.posts.sort((a,b)=>
+  //       a.packageName.localeCompare(b.packageName)
+  //     )
+  //   }
+    
+  // }
+
 
   handleSearchArea = (e) => {
     const searchkey = e.currentTarget.value;
@@ -52,30 +85,120 @@ export default class CardItemsT extends Component {
   };
 
   render() {
+    let publicUrl = process.env.PUBLIC_URL+'/'
     return (
       <div>
-        {/* <Header /> */}
-        <NavbarV3 />
+        <Header />
+        {/* <NavbarV3 /> */}
         <Pageheader headertitle="Package" />
+        <div className="ltn__product-area ltn__product-gutter mb-100">
+				<div className="container">
+						<div className="row">
+							<div className="col-lg-12">
+							<div className="ltn__shop-options">
+								<ul>
+								<li>
+									<div className="ltn__grid-list-tab-menu ">
+									<div className="nav">
+										<a className="active show" data-bs-toggle="tab" href="#liton_product_grid"><i className="fas fa-th-large" /></a>
+										<a data-bs-toggle="tab" href="#liton_product_list"><i className="fas fa-list" /></a>
+									</div>
+									</div>
+								</li>
+								<li>
+									<div className="short-by text-center">
+									<select className="nice-select" id="sort" name="sort"
+                  onClick={this.sorting}>
+										<option>Default sorting</option>
+										<option value="ascending">Sort by popularity</option>
+										<option>Sort by new arrivals</option>
+										<option>Sort by price: low to high</option>
+										<option>Sort by price: high to low</option>
+									</select>
+									</div> 
+								</li>
+								<li>
+									<div className="showing-product-number text-right">
+									<span>Showing 9 of 20 results</span>
+									</div> 
+								</li>
+								</ul>
+							</div>
+							<div className="tab-content ">
+								<div className="tab-pane fade active show" id="liton_product_grid">
+								<div className="ltn__product-tab-content-inner ltn__product-grid-view">
+									<div className="row">
+									<div className="col-lg-12">
+										{/* Search Widget */}
+										<div className="ltn__search-widget mb-30">
+										<form action="#">
+											<input type="text" name="search" placeholder="Search your keyword..." />
+											<button type="submit"><i className="fas fa-search" /></button>
+										</form>
+										</div>
+									</div>
+									{/* ltn__product-item */}
+                  {this.state.posts.map((posts, idx) => (
+                  
+									<div className="col-lg-4 col-sm-6 col-12">
+										<div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
+										<div className="product-img">
+											<Link to={`/travelpackages/travelpackage/${posts.id}`}><img src={`/uploads/${posts.packageImage}`} alt="#" /></Link>
+											{/* <div className="real-estate-agent">
+											<div className="agent-img">
+												<Link to="/team-details"><img src={publicUrl+"assets/img/blog/author.jpg"} alt="#" /></Link>
+											</div>
+											</div> */}
+										</div>
+										<div className="product-info">
+											<div className="product-badge">
+											<ul>
+												<li className="sale-badg">{posts.packageName}</li>
+											</ul>
+											</div>
+											<h2 className="product-title go-top"><Link to="/product-details">New Apartment Nice View</Link></h2>
+											<div className="product-img-location">
+											<ul>
+												<li className="go-top">
+												<Link to="/contact"><i className="flaticon-pin" /> Belmont Gardens, Chicago</Link>
+												</li>
+											</ul>
+											</div>
+										</div>
+										<div className="product-info-bottom">
+											<div className="product-price">
+											<span>$34,900<label>/Month</label></span>
+											</div>
+										</div>
+										</div>
+									</div>
+                  ))}
+									
+									</div>
+								</div>
+								</div>
+							</div>
+							<div className="ltn__pagination-area text-center">
+								<div className="ltn__pagination">
+								<ul>
+									<li><a href="#"><i className="fas fa-angle-double-left" /></a></li>
+									<li><a href="#">1</a></li>
+									<li className="active"><a href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">...</a></li>
+									<li><a href="#">10</a></li>
+									<li><a href="#"><i className="fas fa-angle-double-right" /></a></li>
+								</ul>
+								</div>
+							</div>
+							</div>
+						</div>
+				</div>
+			</div>
 
-        <div className="ltn__shop-options">
+        {/* <div className="ltn__shop-options">
           <ul className="justify-content-start">
-            {/* <li>
-              <div className="ltn__grid-list-tab-menu ">
-                <div className="nav">
-                  <a
-                    className="active show"
-                    data-bs-toggle="tab"
-                    href="#liton_product_grid"
-                  >
-                    <i className="fas fa-th-large" />
-                  </a>
-                  <a data-bs-toggle="tab" href="#liton_product_list">
-                    <i className="fas fa-list" />
-                  </a>
-                </div>
-              </div>
-            </li> */}
+          
             <li className="d-none pl-3">
               <div className="showing-product-number text-right">
                 <span>Showing 1–12 of 18 results</span>
@@ -86,7 +209,7 @@ export default class CardItemsT extends Component {
                 <select
                   className="nice-select"
                   onChange={(e) => sorting(e.target.value)}
-                  // value ={ selects} onChange={e=>sorting("title")}
+                  
                 >
                   <option value="">Default Sorting</option>
                   <option value="title">Sort by popularity</option>
@@ -108,9 +231,9 @@ export default class CardItemsT extends Component {
               </div>
             </li>
           </ul>
-        </div>
-        <div className="col-lg-12">
-          {/* Search Widget */}
+        </div> */}
+        {/* <div className="col-lg-12">
+ 
           <div className="ltn__search-widget mb-30">
             <form action="#">
               <input
@@ -124,9 +247,9 @@ export default class CardItemsT extends Component {
               </button>
             </form>
           </div>
-        </div>
+        </div> */}
 
-        <div className="infotr bodytravelpackage">
+        {/* <div className="infotr bodytravelpackage">
           <div className="bodytravelpackage container" id="bbimg">
             <div>
               <br />
@@ -144,24 +267,6 @@ export default class CardItemsT extends Component {
               >
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                {/* <h1>
-                  <b>Our Travel Packages</b>
-                </h1> */}
-                {/* <input
-                  id="search-input form1"
-                  type="search"
-                  class="form-outline form-control"
-                  style={{ width: "400px", marginInlineStart: "29%" }}
-                  placeholder="Search Package"
-                  onChange={this.handleSearchArea}
-                /> */}
-                {/* <button
-                  id="search-button"
-                  type="button"
-                  class="btn btn-primary"
-                >
-                  <i class="fas fa-search"></i>
-                </button> */}
               </div>
 
               <hr />
@@ -203,11 +308,9 @@ export default class CardItemsT extends Component {
                         </div>
 
                         <div class="postcard__bar"></div>
-                        {/* <div class="postcard__preview-txt">
-                          {posts.discription}
-                        </div> */}
+                      
                         <br />
-                        {/* {posts.destination} */}
+                        
 
                         <ul class="postcard__tagbox">
                           <li class="tag__item">
@@ -236,7 +339,7 @@ export default class CardItemsT extends Component {
                         >
                           <a
                             href={`/travelpackages/travelpackage/${posts.id}`}
-                            // href="/travel"
+            
                             style={{
                               textDecoration: "none",
                               color: "white",
@@ -258,7 +361,7 @@ export default class CardItemsT extends Component {
               <br />
             </div>
           </div>
-        </div>
+        </div> */}
         <Footer />
       </div>
     );

@@ -32,7 +32,7 @@ export default class AllPackagesAdmin extends Component {
     axios
       .delete(`http://localhost:8070/travelpackages/admin/delete/${id}`)
       .then((res) => {
-        alert("Delete SuccessFully");
+        Auth.notify("success", "Travel Package deleted Successfully");
         this.retrievePosts();
       });
   };

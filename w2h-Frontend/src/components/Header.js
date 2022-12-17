@@ -1,9 +1,13 @@
 import React from "react";
 // import "../Styles/HeaderFooter.css";
 // import img1 from "../Images/logo.png";
-// import NavbarV3 from "./navbar-v4";
+import NavbarV3 from "./navbar-v4";
 
 function Header() {
+  // const userInfo=localStorage.getItem('userInfo');
+  // if(userInfo==null){
+  //    alert("You are not Authorized User. Please sign in first.")
+  //  window.location.replace("/register")}
   return (
     <div class="wrapper">
       {/* <div class="sidebar">
@@ -88,7 +92,7 @@ function Header() {
           </a>
         </div>
       </div> */}
-      {/* <div class="main_content"> */}
+      <div class="main_content">
       {/* <header class="fixed-top">
           <div class="header">
             <div>
@@ -153,9 +157,10 @@ function Header() {
           <NavbarV3 />
         </header> */}
       {/* <header class="fixed-top"> */}
-      {/* <NavbarV3 /> */}
+      
+      <NavbarV3 />
       {/* </header> */}
-      {/* </div> */}
+      </div>
     </div>
   );
 }
