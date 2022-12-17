@@ -74,7 +74,7 @@ const AdminEquipment = () => {
                     Delete
                   </Link>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <Link style={{float:"right"}}
+                  <Link style={{top:"115px",position:"absolute",right:"90px"}}
                     class="btn btn-outline-primary mr-3"
                     to={`/equipment/edit/${equipment._id}`}
                   >

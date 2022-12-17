@@ -53,14 +53,12 @@ const CreatePackage = () => {
         console.log(err);
       });
     history.push("/travelpackages/admin");
-    // alert(" Travel Package Added Successful");
-    Auth.notify("success", "Travel Package Added Successfully");
-    <ToastContainer />;
+    alert(" Travel Package Added Successful");
   };
   return (
     <div>
       <HeaderAdmin />
-      <div className="infoadmin">
+      <div className="infoadmin" >
         <div className="bodyaa" id="bodytbc">
           <div>
             <div>
@@ -68,7 +66,7 @@ const CreatePackage = () => {
                 class="signup-form signup-formtr"
                 onSubmit={changeOnClick}
                 encType="multipart/form-data"
-                style={{ position: "relative", top: "-38px" }}
+                style={{position:"relative",top:"-38px"}}
               >
                 <div class="form-header form-headertr">
                   <h1 style={{ color: "white" }}>

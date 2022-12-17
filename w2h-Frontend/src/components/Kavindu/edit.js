@@ -1,6 +1,6 @@
 import React,{useReducer, useState,useEffect} from "react"
 import {useHistory,useParams} from 'react-router-dom';
-import "../../Styles/TravelPackage.css";
+
 import axios from "axios";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -33,7 +33,7 @@ const onSubmit=async e =>{
     e.preventDefault();
     await axios.put(`http://localhost:8070/user/update/${id}`,Registers);
 
-    // history.push("/profile");
+    history.push("/profile");
     alert("  Successful")
 }
 
@@ -49,7 +49,7 @@ const loadPackage = async()=>{
 
         return(
             <div>
-                {/* <Header/> */}
+                <Header/>
             <div className="body1">
                 <div className="info">
                  

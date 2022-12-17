@@ -32,7 +32,7 @@ export default class AllPackagesAdmin extends Component {
     axios
       .delete(`http://localhost:8070/travelpackages/admin/delete/${id}`)
       .then((res) => {
-        Auth.notify("success", "Travel Package deleted Successfully");
+        alert("Delete SuccessFully");
         this.retrievePosts();
       });
   };
@@ -144,14 +144,14 @@ export default class AllPackagesAdmin extends Component {
                       >
                         <i className="fas fa-eye"></i>&nbsp;View
                       </a>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;
                       <a
                         className="btn btn-outline-warning"
                         href={`/travelpackage/admin/edit/${posts.id}`}
                       >
                         <i className="fas fa-edit"></i>&nbsp;Edit
                       </a>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;
                       <a
                         className="btn btn-outline-danger"
                         href={`/travelpackage/admin/delete/${posts.id}`}

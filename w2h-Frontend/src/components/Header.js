@@ -1,16 +1,12 @@
 import React from "react";
-// import "../Styles/HeaderFooter.css";
-// import img1 from "../Images/logo.png";
+import "../Styles/HeaderFooter.css";
+import img1 from "../Images/logo.png";
 import NavbarV3 from "./navbar-v4";
 
 function Header() {
-  // const userInfo=localStorage.getItem('userInfo');
-  // if(userInfo==null){
-  //    alert("You are not Authorized User. Please sign in first.")
-  //  window.location.replace("/register")}
   return (
-    <div class="wrapper">
-      {/* <div class="sidebar">
+    <div className="wrapper">
+      {/* <div className="sidebar">
         <ul>
           <i
             className="fas fa-plane-departure"
@@ -92,9 +88,9 @@ function Header() {
           </a>
         </div>
       </div> */}
-      <div class="main_content">
-      {/* <header class="fixed-top">
-          <div class="header">
+      <div className="main_content">
+        <header className="fixed-top">
+          <div className="header">
             <div>
               <div id="logott">
                 <img src={img1} style={{ width: "200px", height: "100px" }} />
@@ -156,10 +152,6 @@ function Header() {
         {/* <header className="fixed-top">
           <NavbarV3 />
         </header> */}
-      {/* <header class="fixed-top"> */}
-      
-      <NavbarV3 />
-      {/* </header> */}
       </div>
     </div>
   );
