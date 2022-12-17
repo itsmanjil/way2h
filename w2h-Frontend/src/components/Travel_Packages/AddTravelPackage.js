@@ -3,10 +3,6 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "../../Styles/TravelPackage.css";
 import HeaderAdmin from "../HeaderAdmin";
-import 'react-toastify/dist/ReactToastify.min.css';
-import { Auth } from "../notify";
-import { ToastContainer, toast } from 'react-toastify';
-
 
 const CreatePackage = () => {
   let history = useHistory();
@@ -59,12 +55,12 @@ const CreatePackage = () => {
     history.push("/travelpackages/admin");
     // alert(" Travel Package Added Successful");
     Auth.notify("success", "Travel Package Added Successfully");
-    <ToastContainer />
+    <ToastContainer />;
   };
   return (
     <div>
       <HeaderAdmin />
-      <div className="infoadmin" >
+      <div className="infoadmin">
         <div className="bodyaa" id="bodytbc">
           <div>
             <div>
@@ -72,7 +68,7 @@ const CreatePackage = () => {
                 class="signup-form signup-formtr"
                 onSubmit={changeOnClick}
                 encType="multipart/form-data"
-                style={{position:"relative",top:"-38px"}}
+                style={{ position: "relative", top: "-38px" }}
               >
                 <div class="form-header form-headertr">
                   <h1 style={{ color: "white" }}>
