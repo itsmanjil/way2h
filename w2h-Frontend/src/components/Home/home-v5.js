@@ -12,8 +12,8 @@ import Header from "../Header";
 const Home_V5 = () => {
   return (
     <div>
-      {/* <NavbarV3 CustomClass="ltn__header-transparent gradient-color-2"  /> */}
-      <Header />
+      <NavbarV3 CustomClass="ltn__header-transparent gradient-color-2" />
+      {/* <Header /> */}
       {/* <Navbar CustomClass="ltn__header-transparent gradient-color-2" /> */}
       <VideoV4 />
       {/* <AboutV3 /> */}
