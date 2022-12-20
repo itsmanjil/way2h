@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 const URL = process.env.MONGODB_URL;
 
-mongoose.connect("mongodb://localhost:27017/w2h", {
+mongoose.connect("mongodb://127.0.0.1:27017/Way2Heaven", {
   useCreateIndex: true,
   useFindAndModify: false,
   useNewUrlParser: true,

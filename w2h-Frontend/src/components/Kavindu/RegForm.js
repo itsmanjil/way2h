@@ -96,10 +96,10 @@ export default function RegisterUser({}) {
         <div className="info">
           <div className="container containerabc" id="container">
             <div className="form-container form-containerabc sign-up-container sign-up-containerabc">
-              <form onSubmit={sendData} className="form12">
+              <form onSubmit={sendData} className="form12" style={{position:"relative",lineHeight:-10}}>
                 <h1 className="h111">Create Account</h1>
 
-                <input
+                <input 
                   className="inputabc"
                   type="text"
                   placeholder="Name"
@@ -176,7 +176,7 @@ export default function RegisterUser({}) {
               </form>
             </div>
             <div className="overlay-container overlay-containerabc">
-              <div className="overlay overlayabc">
+              <div className="overlay overlayabc" >
                 <div className="overlay-panel overlay-panelabc overlay-left overlay-leftabc">
                   <h1 className="h111">Welcome Back!</h1>
                   <p className="p123">
@@ -191,7 +191,7 @@ export default function RegisterUser({}) {
                     Sign In
                   </button>
                 </div>
-                <div className="overlay-panel overlay-panelabc overlay-right overlay-rightabc">
+                <div className="overlay-panel overlay-panelabc overlay-right overlay-rightabc" style={{color:"red"}}>
                   <h1 className="h111">Hello, Friend!</h1>
                   <p className="p123">
                     Enter your personal details and start journey with us

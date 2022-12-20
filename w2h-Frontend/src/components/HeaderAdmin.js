@@ -1,6 +1,7 @@
 import React from "react";
 import "../Styles/AdminHeader.css";
 
+
 function HeaderAdmin() {
   return (
     <div>
@@ -8,11 +9,12 @@ function HeaderAdmin() {
         <div class="sidebar-logo sidebar-logoadh">
           <i
             class="fas fa-plane-departure"
-            aria-hidden="true"
+            aria-hidden="true"  
             style={{
               fontSize: "70px",
               marginLeft: "25px",
               paddingBottom: "20px",
+              color:"blue"
             }}
           ></i>
         </div>

@@ -5,7 +5,7 @@
 }
 
 .body1 {
-	background-image: url('https://www.99images.com/photos/wallpapers/hd-wallpapers/hd-wallpapers%20android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-8ohqj.jpg?v=1615878254');
+	background-image: url('https://img.freepik.com/free-vector/realistic-travel-background-with-elements_52683-77784.jpg?w=2000');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -83,10 +83,10 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 0 50px;
+	padding: 10px 70px;
 	height: 100%;
 	text-align: center;
-	border-radius:10px;
+	border-radius:90px;
 	background-color: rgba(255, 255, 255, 1);
 }
 
@@ -113,7 +113,8 @@
 .form-containerabc {
 	position: absolute;
 	top: 0;
-	height: 100%;
+	height: 94%;
+	line-height: -1;
 	transition: all 0.6s ease-in-out;
 }
 
@@ -170,8 +171,8 @@
 
 .overlayabc {
 	background: #455ef0;
-	background: -webkit-linear-gradient(to right, #969594, #2c2929);
-	background: linear-gradient(to right, #242323, #4b4a4a);
+	background: -webkit-linear-gradient(to right, #969594, #1141a8);
+	background: linear-gradient(to right, #189757, #3b0daf);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
