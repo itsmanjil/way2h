@@ -31,14 +31,15 @@ export default class AllFeedback extends Component {
       <div
          className="background"
       style={{
-        background:
-          "url(https://landman.me/wp-content/uploads/2019/07/travel-background-png-2.png)",
+        position:"absolute",left:"-20px",top:"0.3px",width:"1540px",backgroundImage:
+        "url('https://mobimg.b-cdn.net/v3/fetch/39/39d0b1af982cfaac50af7cd0fa9fc218.jpeg')",
+        height:"120vh"
       }}>
         <HeaderAdmin />
         <div className="info">
           <div className="container" style={{ background: "" }}>
             &nbsp;&nbsp;
-            <h1 style={{ textAlign: "center" }}>Feedbacks</h1>
+            <h1 style={{ textAlign: "center",color:"white" }}>Feedbacks</h1>
             <br />
             <Row xs={1} md={1} className="g-4" id="by" class="rounded">
               {this.state.feedback.map((feedback, idx) => (

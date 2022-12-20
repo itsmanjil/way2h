@@ -1,29 +1,22 @@
+import { orange } from "@material-ui/core/colors";
 import React from "react";
 import "../Styles/AdminHeader.css";
-
+let publicUrl = process.env.PUBLIC_URL + "/";
 
 function HeaderAdmin() {
   return (
     <div>
       <div class="sidebar-container sidebar-containeradh" style={{height:"124vh",width:"230px",position:"absolute",lineHeight:"-10"}}>
-        <div class="sidebar-logo sidebar-logoadh">
-          <i
-            class="fas fa-plane-departure"
-            aria-hidden="true"  
-            style={{
-              fontSize: "70px",
-              marginLeft: "25px",
-              paddingBottom: "20px",
-              color:"blue"
-            }}
-          ></i>
+        <div class="sidebar-logo sidebar-logoadh" style={{background:"white"}}>
+        <img src={publicUrl + "assets/img/logo.png"} style={{height:"10.6vh",background:"white"}} alt="Logo" />
+       
         </div>
         <ul class="sidebar-navigation sidebar-navigationadh" style={{position:"absolute",lineHeight:"3.9"}}>
           <center>
             {" "}
             <h2
               class="headerad"
-              style={{ fontSize: "17px", color: "black", paddingTop: "15px" }}
+              style={{ fontSize: "17px", color: "black" , paddingTop: "15px" }}
             >
               <b>Way2Heaven</b>
             </h2>
@@ -95,7 +88,7 @@ function HeaderAdmin() {
               style={{
                 paddingTop: "20px",
                 paddingLeft: "80px",
-                color: "white",
+                color: "orange",
               }}
             >
               {" "}

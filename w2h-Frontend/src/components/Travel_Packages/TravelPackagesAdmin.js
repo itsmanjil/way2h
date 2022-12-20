@@ -65,7 +65,6 @@ export default class AllPackagesAdmin extends Component {
           style={{
             backgroundImage:
               "url('https://www.teahub.io/photos/full/236-2363540_world-map-travel-background.jpg')",
-              height:"107vh"
 
           }}
         >
@@ -73,13 +72,13 @@ export default class AllPackagesAdmin extends Component {
             <br />
             <div
               style={{
-                backgroundColor: "hsla(90, 100%, 0%, 0.57)",
-                paddingBottom: "15px",
+                backgroundColor: "transparent",
+                paddingBottom: "-10px",
                 paddingTop: "15px",
               }}
             >
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button className="btn btn-success">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button className="btn btn-success" style={{height:"7vh"}}>
                 <a
                   href="/travelpackage/admin/add"
                   style={{ textDecoration: "none", color: "white" }}
@@ -88,9 +87,9 @@ export default class AllPackagesAdmin extends Component {
                 </a>
                 
               </button>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button className="btn btn-success">
+              &nbsp;&nbsp;
+              &nbsp;&nbsp;
+              <button className="btn btn-danger"style={{height:"7vh"}}>
                 <a
                   href="/allbooking"
                   style={{ textDecoration: "none", color: "white" }}
@@ -101,12 +100,12 @@ export default class AllPackagesAdmin extends Component {
               <input
                 id="search-input form1"
                 type="search"
-                style={{ marginLeft: "530px" }}
+                style={{ marginLeft: "399px" }}
                 placeholder="Search Package"
                 onChange={this.handleSearchArea}
               />
-              <button id="search-button" type="button" class="btn btn-primary">
-                <i class="fas fa-search"></i>
+              <button id="search-button" type="button" class="btn btn-primary" style={{height:"1px",width:"3px",left:"3px",position:"relative"}}>
+                <i class="fas fa-search" style={{top:"10px",position:"absolute"}}></i>
               </button>
             </div>
             <hr />
