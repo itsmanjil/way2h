@@ -92,7 +92,7 @@ function Header() {
           </a>
         </div>
       </div> */}
-      <div class="main_content">
+      {/* <div class="main_content"> */}
       {/* <header class="fixed-top">
           <div class="header">
             <div>
@@ -161,7 +161,7 @@ function Header() {
       <NavbarV3 />
       {/* </header> */}
       </div>
-    </div>
+    // </div>
   );
 }
 
