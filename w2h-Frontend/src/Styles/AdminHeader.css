@@ -50,16 +50,7 @@
 
 .headerh {
   background: #232526; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #414345,
-    #232526
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #414345,
-    #232526
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: transparent; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   background-size: cover;
   height: 50px;
@@ -70,6 +61,11 @@
   margin: 0;
   list-style-type: none;
   position: relative;
+  color:"black";
+  background-color: rgb(255, 255, 255)
+}
+.sidebar-containeradh:hover{
+  color: #e90c0c;
 }
 
 .sidebar-navigationadh li {
@@ -78,11 +74,12 @@
   display: inline-block;
   width: 100%;
   line-height: 20px;
+  color:green
 }
 
 #hnamed {
   font-size: 30px;
-  color:rgb(255, 255, 255);
+  color:rgb(127, 28, 28);
   font-family: "Josefin Sans", sans-serif;
   font-style: italic;
   font-weight: bold;
@@ -97,8 +94,8 @@
 .sidebar-navigationadh li a {
   padding: 10px 15px 10px 30px;
   display: block;
-  color: rgb(247, 247, 247);
-  text-shadow: lightcoral;
+  color: rgb(17, 16, 16);
+  text-shadow: rgb(25, 3, 3);
   box-shadow: 1px 1px 1px 1px;
   font-weight: lighter;
 }
@@ -112,6 +109,7 @@
 .sidebar-navigationadh li a:focus {
   text-decoration: none;
   outline: none;
+  background-color: orange;
 }
 
 .sidebar-navigationadh li::before {

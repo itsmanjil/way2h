@@ -3,6 +3,10 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "../../Styles/TravelPackage.css";
 import HeaderAdmin from "../HeaderAdmin";
+import 'react-toastify/dist/ReactToastify.min.css';
+import { Auth } from "../notify";
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const CreatePackage = () => {
   let history = useHistory();
@@ -53,7 +57,9 @@ const CreatePackage = () => {
         console.log(err);
       });
     history.push("/travelpackages/admin");
-    alert(" Travel Package Added Successful");
+    // alert(" Travel Package Added Successful");
+    Auth.notify("success", "Travel Package Added Successfully");
+    <ToastContainer />
   };
   return (
     <div>
