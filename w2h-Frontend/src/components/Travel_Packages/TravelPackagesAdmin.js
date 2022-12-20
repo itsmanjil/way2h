@@ -65,6 +65,7 @@ export default class AllPackagesAdmin extends Component {
           style={{
             backgroundImage:
               "url('https://www.teahub.io/photos/full/236-2363540_world-map-travel-background.jpg')",
+              height:"107vh"
 
           }}
         >

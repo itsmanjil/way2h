@@ -21,19 +21,20 @@ function AdminHome() {
                   class="row"
                   style={{
                     backgroundImage:
-                      "url('https://img.freepik.com/free-vector/brick-wall-with-spot-lights-background_23-2148606997.jpg?size=626&ext=jpg')",
+                      "url('https://png.pngtree.com/background/20211217/original/pngtree-modern-technology-dashboard-picture-image_1598384.jpg')",
+                      height:"108.7vh"
                   }}
                 >
                   <div class="col-lg-10 col-xl-auto mx-auto">
                     <div
                       class="card flex-row my-3 border-5 shadow rounded-5 overflow-hidden"
-                      style={{ backgroundColor: "hsla(90, 0%, 100%, 0.7)" }}
+                      style={{ backgroundColor: "hsla(90, 100%, 100%, 0.1)" }}
                     >
                       <div class="card-img-left d-none d-md-flex"></div>
                       <div class="card-body p-4 p-sm-5">
                         <center>
                           {" "}
-                          <h1>Admin Panel DashBord</h1>
+                          <h1 style={{color:"white"}}>Admin Panel DashBord</h1>
                         </center>
                         <hr class="my-4" />
 

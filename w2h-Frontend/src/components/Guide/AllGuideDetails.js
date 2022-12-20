@@ -111,7 +111,7 @@ export default class AllGuideDetails extends Component{
                                         <tr key={index}>
                                             <th scope="row">{index+1}</th>
                                                 <td className="text-center">
-                                                    <img src = {`/uploads/${guide.guideImage}`} alt = " " style = {{width : "80%" , minHeight : "70%"}}/>
+                                                    <img src = {`/uploads/${guide.guideImage}`} alt = " " style = {{width : "40%" , height : "20%"}}/>
                                                 </td>
                                                 <td>{guide.name}</td>
                                                 <td>{guide.address}</td>
