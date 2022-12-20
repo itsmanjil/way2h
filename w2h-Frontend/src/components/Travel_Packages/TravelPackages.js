@@ -210,7 +210,7 @@ export default class CardItemsT extends Component {
 									<div className="col-lg-4 col-sm-6 col-12">
 										<div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
 										<div className="product-img">
-											<Link to={`/travelpackages/travelpackage/${posts.id}`}><img src={`/uploads/${posts.packageImage}`} alt="#" /></Link>
+											<Link to={`/travelpackages/travelpackage/${posts._id}`}><img src={`/uploads/${posts.packageImage}`} alt="#" /></Link>
 											{/* <div className="real-estate-agent">
 											<div className="agent-img">
 												<Link to="/team-details"><img src={publicUrl+"assets/img/blog/author.jpg"} alt="#" /></Link>
@@ -248,14 +248,14 @@ export default class CardItemsT extends Component {
 							<div className="ltn__pagination-area text-center">
 								<div className="ltn__pagination">
 								<ul>
-                  page:{this.state.page}
-                  page:count:{this.state.pageCount}
+                  {/* page:{this.state.page}
+                  page:count:{this.state.pageCount} */}
 									<li><a onClick={() => this.handlePrevious(page) }><i className="fas fa-angle-double-left" /></a></li>
 									{/* <li><a href="#">1</a></li>
 									<li className="active"><a href="#">2</a></li>
 									<li><a href="#">3</a></li>
-									<li><a href="#">...</a></li>
-									<li><a href="#">10</a></li> */}
+									<li><a href="#">...</a></li> */}
+									<li><a>{this.state.page}</a></li>
                    {page>=3 ? (
         //  <Link onClick={this.logout}>LogOut</Link>
     
