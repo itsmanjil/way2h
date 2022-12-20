@@ -8,8 +8,8 @@ const Services = () => {
   return (
     <div>
       <Header />
-      <div className="info" style={{background:"hsl(0,0%,50%,0.2)	"}}>
-        <br/>
+      <div className="info" style={{ background: "hsl(0,0%,50%,0.2)	" }}>
+        <br />
         <div
           class="container-fluid mx-auto mt-5 mb-5 col-12"
           style={{ textAlign: "center" }}
@@ -102,107 +102,23 @@ const Services = () => {
             </div>
           </div>{" "}
           <br /> <br />
-          <h4 class="chk">
-            <small class="text-muted">Watch Our Trips Videos</small>
-          </h4>
-          <ul>
-            <li>
-              <iframe
-                width="300"
-                height="150"
-                src="https://www.youtube.com/embed/qxerdchDXeA"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>{" "}
-              &nbsp; &nbsp;
-              <iframe
-                width="300"
-                height="150"
-                src="https://www.youtube.com/embed/6HeG-h7GmpA"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>{" "}
-              &nbsp; &nbsp;
-              <iframe
-                width="300"
-                height="150"
-                src="https://www.youtube.com/embed/bItDQEJzIHE"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-              <iframe
-                width="300"
-                height="150"
-                src="https://www.youtube.com/embed/VYDS_jXYP1k"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>{" "}
-              &nbsp; &nbsp;
-              <iframe
-                width="300"
-                height="150"
-                src="https://www.youtube.com/embed/fpoVPpuzQx8"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>{" "}
-              &nbsp; &nbsp;
-              <iframe
-                width="300"
-                height="150"
-                src="https://www.youtube.com/embed/fet2dqKphhM"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-              <iframe
-                width="300"
-                height="150"
-                src="https://www.youtube.com/embed/mayAodn1mRA"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>{" "}
-              &nbsp; &nbsp;
-              <iframe
-                width="300"
-                height="150"
-                src="https://www.youtube.com/embed/f31V3Y-eD04"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>{" "}
-              &nbsp; &nbsp;
-              <iframe
-                width="300"
-                height="150"
-                src="https://www.youtube.com/embed/cRoHC--sZvw"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </li>
-          </ul>
           <div class="ft">
-            <p class="chk">
+            {/* <p class="chk">
               <small class="text-muted">Still not sure?</small>
-            </p>
-            <div class="btn btn-primary servicetext"><a href="/travelpackages" >Travel Packages</a></div> &nbsp;&nbsp;
-            <div class="btn btn-primary servicetext"> <a href="/hotelpackage" >Room Packages</a></div>&nbsp;&nbsp;
-            <div class="btn btn-primary servicetext"> <a href="/all" >Select Activity</a></div>
+            </p> */}
+            <div class="btn btn-primary servicetext">
+              <a href="/travelpackages">Travel Packages</a>
+            </div>{" "}
+            &nbsp;&nbsp;
+            <div class="btn btn-primary servicetext">
+              {" "}
+              <a href="/hotelpackage">Room Packages</a>
+            </div>
+            &nbsp;&nbsp;
+            <div class="btn btn-primary servicetext">
+              {" "}
+              <a href="/all">Select Activity</a>
+            </div>
           </div>
         </div>
       </div>

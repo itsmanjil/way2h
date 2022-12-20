@@ -14,15 +14,14 @@ const Aboutus = () => {
               <div class="intro">
                 <h2 class="text-center">About Us </h2>
                 <p class="text-center">
-                  We are the Best Travel Company in Sri Lanka. Since 2018, Us
-                  the "Dream travellers" has been committed to bring the
-                  travellers the best experience and value for their travel
-                  arrangements. We are passionate about travel and providing
-                  corporate travellers high-touch services to facilitate their
-                  travel needs and sharing the world's wonders best experience
-                  on the leisure travel side. On behalf of that we offer
-                  valuable and time reliable offers for the best prices for our
-                  customers.
+                  We are the Best Travel Company in Nepal. Since 2022, Us the
+                  "Way to heaven" has been committed to bring the travellers the
+                  best experience and value for their travel arrangements. We
+                  are passionate about travel and providing corporate travellers
+                  high-touch services to facilitate their travel needs and
+                  sharing the world's wonders best experience on the leisure
+                  travel side. On behalf of that we offer valuable and time
+                  reliable offers for the best prices for our customers.
                 </p>
               </div>
               <div class="row people">
@@ -31,9 +30,9 @@ const Aboutus = () => {
                     <h3 class="name">Our Vision</h3>
                     <p class="title">Dream Travelers</p>
                     <p class="description">
-                      Sri Lanka’s best Leading Outbound Travel Agency. Sri
-                      Lanka’s best Leading Outbound Travel Agency.Sri Lanka’s
-                      best Leading Outbound Travel Agency.
+                      Neal’s best Leading Outbound Travel Website. Nepal’s best
+                      Leading Outbound Travel Website.Nepal’s best Leading
+                      Outbound Travel Website.
                     </p>
                     <div class="social">
                       <a href="#">
