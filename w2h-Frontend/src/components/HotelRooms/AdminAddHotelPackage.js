@@ -109,8 +109,8 @@ const AdminAddPackage = ()=>{
                                         <label style={{marginBottom:'5px'}}>Details</label>
                                             <textarea rows="10" cols="60" name="text" placeholder="Enter text" type="text"
                                             className="form-control"
-                                            placeholder="Room Details"
-                                            name="details"
+                                          
+                                            
                                             value={details}
                                             onChange={(e)=>setdetails(e.target.value)}
                                             required>

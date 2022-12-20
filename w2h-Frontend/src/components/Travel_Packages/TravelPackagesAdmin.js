@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "../../Styles/TravelPackage.css";
+// import "../../Styles/TravelPackage.css";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import HeaderAdmin from "../HeaderAdmin";

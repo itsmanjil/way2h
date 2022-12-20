@@ -29,14 +29,21 @@ router.post("/admin/add", upload.single("packageImage"), (req, res) => {
   });
   newTravelPackage
     .save()
-    .then(() => res.json("New Travel Package Added"))
+    .then(() => res.json("New Travel TravelPackage Added"))
     .catch((err) => res.status(400).json(`Error:${err}`));
 });
 
+const item_per_page = 1
 router.get("/", async (req, res) => {
+  const page = req.query.page || 1;
+  const query = {};
   try {
+    const skip = (page-1)*item_per_page;
+    const count = await TravelPackage.estimatedDocumentCount(query);
+    const items = await TravelPackage.find(query).limit(item_per_page).skip(skip);
+    const pageCount = count/item_per_page;
     const data = await TravelPackage.find();
-    const dataMapping = await data?.map(async (da) => {
+    const dataMapping = await items?.map(async (da) => {
       const reviews = await ReviewData.find({ packageId: da._id });
 
       return {
@@ -55,6 +62,11 @@ router.get("/", async (req, res) => {
             ? 0
             : reviews.map((re) => re.rating).reduce((a, b) => a + b) /
               reviews.length,
+        pagination : {
+          count,
+          pageCount
+        },
+        items
       };
     });
 
@@ -62,6 +74,7 @@ router.get("/", async (req, res) => {
     return res.json({
       success: true,
       existingPackage: promiseMappedData,
+      items:items
     });
   } catch (err) {
     return res.status(400).json({
@@ -94,10 +107,9 @@ router.put("/admin/update/:id", upload.single("packageImage"), (req, res) => {
       package.noofnights = req.body.noofnights;
       package.vehical = req.body.vehical;
       package.perperson = req.body.perperson;
-
       package
         .save()
-        .then(() => res.json("The Package is UPDATED successfully"))
+        .then(() => res.json("The TravelPackage is UPDATED successfully"))
         .catch((err) => res.status(400).json(`Error: ${err}`));
     })
     .catch((err) => res.status(400).json(`Error: ${err}`));
@@ -118,5 +130,65 @@ router.delete("/admin/delete/:id", (req, res) => {
     }
   );
 });
+
+
+
+
+
+
+
+// router.get("/getallpackage", async (req, res) => {
+//   try {
+//     const page = parseInt(req.query.page) - 1 || 0;
+//     const limit = parseInt(req.query.limit) || 2;
+//     const search = req.query.search || "";
+//     let sort = req.query.sort || "rating";
+//     let genre = req.query.genre || "All";
+
+//     const genreOptions = [
+//       "Wild life adventure",
+//       "Mountain Trekking",
+//       "Temples",
+//     ];
+
+//     genre === "All"
+//       ? (genre = [...genreOptions])
+//       : (genre = req.query.genre.split(","));
+//     req.query.sort ? (sort = req.query.sort.split(",")) : (sort = [sort]);
+
+//     let sortBy = {};
+//     if (sort[1]) {
+//       sortBy[sort[0]] = sort[1];
+//     } else {
+//       sortBy[sort[0]] = "asc";
+//     }
+
+//     const movies = await TravelPackage.find({ packageName: { $regex: search, $options: "i" } })
+//       .where("genre")
+//       .in([...genre])
+//       .sort(sortBy)
+//       .skip(page * limit)
+//       .limit(limit);
+
+//     const total = await TravelPackage.countDocuments({
+//       genre: { $in: [...genre] },
+//       packageName: { $regex: search, $options: "i" },
+//     });
+
+//     const response = {
+//       error: false,
+//       total,
+//       page: page + 1,
+//       limit,
+//       genres: genreOptions,
+//       movies,
+//     };
+
+//     res.status(200).json(response);
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json({ error: true, message: "Internal Server Error" });
+//   }
+// });
 
 module.exports = router;

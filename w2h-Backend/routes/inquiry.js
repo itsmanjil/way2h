@@ -4,7 +4,6 @@ const router = express.Router();
 
 router.post('/add',(req,res)=>{
     let newInq=new inquiry(req.body);
-  
     newInq.save((err)=>{
         if(err){
             return res.status(400).json({
@@ -72,9 +71,7 @@ router.get("/:id",(req,res) =>{
             success:true,
             post
         });
-
     });
-
 });
 
 
@@ -105,8 +102,6 @@ router.route("/view").post((req,res)=>{
             email:post.email,
             phone:post.phone,
             inq:post.inq,
-           
-           
         });
         } 
 

@@ -84,8 +84,8 @@ else{
   if(userInfo==null){
      alert("You are not Authorized User. Please sign in first.")
    window.location.replace("/register")}
-
-
+  
+  
   const { packageName, perperson } = tpackage;
   return (
     <div>

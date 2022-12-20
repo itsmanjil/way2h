@@ -5,27 +5,22 @@ import axios from "axios";
 import { configure } from "@testing-library/react";
 import Header from "../Header";
 import Footer from "../Footer";
-
+import { toast } from "react-toastify";
 // eslint-disable-next-line no-empty-pattern
 export default function RegisterUser({}) {
   const history = useHistory();
-
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
   const [Num, setNum] = useState("");
   const [Password, setPassword] = useState("");
-
   const [error, setError] = useState(false);
   const [loding, setLoding] = useState(false);
-
   useEffect(() => {
     const userInfo = localStorage.getItem("userInfo");
-
     if (userInfo) {
       history.push("/profile");
     }
   }, [history]);
-
   function sendData() {
     const NewReg = {
       Name,
@@ -34,23 +29,19 @@ export default function RegisterUser({}) {
       Num,
     };
     console.log(NewReg);
-
     axios
       .post("http://localhost:8070/Register/add", NewReg)
       .then(() => {
-        alert("success");
+        toast.success("Register Success!");
       })
       .catch((err) => {
         alert(err);
       });
   }
-
   const getData = async (e) => {
     e.preventDefault();
-
     const email = document.getElementById("logemail").value;
     const pass = document.getElementById("logpass");
-
     if (email === "" || email.includes("@" && ".com") === false) {
       alert("Enter Valid email Address");
       return false;
@@ -58,7 +49,6 @@ export default function RegisterUser({}) {
       alert("pass Required");
       return false;
     }
-
     try {
       const config = {
         headers: {
@@ -74,20 +64,18 @@ export default function RegisterUser({}) {
         },
         config
       );
+      toast.success("Login Success!");
       console.log(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
       localStorage.setItem("token", response.data.userInfo.token);
-
-      history.push("/profile");
-
+      window.location.replace("/");
+      // history.push("/profile");
       setLoding(false);
-
       console.log("err");
     } catch (error) {
       setError(error.response.data.message);
     }
   };
-
   return (
     <div>
       {" "}
@@ -98,7 +86,6 @@ export default function RegisterUser({}) {
             <div className="form-container form-containerabc sign-up-container sign-up-containerabc">
               <form onSubmit={sendData} className="form12">
                 <h1 className="h111">Create Account</h1>
-
                 <input
                   className="inputabc"
                   type="text"
@@ -139,7 +126,6 @@ export default function RegisterUser({}) {
                   }}
                   required
                 />
-
                 <button className="button12 " type="submit">
                   Sign Up
                 </button>
@@ -148,7 +134,6 @@ export default function RegisterUser({}) {
             <div className="form-container form-containerabc sign-in-container sign-in-containerabc">
               <form onSubmit={getData} className="form12">
                 <h1 className="h111">Sign in</h1>
-
                 <input
                   className="inputabc"
                   type="text"
