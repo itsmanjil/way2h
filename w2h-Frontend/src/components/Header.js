@@ -1,0 +1,160 @@
+import React from "react";
+import "../Styles/HeaderFooter.css";
+import img1 from "../Images/logo.png";
+import NavbarV3 from "./navbar-v4";
+
+function Header() {
+  return (
+    <div className="wrapper">
+      {/* <div className="sidebar">
+        <ul>
+          <i
+            className="fas fa-plane-departure"
+            style={{
+              textDecoration: "none",
+              color: "rgba(116, 116, 116, 0)",
+              fontSize: "105px",
+            }}
+          >
+            {" "}
+          </i>
+
+          <li>
+            {" "}
+            <a href="/" style={{ textDecoration: "none", color: "white" }}>
+              <i className="fas fa-home"></i>Home
+            </a>
+          </li>
+          <li>
+            <a
+              href="/travelpackages"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <i className="fas fa-car"></i>Travel Package
+            </a>
+          </li>
+          <li>
+            <a
+              href="/hotelpackage"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <i className="fas fa-bed"></i>Room Package
+            </a>
+          </li>
+          <li>
+            <a href="/all" style={{ textDecoration: "none", color: "white" }}>
+              <i className="fas fa-running"></i>Activity
+            </a>
+          </li>
+          <li>
+            <a
+              href="/equipment"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <i className="fas fa-campground"></i>Equipment
+            </a>
+          </li>
+          <li>
+            <a
+              href="/guide/all"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <i className="fas fa-home"></i>Guides
+            </a>
+          </li>
+          <li>
+            <a
+              href="/feedback"
+              style={{ textDecoration: "none", color: "white" }}
+            >
+              <i className="fas fa-comments"></i>FeedBack
+            </a>
+          </li>
+          <li>
+            <a href="/add" style={{ textDecoration: "none", color: "white" }}>
+              <i className="fas fa-exclamation-circle"></i>Inquiry
+            </a>
+          </li>
+        </ul>
+        <div className="social_media">
+          <a href="#">
+            <i className="fab fa-facebook-f"></i>
+          </a>
+          <a href="#">
+            <i className="fab fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i className="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div> */}
+      <div className="main_content">
+        <header className="fixed-top">
+          <div className="header">
+            <div>
+              <div id="logott">
+                <img src={img1} style={{ width: "200px", height: "100px" }} />
+              </div>
+              <div id="hname">
+                <h1>
+                  <b> Way2Heaven</b>
+                </h1>
+              </div>
+
+              <div id="dateandtime">
+                <p>
+                  {" "}
+                  {new Date().getFullYear()} : {new Date().getMonth()} :{" "}
+                  {new Date().getDate()} - {new Date().toLocaleTimeString()}
+                </p>
+              </div>
+
+              <div id="login">
+                <a
+                  href="/register"
+                  style={{
+                    textDecoration: "none",
+                    color: "rgb(218, 213, 213)",
+                  }}
+                >
+                  {" "}
+                  <i className="fas fa-user-alt"></i>{" "}
+                </a>
+              </div>
+            </div>
+
+            <div className="menupp" style={{ width: "100%" }}>
+              <li className="menupp">
+                <a></a>
+              </li>
+
+              <li className="menupp mr-0">
+                <a></a>
+              </li>
+
+              <li className="menupp">
+                <a className="actively" href="/aboutus">
+                  About Us
+                </a>
+              </li>
+              <li className="menupp">
+                <a href="/services">Services</a>
+              </li>
+              <li className="menupp">
+                <a href="/contactus">Contact Us</a>
+              </li>
+              <li className="menupp">
+                <a href="/gallery">Gallery</a>{" "}
+              </li>
+            </div>
+          </div>
+        </header>
+        {/* <header className="fixed-top">
+          <NavbarV3 />
+        </header> */}
+      </div>
+    </div>
+  );
+}
+
+export default Header;
