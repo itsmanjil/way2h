@@ -1,12 +1,29 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 class NavbarV3 extends Component {
+
+  logout(){
+
+    if (window.confirm("You Want To LogOut ")){
+   const dat = localStorage.removeItem("userInfo");
+   if (dat == null  ){
+    toast.success("logout succesfully")
+    window.location.replace("/")
+
+   } }
+   
+}
   render() {
     let publicUrl = process.env.PUBLIC_URL + "/";
     let imgattr = "logo";
     let anchor = "#";
+    const userInfo=localStorage.getItem('userInfo');
+    // if(userInfo==null){
+    //    alert("You are not Authorized User. Please sign in first.")
+    //  window.location.replace("/register")}
     return (
       <div>
         <header className="ltn__header-area ltn__header-5 ltn__header-logo-and-mobile-menu-in-mobile ltn__header-logo-and-mobile-menu ltn__header-transparent gradient-color-2">
@@ -292,7 +309,12 @@ class NavbarV3 extends Component {
                             <Link to="/contact">Contact</Link>
                           </li>
                           <li className="special-link">
-                            <Link to="/register">SignIn/SignUp</Link>
+                          {userInfo ? (
+         <Link onClick={this.logout}>LogOut</Link>
+      ) : (
+        <Link to="/register">SignIn/SignUp</Link>
+      )}
+                           
                           </li>
                         </ul>
                       </div>
@@ -591,6 +613,7 @@ class NavbarV3 extends Component {
       </div>
     </div>
   );
+}
 }
 
 export default NavbarV3;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "../../Styles/TravelPackage.css";
+// import "../../Styles/TravelPackage.css";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import HeaderAdmin from "../HeaderAdmin";
@@ -144,14 +144,14 @@ export default class AllPackagesAdmin extends Component {
                       >
                         <i className="fas fa-eye"></i>&nbsp;View
                       </a>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;
                       <a
                         className="btn btn-outline-warning"
                         href={`/travelpackage/admin/edit/${posts.id}`}
                       >
                         <i className="fas fa-edit"></i>&nbsp;Edit
                       </a>
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;
                       <a
                         className="btn btn-outline-danger"
                         href={`/travelpackage/admin/delete/${posts.id}`}

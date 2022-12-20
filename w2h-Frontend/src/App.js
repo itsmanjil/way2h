@@ -84,6 +84,8 @@ import pay from "./components/Kavindu/pay";
 import Home_V5 from "./components/Home/home-v5";
 import NavbarV3 from "./components/navbar-v4";
 import PackageDetailed from "./components/Travel_Packages/details";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -255,6 +257,18 @@ function App() {
         <Route path="/inqmail/:id" component={Inqmail}></Route>
         <Route path="/adminDet/:id" component={AdminDetails}></Route>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </Router>
   );
 }
