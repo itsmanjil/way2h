@@ -22,11 +22,11 @@ const NavbarV3 = () => {
 
   const logout = () => {
     if (window.confirm("You Want To LogOut ")) {
-      const dat = localStorage.removeItem("userInfo");
+      const dat = localStorage.clear();
       if (dat == null) {
         toast.success("logout succesfully");
         history.push({
-          pathname: "/",
+          pathname: "/register",
         });
       }
     }
@@ -130,7 +130,7 @@ const NavbarV3 = () => {
                           <Link to="/">Home</Link>
                         </li>
                         <li className="menu-icon">
-                          <Link to="/about">About</Link>
+                          <Link to="/">About</Link>
                           <ul>
                             <li>
                               <Link to="/aboutus">About</Link>
@@ -138,9 +138,9 @@ const NavbarV3 = () => {
                             <li>
                               <Link to="/services">Services</Link>
                             </li>
-                            <li>
+                            {/* <li>
                               <Link to="/contactus">Contact us</Link>
-                            </li>
+                            </li> */}
                             <li>
                               <Link to="/gallery">Gallery</Link>
                             </li>
@@ -173,7 +173,7 @@ const NavbarV3 = () => {
                           </ul>
                         </li>
                         <li>
-                          <Link to="/contact">Contact</Link>
+                          <Link to="/contactus">Contact</Link>
                         </li>
                         <li className="menu-icon">
                           {userInfo === undefined ||
