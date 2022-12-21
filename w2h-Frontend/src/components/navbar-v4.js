@@ -195,7 +195,7 @@ const NavbarV3 = () => {
                               LogOut
                             </Link>
                           ) : (
-                            <Link to="/register">SignIn/SignUp</Link>
+                            <Link to="/register">SignIn</Link>
                           )}
                         </li>
                       </ul>
