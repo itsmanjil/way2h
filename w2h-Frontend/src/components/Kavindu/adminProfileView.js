@@ -1,171 +1,167 @@
-import React ,{Component} from 'react';
+import React, { Component } from 'react';
 import HeaderAdmin from '../HeaderAdmin'
 import ReactToPrint from "react-to-print";
 import axios from 'axios';
 
 
 
-export default class Display extends Component{
-   
-    
-    constructor(props){
+export default class Display extends Component {
+
+
+    constructor(props) {
         super(props);
 
-        this.state={
-            RegData:[]
-        
-    };
-        
+        this.state = {
+            RegData: []
 
-}
-
-componentDidMount(){
-
-this.DisplayData(); 
-
-}
-
-DisplayData(){  //Display All details
-    
-    axios.get("http://localhost:8070/access/Details").then(res =>{
-        
-        if(res.data.success){
-            this.setState({
-                RegData:res.data.BackendData
-            
-            });
-             console.log(this.state.RegData);
-        }
-        else (
-            console.log("cant")
-        )
-    })
-
-}
-
-filterData(RegData,searchkey){  //Search 
-    console.log("err2")
-    const result = RegData.filter((post)=>
-        
-        post.Email.includes(searchkey)
-     )
-    
-    this.setState({RegData:result})
-    
-    console.log(this.setState({RegData:result}))
-
-}
+        };
 
 
-Handelsearch = (e) => {
-   const searchkey = e.currentTarget.value;
-  
+    }
 
-    axios.get("http://localhost:8070/access/Details").then(res =>{
-        
-        if(res.data.success){
-           
-             this.filterData(res.data.BackendData,searchkey)
-        }
-        else {
+    componentDidMount() {
 
-            console.log("eee")
-        }
-        
-})
-}
-
-onDelete = (id) =>{
-  if(window.confirm("Confirm Delete")){
-    const url="http://localhost:8070/access/delete/";
-    const id1 = id;
-        axios.delete(url+id1).then((res)=>{
-
-        alert("success Deleted");
         this.DisplayData();
-})
-   
-}
-   
 
-}
+    }
 
-render(){
-return (
-    <div>
-     <HeaderAdmin/> 
-    <div className="body1">
-        
-        <div className="infoadmin">
+    DisplayData() {  //Display All details
 
-              <br></br>
-              <hr></hr>
-               
-               
-                    
+        axios.get("http://localhost:8070/access/Details").then(res => {
 
-    
-   
-                <div className="container containerabc">
-                <hr></hr>
-                <h2 className="h222"> All Registration Details </h2> 
-                <hr></hr>
-                <input className="inputabc" type="text" placeholder="Search By Email" id="searchid" onChange={this.Handelsearch}></input> 
-                    <table className="table">
+            if (res.data.success) {
+                this.setState({
+                    RegData: res.data.BackendData
 
-               
-                   <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Number</th>
+                });
+                console.log(this.state.RegData);
+            }
+            else (
+                console.log("cant")
+            )
+        })
+
+    }
+
+    filterData(RegData, searchkey) {  //Search 
+        console.log("err2")
+        const result = RegData.filter((post) =>
+
+            post.Email.includes(searchkey)
+        )
+
+        this.setState({ RegData: result })
+
+        console.log(this.setState({ RegData: result }))
+
+    }
+
+
+    Handelsearch = (e) => {
+        const searchkey = e.currentTarget.value;
+
+
+        axios.get("http://localhost:8070/access/Details").then(res => {
+
+            if (res.data.success) {
+
+                this.filterData(res.data.BackendData, searchkey)
+            }
+            else {
+
+                console.log("eee")
+            }
+
+        })
+    }
+
+    onDelete = (id) => {
+        if (window.confirm("Confirm Delete")) {
+            const url = "http://localhost:8070/access/delete/";
+            const id1 = id;
+            axios.delete(url + id1).then((res) => {
+
+                alert("success Deleted");
+                this.DisplayData();
+            })
+
+        }
+
+
+    }
+
+    render() {
+        return (
+            <div>
+                <HeaderAdmin />
+                <div className="body1">
+
+                    <div className="infoadmin">
+
                      
+                      
+                        <div className="container containerabc">
+                            
+                            <h2 className="h222"> All Registration Details </h2>
                         
+                            <input className="inputabc" type="text" placeholder="Search By Email" id="searchid" onChange={this.Handelsearch}></input>
+                            <table className="table">
 
-                        </tr>       
-                </thead>  
-                 <tbody>
-                {this.state.RegData.map((RegData,index)=>(
 
-                    <tr>
-                        <th scope="row">{index+1}</th>
-                        <td>{RegData.Name}</td>
-                        <td>{RegData.Email}</td>
-                        <td>{RegData.Num}</td>
-                       
-                       
-                        <td>
-                            <a className="btn btn-danger a123" href="#" onClick={()=>this.onDelete(RegData._id)}>
-                                <i className ="fas fa-trash-alt"></i>&nbsp;Ban User
-                            </a>
-                        </td>
-
-                       
-                    </tr>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Number</th>
+                                        <th scope='col'>Action</th>
 
 
 
-                ))}
-                
-                   
-            
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {this.state.RegData.map((RegData, index) => (
 
-                    
-                    </tbody>
-                   
-                    </table>
-                    <a className="a123" href="/rep">
-                    <button className="button12" >Generate User Report</button></a>
-                    <hr></hr>
+                                        <tr>
+                                            <th scope="row">{index + 1}</th>
+                                            <td>{RegData.Name}</td>
+                                            <td>{RegData.Email}</td>
+                                            <td>{RegData.Num}</td>
+
+
+                                            <td>
+                                                <a className="btn btn-danger a1"style={{height:"1vh",top:"-1px"}} href="#" onClick={() => this.onDelete(RegData._id)}>
+                                                    <i className="fas fa-trash-alt" style={{position:"relative",width:"19px",height:"1vh",top:"-1px"}}></i>Ban User
+                                                </a>
+                                            </td>
+
+
+                                        </tr>
+
+
+
+                                    ))}
+
+
+
+
+
+                                </tbody>
+
+                            </table>
+                            <a className="a123" href="/rep">
+                                <button className="button12" >Generate User Report</button></a>
+                            <hr></hr>
+                        </div>
+                        <hr></hr>
+
+
+
                     </div>
-                    <hr></hr>
-                    
-                    
-                   
-                    </div>
-                    </div>
-                    </div>
-)}
+                </div>
+            </div>
+        )
+    }
 
 }

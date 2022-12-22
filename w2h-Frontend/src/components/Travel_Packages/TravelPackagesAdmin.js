@@ -116,12 +116,16 @@ export default class AllPackagesAdmin extends Component {
                     class="card"
                     style={{
                       backgroundColor: "hsl(0,0%,100%,0.9)",
-                      borderColor: "black",
-
+                      borderColor:"green",
+                      borderRadius:"30px" ,
+                      borderWidth:"10px",
+                      right:"160px",
+                      top:"-70px",              
                     }}
+                    
                   >
                    
-                    <div class="card-body"  >
+                    <div class="card-body" >
                       <h5 class="card-title" >
                         {index + 1}.&nbsp; <b>{posts.packageName}</b>
                       </h5>
@@ -139,24 +143,24 @@ export default class AllPackagesAdmin extends Component {
                       </p>
                       &nbsp;&nbsp;
                       <a
-                        className="btn btn-outline-primary"
+                        className="btn btn-outline-primary" style={{height:"0vh",right:"20px",width:"120px"}}
                         href={`/travelpackages/travelpackage/admin/${posts.id}`}
                       >
-                        <i className="fas fa-eye"></i>&nbsp;View
+                        <i className="fas fa-eye" style={{right:"75px",position:"absolute",marginTop:"3px"}} ></i>View
                       </a>
-                      &nbsp;
+                
                       <a
-                        className="btn btn-outline-warning"
+                        className="btn btn-outline-warning"  style={{height:"0vh",right:"20px",width:"120px",top:"-35px",left:"150px"}}
                         href={`/travelpackage/admin/edit/${posts.id}`}
                       >
-                        <i className="fas fa-edit"></i>&nbsp;Edit
+                        <i className="fas fa-edit" style={{right:"75px",position:"absolute"}}></i>&nbsp;Edit
                       </a>
                       &nbsp;&nbsp;&nbsp;
                       <a
-                        className="btn btn-outline-danger"
+                        className="btn btn-outline-danger"style={{height:"0vh",right:"20px",width:"120px",top:"14px",right:"75px"}}
                         href={`/travelpackage/admin/delete/${posts.id}`}
                       >
-                        <i className="fas fa-trash-alt"></i>&nbsp;Delete
+                        <i className="fas fa-trash-alt" style={{right:"75px",position:"absolute",marginTop:"3px"}}></i>&nbsp;Delete
                       </a>
                     </div>
                   </div>
