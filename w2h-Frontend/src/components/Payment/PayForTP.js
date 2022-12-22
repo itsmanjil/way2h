@@ -12,9 +12,6 @@ export default class PayForTravelPackage extends Component{
     
   constructor(props){
     super(props)
-
-    
-
     this.onChangeReference =this.onChangeReference.bind(this);
     this.onChangeName =this.onChangeName.bind(this);
     this.onChangePay=this.onChangePay.bind(this);
@@ -42,17 +39,22 @@ export default class PayForTravelPackage extends Component{
       card:"",
       time:"",
       no:"",
-      amount:""
+      amount:"",
+      reward:"",
+      actualPrice:"",
+      reward_point:0
     }
    }
 
 
    componentDidMount(){
+    
     const id = this.props.match.params.id;
     axios.get(`http://localhost:8070/travelpackages/admin/${id}`).then((res)=>{
       if (res.data.success){
          this.setState({
       packageName:res.data.post.packageName,
+      actualPrice:res.data.post.perperson,
       price:res.data.post.perperson,
       img:res.data.post.packageImage,
       tdate:res.data.post.date,
@@ -61,6 +63,7 @@ export default class PayForTravelPackage extends Component{
     });
       }
     });
+    
 
 
   }
@@ -92,54 +95,132 @@ export default class PayForTravelPackage extends Component{
     onChangeAmount (e){
       this.setState({amount:e.target.value})
     }
+
+    onChangeReward=(e)=>{
+      this.setState({reward_point:e.target.value})
+      const{price, actualPrice}=this.state;
+      // this.setState({reward:e.target.value})
+      const reward = e.target.value*1;
+      const exact_price= actualPrice-reward;
+      // const discount_price = (this.state.price - reward);
+      // const reward = e.target.value*1;
+      // const exact_price = this.state.price-reward;
+      
+      // if(this.state.price <= this.state.actualPrice){
+      //   const reward = e.target.value*1
+      //   const exact_price = this.state.price-reward;
+        this.setState({
+          price:exact_price
+        })
+      // }
+      // else{
+      //   const reward = e.target.value*1
+      //   const exact_price = this.state.actualPrice-reward;
+      // }
+
+  }
     
   
 
     onSubmit= (e)=>{
-      const form = e.currentTarget;
-    if (form.checkValidity() === false) {
-    e.preventDefault();
-    e.stopPropagation();
-  }
-  else{
-
-  
-      e.preventDefault();
-      
-      console.log('Payment Added');
-      
-const{packageName,price}=this.state;
-      const{reference,name,payf,method,card,time, no,amount}=this.state;
-
-        const data={
-      reference:packageName,
-      name:name,
-      payf:payf,
-      method:method,
-      card:card,
-      time:time,
-      no:no,
-      amount:price
-      }
-
-      console.log(data)
-      axios.post("http://localhost:8070/payment/add",data).then((res=>{
-        if(res.data.success){
-
-window.location.replace("/confirm/payment")
-          this.setState(
-
-            
-          )
+      const userInfo = localStorage.getItem('userInfo');
+      // const reward =(price * 2)/100;
+      const previousReward = JSON.parse(userInfo).reward;
+      if(this.state.reward_point < previousReward){
+          if(this.state.reward_point>0 ){
+            const userInfo = localStorage.getItem('userInfo');
+          // const reward =(price * 2)/100;
+          const previousReward = JSON.parse(userInfo).reward;
+          const currentReward = previousReward - this.state.reward_point;
+          const user_id= JSON.parse(userInfo).id;
+          const name= JSON.parse(userInfo).Name;
+          const email= JSON.parse(userInfo).Email;
+          const password= JSON.parse(userInfo).Password;
+          const num= JSON.parse(userInfo).Num;
+          const Registers = {
+            Name:name, Email:email, Password:password, Num:num, reward:currentReward
           }
-        })
-          )}
-          this.setState({ validated: true })
-        }
-      
- render(){
+          axios.put(`http://localhost:8070/user/update/${user_id}`,Registers);
 
+          }
+          else{
+          const userInfo = localStorage.getItem('userInfo');
+          // const reward =(price * 2)/100;
+          const previousReward = JSON.parse(userInfo).reward;
+          const reward =(this.state.price * 2)/100;
+          const newReward = previousReward + reward;
+          const user_id= JSON.parse(userInfo).id;
+          const name= JSON.parse(userInfo).Name;
+          const email= JSON.parse(userInfo).Email;
+          const password= JSON.parse(userInfo).Password;
+          const num= JSON.parse(userInfo).Num;
+          const Registers = {
+            Name:name, Email:email, Password:password, Num:num, reward:newReward
+          }
+          axios.put(`http://localhost:8070/user/update/${user_id}`,Registers);
+
+          // history.push("/profile");
+          alert("  Successful")
+        }       
+          const form = e.currentTarget;
+            if (form.checkValidity() === false) {
+            e.preventDefault();
+            e.stopPropagation();
+          }
+          else{
+
+              e.preventDefault();
+              
+              console.log('Payment Added');
+              
+          const{packageName,price}=this.state;
+                const{reference,name,payf,method,card,time, no,amount}=this.state;
+                const reward =(price * 2)/100;
+                
+                const data={
+                reference:packageName,
+                name:name,
+                payf:payf,
+                method:method,
+                card:card,
+                time:time,
+                no:no,
+                amount:price,
+                reward:reward
+                }
+
+                console.log(data)
+                axios.post("http://localhost:8070/payment/add",data).then((res=>{
+                  if(res.data.success){
+
+                    window.location.replace("/confirm/payment")
+                    this.setState(
+
+                      
+                    )
+                    }
+                  })
+                    )}
+                    this.setState({ validated: true })
+     }
+     else{
+       alert("Not enough funds")
+
+     }
+             
+             
+              
+ }
+        
+            
+ render(){
     const{packageName,price,payf,method,img,tdate,noofD,noofN}=this.state;
+    // const userInfo = localStorage.getItem('userInfo');
+    // // const reward =(price * 2)/100;
+    // const previousReward = JSON.parse(userInfo).reward;
+    // const reward =(this.state.price * 2)/100;
+    // const newReward = previousReward + reward;
+    // console.log(newReward);
    return(
      <div>
        <Header/>
@@ -173,6 +254,21 @@ window.location.replace("/confirm/payment")
                     <div class="row lower">
                         <div class="col text-lefta"><b>Price Per Person</b></div>
                         <div class="col text-righta"><b>{price}</b></div>
+                    </div>
+                    <div class="row lower">
+                        <div class="col text-lefta"><b>Reward Point for Buying</b></div>
+                        {/* <div class="col text-righta"><b></b></div> */}
+                        {/* <form onSubmit={this.onSubmit}> */}
+                        <div class="form-outline mb-2 col-9">
+                        <input
+                    type="text"
+                    id="formControlLgcvv"
+                    class="form-control form-control-lg"
+                    placeholder="Points" maxLength="3" onChange={this.onChangeReward} required ="required" /> 
+                    </div>
+                    {/* <button type="submit" class="btn btn-danger btn-lg btn-block" style={{height:"43px"}}><b>Use Reward</b></button> */}
+                    {/* </form> */}
+                        
                     </div>
                     <br/> 
                     <p class="text-muted text-center">Apply Terms and Condition</p>

@@ -15,7 +15,7 @@ const paymentSchema = new Schema({
 
     method: {
         type: String,
-        required: true
+        // required: true
 
     },
     card: {
@@ -45,6 +45,10 @@ const paymentSchema = new Schema({
         type:Date,
         default:Date.now
     },
+    reward:{
+        type:Number,
+        // required: true
+    }
    
 })
 

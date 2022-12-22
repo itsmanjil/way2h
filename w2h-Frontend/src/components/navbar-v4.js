@@ -176,10 +176,14 @@ const NavbarV3 = () => {
                           <Link to="/contactus">Contact</Link>
                         </li>
                         <li className="menu-icon">
-                          {userInfo === undefined ||
-                            (userInfo !== null && (
+                          {userInfo ? (
                               <Link to="/Profile">My-account</Link>
-                            ))}
+                            )
+                            :
+                            (
+                              <Link to=""></Link>
+                            )
+                          }
                         </li>
                         <li className="special-link">
                           {userInfo ? (
