@@ -6,6 +6,8 @@ import { configure } from "@testing-library/react";
 import Header from "../Header";
 import Footer from "../Footer";
 import { toast } from "react-toastify";
+import { ElseIf } from "react-if-elseif-else-render";
+import NavbarV3 from "../navbar-v4";
 
 // eslint-disable-next-line no-empty-pattern
 export default function RegisterUser({}) {
@@ -25,6 +27,19 @@ export default function RegisterUser({}) {
     }
   }, [history]);
   function sendData() {
+    if (Name === "" || Name === null || !isNaN(Name)) {
+      alert("Name Required. Please enter a valid name.");
+      return false;
+    } else if (Email === "" || Email.includes("@" && ".com") === false) {
+      alert("Enter Valid email Address");
+      return false;
+    } else if (Password === "" || Password == null || Password.length < 8) {
+      alert("password Required");
+      return false;
+    } else if (Num === "" || Num == null || Num.length < 10) {
+      alert("Number Required");
+      return false;
+    }
     const NewReg = {
       Name,
       Email,
@@ -91,8 +106,7 @@ export default function RegisterUser({}) {
 
   return (
     <div>
-      {" "}
-      <Header />
+      <NavbarV3 />{" "}
       <div className="body1 ">
         <div className="info">
           <div className="container containerabc" id="container">
