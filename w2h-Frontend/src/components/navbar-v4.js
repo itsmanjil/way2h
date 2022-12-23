@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
-// import "../../assets/css/style.css";
-
+// import "../../public/assets/css/style.css";
 
 const NavbarV3 = () => {
   const history = useHistory();
@@ -198,7 +197,7 @@ const NavbarV3 = () => {
                               LogOut
                             </Link>
                           ) : (
-                            <Link to="/register">SignIn/SignUp</Link>
+                            <Link to="/register">SignIn</Link>
                           )}
                         </li>
                       </ul>

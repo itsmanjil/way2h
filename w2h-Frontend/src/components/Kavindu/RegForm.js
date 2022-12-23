@@ -26,7 +26,9 @@ export default function RegisterUser({}) {
       history.push("/profile");
     }
   }, [history]);
-  function sendData() {
+
+  function sendData(e) {
+    e.preventDefault();
     if (Name === "" || Name === null || !isNaN(Name)) {
       alert("Name Required. Please enter a valid name.");
       return false;
@@ -100,6 +102,7 @@ export default function RegisterUser({}) {
 
       console.log("err");
     } catch (error) {
+      toast.error("error!");
       setError(error.response.data.message);
     }
   };

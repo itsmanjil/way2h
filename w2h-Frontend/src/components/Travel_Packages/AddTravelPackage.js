@@ -109,9 +109,10 @@ const CreatePackage = () => {
                       required
                     >
                       <option>Select</option>
-                      <option>kapan</option>
                       <option>chabail</option>
                       <option>thamel</option>
+                      <option>kalanki</option>
+                      <option>koteshor</option>
                     </select>
 
                     {/* <input

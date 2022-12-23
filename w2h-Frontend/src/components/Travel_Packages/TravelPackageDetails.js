@@ -71,9 +71,9 @@ export default class PackageDetails extends Component {
 
     return (
       <>
-        <div className="boodydetails">
+        <div>
           {/* <Header /> */}
-          <NavbarV3 />
+          {/* <NavbarV3 /> */}
 
           <Pageheader headertitle={packageName} />
           <div className="infotr boodydetails">

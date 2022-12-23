@@ -1,12 +1,18 @@
 import React from "react";
-import "../Styles/HeaderFooter.css";
-import img1 from "../Images/logoo.png";
+// import "../Styles/HeaderFooter.css";
+// import "../Styles/css/traveldetail.css";
+// import img1 from "../Images/logo.png";
+import NavbarV3 from "./navbar-v4";
 
 function Header() {
+  // const userInfo=localStorage.getItem('userInfo');
+  // if(userInfo==null){
+  //    alert("You are not Authorized User. Please sign in first.")
+  //  window.location.replace("/register")}
   return (
     <div class="wrapper">
       <div class="main_content">
-        <header class="fixed-top">
+        {/* <header class="fixed-top">
           <div class="header">
             <div>
               <div id="logott">
@@ -14,7 +20,7 @@ function Header() {
               </div>
               <div id="hname">
                 <h1>
-                  <b> Dream Travelers</b>
+                  <b> Way2Heaven</b>
                 </h1>
               </div>
 
@@ -35,7 +41,7 @@ function Header() {
                   }}
                 >
                   {" "}
-                  <i class="fas fa-user-alt"></i>{" "}
+                  <i className="fas fa-user-alt"></i>{" "}
                 </a>
               </div>
             </div>
@@ -49,24 +55,32 @@ function Header() {
                 <a></a>
               </li>
 
-              <li class="menupp">
-                <a class="actively" href="/aboutus">
+              <li className="menupp">
+                <a className="actively" href="/aboutus">
                   About Us
                 </a>
               </li>
-              <li class="menupp">
+              <li className="menupp">
                 <a href="/services">Services</a>
               </li>
-              <li class="menupp">
+              <li className="menupp">
                 <a href="/contactus">Contact Us</a>
               </li>
-              <li class="menupp">
+              <li className="menupp">
                 <a href="/gallery">Gallery</a>{" "}
               </li>
             </div>
           </div>
         </header>
+        {/* <header className="fixed-top">
+          <NavbarV3 />
+        </header> */}
+        {/* <header class="fixed-top"> */}
+
+        <NavbarV3 />
+        {/* </header> */}
       </div>
+      //{" "}
     </div>
   );
 }

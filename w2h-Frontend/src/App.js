@@ -90,7 +90,14 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <Router>
-      {/* <NavbarV3 /> */}
+      {/* Token xa ra  || xaina  */}
+      {/* <Route> */}
+      <NavbarV3 />
+      {/*sab user path */}
+      {/* </Route> */}
+
+      
+
 
       <div>
         <Route path="/" exact component={Home_V5}></Route>
