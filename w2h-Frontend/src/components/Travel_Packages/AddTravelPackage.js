@@ -3,10 +3,9 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "../../Styles/TravelPackage.css";
 import HeaderAdmin from "../HeaderAdmin";
-import 'react-toastify/dist/ReactToastify.min.css';
+import "react-toastify/dist/ReactToastify.min.css";
 import { Auth } from "../notify";
-import { ToastContainer, toast } from 'react-toastify';
-
+import { ToastContainer, toast } from "react-toastify";
 
 const CreatePackage = () => {
   let history = useHistory();
@@ -59,12 +58,12 @@ const CreatePackage = () => {
     history.push("/travelpackages/admin");
     // alert(" Travel Package Added Successful");
     Auth.notify("success", "Travel Package Added Successfully");
-    <ToastContainer />
+    <ToastContainer />;
   };
   return (
     <div>
       <HeaderAdmin />
-      <div className="infoadmin" >
+      <div className="infoadmin">
         <div className="bodyaa" id="bodytbc">
           <div>
             <div>
@@ -72,7 +71,7 @@ const CreatePackage = () => {
                 class="signup-form signup-formtr"
                 onSubmit={changeOnClick}
                 encType="multipart/form-data"
-                style={{position:"relative",top:"-38px"}}
+                style={{ position: "relative", top: "-38px" }}
               >
                 <div class="form-header form-headertr">
                   <h1 style={{ color: "white" }}>
@@ -99,9 +98,23 @@ const CreatePackage = () => {
 
                   <div class="form-group form-grouptr">
                     <lable class="label-title">
-                      <b>Destination *</b>
+                      <strong>Destination</strong>
                     </lable>
-                    <input
+                    <select
+                      name="destination"
+                      id="floatingInput"
+                      className="form-control border-dark"
+                      value={destination}
+                      onChange={(e) => setDestination(e.target.value)}
+                      required
+                    >
+                      <option>Select</option>
+                      <option>kapan</option>
+                      <option>chabail</option>
+                      <option>thamel</option>
+                    </select>
+
+                    {/* <input
                       type="text"
                       name="destination"
                       class="form-input"
@@ -110,7 +123,7 @@ const CreatePackage = () => {
                       onChange={(e) => setDestination(e.target.value)}
                       required="required"
                     />
-                    <br />
+                    <br /> */}
                   </div>
 
                   <div class="horizontal-group horizontal-grouptr">
@@ -129,13 +142,12 @@ const CreatePackage = () => {
                       />
                       <br />
                     </div>
-
                     <div class="form-group form-grouptr right">
                       <lable class="label-title">
                         <b>Date *</b>
                       </lable>
                       <input
-                        type="text"
+                        type="date"
                         name="date"
                         class="form-input"
                         placeholder="date"

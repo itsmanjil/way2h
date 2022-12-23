@@ -24,6 +24,7 @@
     "react-pdf-print": "^0.2.0",
     "react-rating-stars-component": "^2.2.0",
     "react-router-dom": "^5.2.0",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "^4.0.3",
     "react-scroll-parallax": "^2.4.0",
     "react-to-print": "^2.13.0",

@@ -8,7 +8,6 @@ import Footer from "../Footer";
 import Reactstars from "react-rating-stars-component";
 import Pageheader from "./page-header";
 import { Link } from "react-router-dom";
-import "../../assets/css/style.css";
 
 export default class CardItemsT extends Component {
   constructor(props) {
@@ -145,8 +144,8 @@ export default class CardItemsT extends Component {
     console.log(pageCount);
     return (
       <div>
-        <Header />
-        {/* <NavbarV3 /> */}
+        {/* <Header /> */}
+        <NavbarV3 />
         <Pageheader headertitle="Package" />
         <div className="ltn__product-area ltn__product-gutter mb-100">
           <div className="container">

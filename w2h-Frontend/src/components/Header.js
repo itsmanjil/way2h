@@ -1,99 +1,12 @@
 import React from "react";
-// import "../Styles/HeaderFooter.css";
-// import img1 from "../Images/logo.png";
-import NavbarV3 from "./navbar-v4";
+import "../Styles/HeaderFooter.css";
+import img1 from "../Images/logoo.png";
 
 function Header() {
-  // const userInfo=localStorage.getItem('userInfo');
-  // if(userInfo==null){
-  //    alert("You are not Authorized User. Please sign in first.")
-  //  window.location.replace("/register")}
   return (
     <div class="wrapper">
-      {/* <div class="sidebar">
-        <ul>
-          <i
-            className="fas fa-plane-departure"
-            style={{
-              textDecoration: "none",
-              color: "rgba(116, 116, 116, 0)",
-              fontSize: "105px",
-            }}
-          >
-            {" "}
-          </i>
-
-          <li>
-            {" "}
-            <a href="/" style={{ textDecoration: "none", color: "white" }}>
-              <i className="fas fa-home"></i>Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="/travelpackages"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <i className="fas fa-car"></i>Travel Package
-            </a>
-          </li>
-          <li>
-            <a
-              href="/hotelpackage"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <i className="fas fa-bed"></i>Room Package
-            </a>
-          </li>
-          <li>
-            <a href="/all" style={{ textDecoration: "none", color: "white" }}>
-              <i className="fas fa-running"></i>Activity
-            </a>
-          </li>
-          <li>
-            <a
-              href="/equipment"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <i className="fas fa-campground"></i>Equipment
-            </a>
-          </li>
-          <li>
-            <a
-              href="/guide/all"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <i className="fas fa-home"></i>Guides
-            </a>
-          </li>
-          <li>
-            <a
-              href="/feedback"
-              style={{ textDecoration: "none", color: "white" }}
-            >
-              <i className="fas fa-comments"></i>FeedBack
-            </a>
-          </li>
-          <li>
-            <a href="/add" style={{ textDecoration: "none", color: "white" }}>
-              <i className="fas fa-exclamation-circle"></i>Inquiry
-            </a>
-          </li>
-        </ul>
-        <div className="social_media">
-          <a href="#">
-            <i className="fab fa-facebook-f"></i>
-          </a>
-          <a href="#">
-            <i className="fab fa-twitter"></i>
-          </a>
-          <a href="#">
-            <i className="fab fa-instagram"></i>
-          </a>
-        </div>
-      </div> */}
-      {/* <div class="main_content"> */}
-      {/* <header class="fixed-top">
+      <div class="main_content">
+        <header class="fixed-top">
           <div class="header">
             <div>
               <div id="logott">
@@ -101,7 +14,7 @@ function Header() {
               </div>
               <div id="hname">
                 <h1>
-                  <b> Way2Heaven</b>
+                  <b> Dream Travelers</b>
                 </h1>
               </div>
 
@@ -122,7 +35,7 @@ function Header() {
                   }}
                 >
                   {" "}
-                  <i className="fas fa-user-alt"></i>{" "}
+                  <i class="fas fa-user-alt"></i>{" "}
                 </a>
               </div>
             </div>
@@ -136,32 +49,25 @@ function Header() {
                 <a></a>
               </li>
 
-              <li className="menupp">
-                <a className="actively" href="/aboutus">
+              <li class="menupp">
+                <a class="actively" href="/aboutus">
                   About Us
                 </a>
               </li>
-              <li className="menupp">
+              <li class="menupp">
                 <a href="/services">Services</a>
               </li>
-              <li className="menupp">
+              <li class="menupp">
                 <a href="/contactus">Contact Us</a>
               </li>
-              <li className="menupp">
+              <li class="menupp">
                 <a href="/gallery">Gallery</a>{" "}
               </li>
             </div>
           </div>
         </header>
-        {/* <header className="fixed-top">
-          <NavbarV3 />
-        </header> */}
-      {/* <header class="fixed-top"> */}
-      
-      <NavbarV3 />
-      {/* </header> */}
       </div>
-    // </div>
+    </div>
   );
 }
 
