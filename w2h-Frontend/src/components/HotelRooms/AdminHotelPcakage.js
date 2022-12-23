@@ -42,16 +42,16 @@ export default class AdminHotelBooking extends Component {
         <br></br>
         <div className="infoadmin" style={{position:"absolute",left:"30px"}}>
           <div classname="addbttn">
-            <button className="btn btn-success">
+            <button className="btn btn-success"  style={{position:"relative",height:"7vh"}}>
               <a
                 href="/adminaddhotelpackage"
                 style={{ textDecoration: "none", color: "white" }}
               >
-                <i classname="fas fa-plus mr-4"></i>Add New Package
+                <i classname="fas fa-plus mr-1"></i>Add New Package
               </a>
             </button>
             &nbsp;
-            <button className="btn btn-success">
+            <button className="btn btn-warning"  style={{position:"relative",height:"7vh"}}>
               <a
                 href="/adminhotelbooking"
                 style={{ textDecoration: "none", color: "white" }}

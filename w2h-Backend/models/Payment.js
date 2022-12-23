@@ -46,7 +46,7 @@ const paymentSchema = new Schema({
         default:Date.now
     },
    
-})
+})  
 
 const Payment = mongoose.model("Payment",paymentSchema);
 
