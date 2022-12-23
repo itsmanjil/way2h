@@ -34,20 +34,20 @@ const AdminEquipment = () => {
         <HeaderAdmin/>
         <div className="infoadmin">
       <div className="TEcenter">
-      <div style={{paddingRight:"100px", paddingTop:"10px"}}><Link class="btn btn-primary mr-2" to="/equipment/report" style={{float:"right"}}>
+      <div style={{paddingRight:"100px", paddingTop:"10px"}}><Link class="btn btn-primary mr-2" to="/equipment/report" style={{float:"right",height:"50px"}}>
                     Report
                   </Link></div>
-                <div><Link class="btn btn-primary mr-2" to="/equipment/add" style={{float:"right"}}>
+                <div><Link class="btn btn-primary mr-1" to="/equipment/add" style={{float:"right",height:"50px",background:"red"}}>
                     Add Equipment
                   </Link></div> <br/> <br/> <br/> 
                   <Row xs={1} md={1} className="g-4" id="by" class="rounded" style={{height:"270px", width:"90%"}} >
           {equipments.map((equipment, idx) => (
           
 
-<div class="card mb-3" >
-  <div class="row g-0">
+<div class="card mb-3"style={{position:"relative",right:"99px"}} >
+  <div class="row " style={{position:"relative"}}>
     <div class="col-md-2"><br/>
-      <img src={`/uploads/${equipment.image}`} alt="..."  class="img-fluid rounded-start" style={{height:"200px", width:"200px", paddingRight:"5px"}} />
+      <img src={`/uploads/${equipment.image}`} alt="..."  class="img-fluid rounded-start" style={{height:"200px", width:"200px"}} />
     </div>
     <div class="col-md-10">
       <div class="card-body"> <br/>
@@ -66,15 +66,15 @@ const AdminEquipment = () => {
 
    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
    
-    <div class="form-outline mb-2 " style={{paddingLeft:"70%"}}>
-                  <Link style={{float:"right"}}
+    <div class="form-outline mb-2 " style={{paddingLeft:"70%",height:"6vh"}}>
+                  <Link style={{float:"right",height:"6vh",top:"-14px"}}
                     class="btn btn-danger"
                     onClick={() => deleteEquipment(equipment._id)}
                   >
                     Delete
                   </Link>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <Link style={{top:"115px",position:"absolute",right:"90px"}}
+                  <Link style={{top:"115px",position:"absolute",right:"170px",height:"6vh"}}
                     class="btn btn-outline-primary mr-3"
                     to={`/equipment/edit/${equipment._id}`}
                   >
