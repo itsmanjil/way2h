@@ -23,6 +23,9 @@ const RegSchema = new Schema({
         type: Number,
         required: true
 
+    },
+    reward:{
+        type: Number
     }
 
 });

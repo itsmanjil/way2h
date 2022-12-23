@@ -11,13 +11,15 @@ router.route("/add").post((req,res)=>{
     const Email = req.body.Email;
     const Num =req.body.Num;
     const Password = req.body.Password;
+    const reward = req.body.Password;
    
 
     const NewAdd = new Reg({
         Name,
         Email,
         Password,
-        Num
+        Num,
+        reward
 
     })
     
@@ -56,7 +58,9 @@ router.route("/login").post((req,res)=>{
             id:Registers._id,
             Name:Registers.Name,
             Email:Registers.Email,
+            reward:Registers.reward,
             Password:Registers.Password,
+            Num:Registers.Num,
             token:generateToken(Registers._id)
            
         });

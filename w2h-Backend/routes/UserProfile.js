@@ -32,13 +32,15 @@ router.route("/Update/:id").put((req,res)=>{
     const Email = req.body.Email;
     const Password = req.body.Password;
     const Num = req.body.Num;
+    const reward = req.body.reward;
 
     const UpdateUser = {
 
         Name,
         Email,
         Password,
-        Num
+        Num,
+        reward
     }
 
     const Update = User.findByIdAndUpdate(id,UpdateUser)
