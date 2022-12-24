@@ -8,7 +8,6 @@ import Footer from "../Footer";
 import Reactstars from "react-rating-stars-component";
 import Pageheader from "./page-header";
 import { Link } from "react-router-dom";
-import "../../assets/css/style.css";
 
 export default class CardItemsT extends Component {
   constructor(props) {
@@ -145,8 +144,8 @@ export default class CardItemsT extends Component {
     console.log(pageCount);
     return (
       <div>
-        <Header />
-        {/* <NavbarV3 /> */}
+        {/* <Header /> */}
+        <NavbarV3 />
         <Pageheader headertitle="Package" />
         <div className="ltn__product-area ltn__product-gutter mb-100">
           <div className="container">
@@ -222,7 +221,10 @@ export default class CardItemsT extends Component {
                         {this.state.posts.map((posts, idx) => (
                           <div className="col-lg-4 col-sm-6 col-12">
                             <div className="ltn__product-item ltn__product-item-4 ltn__product-item-5 text-center---">
-                              <div className="product-img">
+                              <div
+                                className="product-img"
+                                style={{ height: "250px" }}
+                              >
                                 <Link
                                   to={`/travelpackages/travelpackage/${posts._id}`}
                                 >

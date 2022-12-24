@@ -4,6 +4,8 @@ import Footer from "../Footer";
 import AddRating from "./PackageAddRating";
 import Header from "../Header";
 import Pageheader from "./page-header";
+// import "../../assets/css/style.css";
+import NavbarV3 from "../navbar-v4";
 
 export default class PackageDetails extends Component {
   constructor(props) {
@@ -69,8 +71,10 @@ export default class PackageDetails extends Component {
 
     return (
       <>
-        <div className="boodydetails">
+        <div>
           <Header />
+          {/* <NavbarV3 /> */}
+
           <Pageheader headertitle={packageName} />
           <div className="infotr boodydetails">
             <div className="container">

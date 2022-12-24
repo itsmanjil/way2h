@@ -65,31 +65,30 @@ export default class AllPackagesAdmin extends Component {
           style={{
             backgroundImage:
               "url('https://www.teahub.io/photos/full/236-2363540_world-map-travel-background.jpg')",
-
+            height: "107vh",
           }}
         >
           <div className="container">
             <br />
             <div
               style={{
-                backgroundColor: "transparent",
-                paddingBottom: "-10px",
+                backgroundColor: "hsla(90, 100%, 0%, 0.57)",
+                paddingBottom: "15px",
                 paddingTop: "15px",
               }}
             >
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button className="btn btn-success" style={{height:"7vh"}}>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button className="btn btn-success">
                 <a
                   href="/travelpackage/admin/add"
                   style={{ textDecoration: "none", color: "white" }}
                 >
                   <i class="fas fa-plus mr-2"></i>Add New Package
                 </a>
-                
               </button>
-              &nbsp;&nbsp;
-              &nbsp;&nbsp;
-              <button className="btn btn-danger"style={{height:"7vh"}}>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button className="btn btn-success">
                 <a
                   href="/allbooking"
                   style={{ textDecoration: "none", color: "white" }}
@@ -100,33 +99,27 @@ export default class AllPackagesAdmin extends Component {
               <input
                 id="search-input form1"
                 type="search"
-                style={{ marginLeft: "399px" }}
+                style={{ marginLeft: "530px" }}
                 placeholder="Search Package"
                 onChange={this.handleSearchArea}
               />
-              <button id="search-button" type="button" class="btn btn-primary" style={{height:"1px",width:"3px",left:"3px",position:"relative"}}>
-                <i class="fas fa-search" style={{top:"10px",position:"absolute"}}></i>
+              <button id="search-button" type="button" class="btn btn-primary">
+                <i class="fas fa-search"></i>
               </button>
             </div>
             <hr />
-            <Row xs={1} md={3} className="g-4 " id="by" class="rounded" >
+            <Row xs={1} md={3} className="g-4 " id="by" class="rounded">
               {this.state.posts.map((posts, index) => (
                 <Col key={index}>
                   <div
                     class="card"
                     style={{
                       backgroundColor: "hsl(0,0%,100%,0.9)",
-                      borderColor:"green",
-                      borderRadius:"30px" ,
-                      borderWidth:"10px",
-                      right:"160px",
-                      top:"-70px",              
+                      borderColor: "black",
                     }}
-                    
                   >
-                   
-                    <div class="card-body" >
-                      <h5 class="card-title" >
+                    <div class="card-body">
+                      <h5 class="card-title">
                         {index + 1}.&nbsp; <b>{posts.packageName}</b>
                       </h5>
                       <h6 class="card-subtitle mb-2 text-muted">
@@ -143,24 +136,24 @@ export default class AllPackagesAdmin extends Component {
                       </p>
                       &nbsp;&nbsp;
                       <a
-                        className="btn btn-outline-primary" style={{height:"0vh",right:"20px",width:"120px"}}
+                        className="btn btn-outline-primary"
                         href={`/travelpackages/travelpackage/admin/${posts.id}`}
                       >
-                        <i className="fas fa-eye" style={{right:"75px",position:"absolute",marginTop:"3px"}} ></i>View
+                        <i className="fas fa-eye"></i>&nbsp;View
                       </a>
-                
+                      &nbsp;
                       <a
-                        className="btn btn-outline-warning"  style={{height:"0vh",right:"20px",width:"120px",top:"-35px",left:"150px"}}
+                        className="btn btn-outline-warning"
                         href={`/travelpackage/admin/edit/${posts.id}`}
                       >
-                        <i className="fas fa-edit" style={{right:"75px",position:"absolute"}}></i>&nbsp;Edit
+                        <i className="fas fa-edit"></i>&nbsp;Edit
                       </a>
                       &nbsp;&nbsp;&nbsp;
                       <a
-                        className="btn btn-outline-danger"style={{height:"0vh",right:"20px",width:"120px",top:"14px",right:"75px"}}
+                        className="btn btn-outline-danger"
                         href={`/travelpackage/admin/delete/${posts.id}`}
                       >
-                        <i className="fas fa-trash-alt" style={{right:"75px",position:"absolute",marginTop:"3px"}}></i>&nbsp;Delete
+                        <i className="fas fa-trash-alt"></i>&nbsp;Delete
                       </a>
                     </div>
                   </div>
