@@ -92,7 +92,7 @@ function App() {
     <Router>
       {/* Token xa ra  || xaina  */}
       <Route>
-        <NavbarV3 />
+        {/* <NavbarV3 /> */}
         <Route path="/Register" exact component={RegisterUser} />
         <Route path="/" exact component={Home_V5}></Route>
         <Route path="/gallery" exact component={Gallery} />
@@ -161,11 +161,7 @@ function App() {
         {/*sab user path */}
       </Route>
 
-
-
-
       <div>
-
         {/* <Route path="/" exact component={PackageDetailed}></Route> */}
 
         <Route
@@ -237,7 +233,6 @@ function App() {
         <Route path="/get" exact component={Display} />
         <Route path="/admin" exact component={admin} />
 
-
         <Route path="/rep" exact component={UserRepo} />
         <Route path="/equipment/add" exact component={AddEquipment} />
         <Route path="/equipment/edit/:id" exact component={EditEquipment} />
@@ -247,12 +242,7 @@ function App() {
         <Route path="/feedbacks/admin" exact component={AllFeedback} />
         <Route path="/contactus/admin" exact component={ContactUsAdmin} />
 
-
-
-
         <Route path="/payment/" exact component={AllPayments} />
-
-
 
         <Route path="/adminhome" exact component={AdminHome} />
 
@@ -265,7 +255,6 @@ function App() {
         <Route path="/guide/handle/:id" exact component={GuideConfirm} />
         <Route path="/guide/request/:id" exact component={GuideRequest} />
         <Route path="/guide/allrequests" exact component={AllRequests} />
-
 
         <Route path="/activity/:id" exact component={Activity} />
         <Route path="/activity-details" exact component={ActivityDetails} />
@@ -284,7 +273,6 @@ function App() {
         <Route path="/adView/" component={AdminView}></Route>
         <Route path="/report" component={ComponentToPrint}></Route>
         <Route path="/userDoc/:id" component={ComponentToPrint1}></Route>
-
 
         <Route path="/edittpackage/:id" component={EditTPackage}></Route>
         <Route path="/inqmail/:id" component={Inqmail}></Route>

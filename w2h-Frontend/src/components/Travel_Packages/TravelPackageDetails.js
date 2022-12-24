@@ -72,7 +72,7 @@ export default class PackageDetails extends Component {
     return (
       <>
         <div>
-          {/* <Header /> */}
+          <Header />
           {/* <NavbarV3 /> */}
 
           <Pageheader headertitle={packageName} />
