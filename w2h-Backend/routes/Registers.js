@@ -4,6 +4,15 @@ const generateToken = require("../utils/generateToken");
 
 //localhost:8070/Register/add
 
+const {
+  forgotPassword,
+  resetPassword,
+} = require("../controllers/usercontroller");
+
+router.route("/password/forgot").post(forgotPassword);
+
+router.route("/password/reset/:token").put(resetPassword);
+
 http: router.route("/add").post((req, res) => {
   const Name = req.body.Name;
   const Email = req.body.Email;
