@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Header from "../Header";
 import Footer from "../Footer";
 import axios from "axios";
+import Pageheader from "../Travel_Packages/page-header";
 
 const ViewActivity = (props) => {
   const [aname, setActivityName] = useState("");
@@ -29,8 +30,152 @@ const ViewActivity = (props) => {
   return (
     <div>
       <Header />
+      <Pageheader headertitle={aname} />
+
       <ActivityContainer>
-        <div className="info">
+        <div className="infotr boodydetails">
+          <div className="container">
+            <div className={{ paddingBottom: "10px" }}>
+              <hr />
+            </div>
+            <ul
+              class="postcard__tagbox"
+              style={{ fontSize: "16px", marginTop: "40px" }}
+            >
+              <li>
+                <small class="text-muted" style={{ marginInlineStart: "2%" }}>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    style={{ width: "100px" }}
+                  >
+                    <a
+                      href="/all"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
+                      <i class="fas fa-angle-left mr-2"></i>Back
+                    </a>
+                  </button>
+                </small>{" "}
+              </li>
+              <div style={{ marginInlineStart: "59%" }}>
+                <li class="tag__item">
+                  <i class="fab fa-cc-visa mr-2"></i>Visa Payment
+                </li>
+                <li class="tag__item">
+                  <i class="fas fa-paper-plane mr-2"></i>Full Option
+                </li>
+                <li class="tag__item play blue">
+                  {" "}
+                  <i class="fas fa-hands mr-2"></i>Security{" "}
+                </li>
+              </div>
+            </ul>
+            <hr />
+            <br />
+
+            <div class="card">
+              <img
+                style={{ height: "580px" }}
+                class="card-img-top"
+                src={`/uploads/${fileName}`}
+                alt="..."
+              />
+              <div class="card-body" style={{ backgroundColor: "#DDE8E8" }}>
+                <h5 class="card-title"> {aname}</h5>
+                {/* <p class="card-text"> {date} </p> */}
+                <p class="card-text">
+                  <i class="fas fa-long-arrow-alt-right mr-2"></i>
+                  <b> {category} </b>{" "}
+                </p>
+                <p class="card-text">
+                  <i class="fas fa-long-arrow-alt-right mr-2"></i>
+                  <b> {description} </b>{" "}
+                </p>
+              </div>
+
+              <div
+                class="modal custom-fade"
+                id="exampleModalCenter"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true"
+              >
+                {/* <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div
+                    class="modal-content"
+                    style={{
+                      width: "400px",
+                      height: "200px",
+                      alignContent: "center",
+                    }}
+                  >
+                    <div>
+                      <AddRating id={_id} />
+                    </div>
+                  </div>
+                </div> */}
+              </div>
+
+              <div
+                className="card-footer"
+                style={{ backgroundColor: "#ADADAD" }}
+              >
+                <ul className="postcard__tagbox" style={{ fontSize: "16px" }}>
+                  <li className="tag__item">
+                    <i className="fas fa-tag mr-2"></i>Rs.&nbsp;{price}
+                  </li>
+                  {/* <li className="tag__item">
+                    <i className="fas fa-clock mr-2"></i>
+                    {noofdays}&nbsp;{noofnights}
+                  </li> */}
+                  {/* <li className="tag__item play blue">
+                    {" "}
+                    <i className="fas fa-car mr-2"></i>
+                    {vehical}{" "}
+                  </li> */}
+
+                  {/* <li style={{ marginLeft: "12%", paddingBottom: "5px" }}>
+                    <button
+                      style={{ width: "200px" }}
+                      type="button"
+                      className="btn btn-success"
+                      data-toggle="modal"
+                      data-target="#exampleModalCenter"
+                    >
+                      <b>Give Rating</b>
+                    </button>
+                  </li> */}
+
+                  <li style={{ marginLeft: "18%", paddingBottom: "5px" }}>
+                    <small className="text-muted">
+                      {" "}
+                      <button
+                        type="submit"
+                        className="btn btn-danger"
+                        style={{ width: "250px", fontSize: "20px" }}
+                      >
+                        <a
+                          href={`/activity-user/${props.match.params.id}`}
+                          style={{
+                            textDecoration: "none",
+                            color: "white",
+                            width: "250px",
+                            fontSize: "20px",
+                          }}
+                        >
+                          Select Activity
+                        </a>
+                      </button>
+                    </small>{" "}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <div className="info">
           <div className="container">
             <div className="row my-5">
               <div className="col-sm-2">
@@ -67,7 +212,7 @@ const ViewActivity = (props) => {
               Select Activity
             </Link>
           </div>
-        </div>
+        </div> */}
       </ActivityContainer>
       <Footer />
     </div>
