@@ -111,10 +111,15 @@ const CreatePackage = () => {
                       style={{position:"relative",top:"-45px",height:"7vh"}}
                     >
                       <option>Select</option>
-                      <option>chabail</option>
-                      <option>thamel</option>
-                      <option>kalanki</option>
-                      <option>koteshor</option>
+                      <option>Pokara</option>
+                      <option>Kathmandu</option>
+                      <option>chitwan</option>
+                      <option>Bhaktapur</option>
+                      <option>solukhumbu</option>
+                      <option>Gorkha</option>
+                      <option>Lumbini</option>
+                      <option>solukhumbu</option>
+
                     </select>
 
                     {/* <input
