@@ -112,23 +112,35 @@ const EditPackage = (props) => {
                       onChange={(e) => setPackagename(e.target.value)}
                       required="required"
                     />
-                    <br />
                   </div>
 
                   <div class="form-group form-grouptr">
                     <lable class="label-title">
-                      <b>Destination *</b>
+                      <strong>Destination</strong>
                     </lable>
-                    <input
-                      type="text"
+                    <select
                       name="destination"
-                      class="form-input"
-                      placeholder="destination"
+                      id="floatingInput"
+                      className="form-control border-dark"
                       value={destination}
                       onChange={(e) => setDestination(e.target.value)}
-                      required="required"
-                    />
-                    <br />
+                      required
+                      style={{
+                        position: "relative",
+                        top: "-45px",
+                        height: "7vh",
+                      }}
+                    >
+                      <option>Select</option>
+                      <option>Pokara</option>
+                      <option>Kathmandu</option>
+                      <option>chitwan</option>
+                      <option>Bhaktapur</option>
+                      <option>solukhumbu</option>
+                      <option>Gorkha</option>
+                      <option>Lumbini</option>
+                      <option>solukhumbu</option>
+                    </select>
                   </div>
 
                   <div class="horizontal-group horizontal-grouptr">
@@ -145,7 +157,6 @@ const EditPackage = (props) => {
                         onChange={(e) => setDiscription(e.target.value)}
                         required="required"
                       />
-                      <br />
                     </div>
 
                     <div class="form-group form-grouptr right">
@@ -161,7 +172,6 @@ const EditPackage = (props) => {
                         onChange={(e) => setDate(e.target.value)}
                         required="required"
                       />
-                      <br />
                     </div>
                   </div>
 
@@ -180,7 +190,6 @@ const EditPackage = (props) => {
                         required="required"
                         onChange={(e) => setDays(e.target.value)}
                       />
-                      <br />
                     </div>
 
                     <div class="form-group form-grouptr right">
@@ -197,7 +206,6 @@ const EditPackage = (props) => {
                         required="required"
                         onChange={(e) => setNights(e.target.value)}
                       />
-                      <br />
                     </div>
                   </div>
 
@@ -231,7 +239,6 @@ const EditPackage = (props) => {
                         value={perperson}
                         onChange={(e) => setPerperson(e.target.value)}
                       />
-                      <br />
                     </div>
                   </div>
 
@@ -256,7 +263,6 @@ const EditPackage = (props) => {
                       value="Edit Package"
                     />
                   </div>
-                  <br />
                 </div>
 
                 <br />

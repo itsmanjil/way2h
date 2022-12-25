@@ -86,11 +86,11 @@ function AddActivity() {
                     className="form-control"
                     placeholder="Activity Name"
                   />
+                  <br />
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="category">Category</label>
-                  <strong>Destination</strong>
                   <select
                     name="destination"
                     id="floatingInput"
