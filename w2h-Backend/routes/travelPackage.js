@@ -33,7 +33,7 @@ router.post("/admin/add", upload.single("packageImage"), (req, res) => {
     .catch((err) => res.status(400).json(`Error:${err}`));
 });
 
-const item_per_page = 1
+const item_per_page = 6
 router.get("/", async (req, res) => {
   const page = req.query.page || 1;
   const query = {};

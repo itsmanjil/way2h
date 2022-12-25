@@ -162,7 +162,7 @@ function App() {
       </Route>
 
       <div>
-        {/* <Route path="/" exact component={PackageDetailed}></Route> */}
+        {/* <Route path="/" exact component={PackageDetailed}></Route> */}  
 
         <Route
           path="/travelpackages/admin"

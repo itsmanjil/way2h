@@ -97,7 +97,7 @@ useEffect(()=>{
          <Header/>
          
     <div className="info">
-                <div className="request-container"style={{background:"blueviolet"}}>
+                <div className="request-container"style={{background:"white"}}>
                     <br/>
                     <div className="w-50 mx-auto shadow p-5 guide-container"style={{background:"white"}}>
                         <div className="bodycd">

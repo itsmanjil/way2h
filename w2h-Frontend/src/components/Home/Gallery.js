@@ -8,9 +8,7 @@ const Gallery = () => {
       <Header />
       <div className="info" style={{background:"hsl(180,100%,25%,0.17)"}}>
         <div class="container">
-          <h1 class="fw-light text-center text-lg-start mt-4 mb-0">
-            Dream Travelers Gallery
-          </h1>
+         
 
           <hr class="mt-2 mb-5" />
 

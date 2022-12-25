@@ -71,7 +71,7 @@ const CreatePackage = () => {
                 class="signup-form signup-formtr"
                 onSubmit={changeOnClick}
                 encType="multipart/form-data"
-                style={{ position: "relative", top: "-38px" }}
+                style={{ position: "relative", top: "-28px",height:"100vh" }}
               >
                 <div class="form-header form-headertr">
                   <h1 style={{ color: "white" }}>
@@ -92,12 +92,13 @@ const CreatePackage = () => {
                       value={packageName}
                       onChange={(e) => setPackagename(e.target.value)}
                       required="required"
+                      style={{position:"relative",top:"-5px"}}
+                 
                     />
-                    <br />
                   </div>
 
                   <div class="form-group form-grouptr">
-                    <lable class="label-title">
+                    <lable class="label-title"   style={{position:"relative",top:"-45px"}}>
                       <strong>Destination</strong>
                     </lable>
                     <select
@@ -107,6 +108,7 @@ const CreatePackage = () => {
                       value={destination}
                       onChange={(e) => setDestination(e.target.value)}
                       required
+                      style={{position:"relative",top:"-45px",height:"7vh"}}
                     >
                       <option>Select</option>
                       <option>chabail</option>
@@ -129,7 +131,7 @@ const CreatePackage = () => {
 
                   <div class="horizontal-group horizontal-grouptr">
                     <div class="form-group form-grouptr left">
-                      <lable class="label-title">
+                      <lable class="label-title"style={{position:"relative",top:"-45px"}}>
                         <b>Discription *</b>
                       </lable>
                       <input
@@ -140,11 +142,12 @@ const CreatePackage = () => {
                         value={discription}
                         onChange={(e) => setDiscription(e.target.value)}
                         required="required"
+                        style={{position:"relative",top:"-45px"}}
                       />
                       <br />
                     </div>
                     <div class="form-group form-grouptr right">
-                      <lable class="label-title">
+                      <lable class="label-title"style={{position:"relative",top:"-45px"}}>
                         <b>Date *</b>
                       </lable>
                       <input
@@ -155,6 +158,7 @@ const CreatePackage = () => {
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
                         required="required"
+                        style={{position:"relative",top:"-45px"}}
                       />
                       <br />
                     </div>
@@ -162,7 +166,7 @@ const CreatePackage = () => {
 
                   <div class="horizontal-group horizontal-grouptr">
                     <div class="form-group form-grouptr left">
-                      <lable class="label-title">
+                      <lable class="label-title"style={{position:"relative",top:"-45px",right:"340px"}}>
                         <b>No of Days *</b>
                       </lable>
                       <input
@@ -174,12 +178,13 @@ const CreatePackage = () => {
                         value={noofdays}
                         required="required"
                         onChange={(e) => setDays(e.target.value)}
+                        style={{position:"relative",top:"-45px",right:"340px"}}
                       />
                       <br />
                     </div>
 
                     <div class="form-group form-grouptr right">
-                      <lable class="label-title">
+                      <lable class="label-title"style={{position:"relative",top:"-148px"}}>
                         <b>No of Nights *</b>
                       </lable>
                       <input
@@ -191,6 +196,7 @@ const CreatePackage = () => {
                         maxLength="3"
                         required="required"
                         onChange={(e) => setNights(e.target.value)}
+                        style={{position:"relative",top:"-155px"}}
                       />
                       <br />
                     </div>
@@ -198,7 +204,7 @@ const CreatePackage = () => {
 
                   <div class="horizontal-group horizontal-grouptr">
                     <div class="form-group form-grouptr left">
-                      <lable class="label-title">
+                      <lable class="label-title"style={{position:"relative",top:"-78px"}}>
                         <b>Vehical *</b>
                       </lable>
                       <input
@@ -209,12 +215,13 @@ const CreatePackage = () => {
                         placeholder="vehical"
                         value={vehical}
                         onChange={(e) => setVehical(e.target.value)}
+                        style={{position:"relative",top:"-78px"}}
                       />
                       <br />
                     </div>
 
                     <div class="form-group form-grouptr right">
-                      <lable class="label-title">
+                      <lable class="label-title"style={{position:"relative",top:"-188px"}}>
                         <b>Perperson *</b>
                       </lable>
                       <input
@@ -225,12 +232,13 @@ const CreatePackage = () => {
                         placeholder="perperson"
                         value={perperson}
                         onChange={(e) => setPerperson(e.target.value)}
+                        style={{position:"relative",top:"-188px"}}
                       />
                       <br />
                     </div>
                   </div>
 
-                  <lable class="label-title">
+                  <lable class="label-title"style={{position:"relative",top:"-98px"}}>
                     <b>Add a Image*</b>
                     <div class="mb-3">
                       <input
@@ -239,17 +247,19 @@ const CreatePackage = () => {
                         id="formFile"
                         filename="packageImage"
                         onChange={onChangeFile}
+                        style={{position:"relative",top:"-88px"}}
                       />
                     </div>
                   </lable>
 
-                  <div style={{ paddingTop: "10px" }}>
+                  <div style={{ paddingTop: "0px",height:"5vh" }}>
                     <center>
                       <input
-                        style={{ width: "100%" }}
+
                         type="submit"
                         class="reg btn btn-danger"
                         value="Add Package"
+                        style={{position:"relative",top:"-188px"}}
                       />
                     </center>
                   </div>

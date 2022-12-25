@@ -131,7 +131,7 @@ export default class Display extends Component {
 
 
                                             <td>
-                                                <a className="btn btn-danger a1"style={{height:"1vh",top:"-1px"}} href="#" onClick={() => this.onDelete(RegData._id)}>
+                                                <a className="btn btn-danger a1"style={{height:"5vh",top:"-1px"}} href="#" onClick={() => this.onDelete(RegData._id)}>
                                                     <i className="fas fa-trash-alt" style={{position:"relative",width:"19px",height:"1vh",top:"-1px"}}></i>Ban User
                                                 </a>
                                             </td>

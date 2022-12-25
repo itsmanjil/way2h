@@ -47,6 +47,7 @@ export default function RegisterUser({}) {
       Email,
       Password,
       Num,
+      reward : 0
     };
     console.log(NewReg);
 

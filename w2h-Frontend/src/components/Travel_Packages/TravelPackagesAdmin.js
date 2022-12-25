@@ -65,7 +65,7 @@ export default class AllPackagesAdmin extends Component {
           style={{
             backgroundImage:
               "url('https://www.teahub.io/photos/full/236-2363540_world-map-travel-background.jpg')",
-            height: "107vh",
+            height: "87vh",
           }}
         >
           <div className="container">
@@ -150,7 +150,7 @@ export default class AllPackagesAdmin extends Component {
                       </a>
                       &nbsp;&nbsp;&nbsp;
                       <a
-                        className="btn btn-outline-danger"
+                        className="btn btn-outline-danger"style={{position:"absolute",right:"10px"}}
                         href={`/travelpackage/admin/delete/${posts.id}`}
                       >
                         <i className="fas fa-trash-alt"></i>&nbsp;Delete

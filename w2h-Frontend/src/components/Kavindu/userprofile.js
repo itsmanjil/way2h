@@ -64,7 +64,7 @@ export default class UserProfile extends Component {
         <NavbarV3 />
         <div>
           <Pageheader headertitle="Profile" />
-          <div style={{ marginTop: "170px" }}>
+          <div style={{ marginTop: "10px" }}>
             {/* <Sub/> */}
             {/*                
             <div className="body1">
@@ -101,7 +101,7 @@ export default class UserProfile extends Component {
         <a className="nav-link" href="https://www.bootdey.com/snippets/view/bs5-profile-security-page" target="__blank">Security</a>
         <a className="nav-link" href="https://www.bootdey.com/snippets/view/bs5-edit-notifications-page"  target="__blank">Notifications</a>
     </nav> */}
-              <hr className="mt-0 mb-4" />
+              <hr className="mt-0 mb-1" />
               <div className="row">
                 <div className="col-xl-4">
                   <div className="card mb-4 mb-xl-0">
