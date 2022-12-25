@@ -83,6 +83,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import pay from "./components/Kavindu/pay";
 import Home_V5 from "./components/Home/home-v5";
 import NavbarV3 from "./components/navbar-v4";
+import ResetPassword from "./components/Kavindu/resetpassword";
 import PackageDetailed from "./components/Travel_Packages/details";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -104,6 +105,11 @@ function App() {
           exact
           component={PackageDetails}
         ></Route>
+        <Route
+          exact
+          path="/Register/password/reset/:token"
+          component={ResetPassword}
+        />
         <Route
           path="/bookingpackage/:id"
           exact

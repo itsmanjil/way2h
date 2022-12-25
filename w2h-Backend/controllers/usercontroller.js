@@ -24,14 +24,14 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
   await user.save({ validateBeforeSave: false });
 
   // const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
-  const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
+  const resetPasswordUrl = `${process.env.FRONTEND_URL}/Register/password/reset/${resetToken}`;
 
   const message = `Your Password Reset Token is ttemp: -\n\n${resetPasswordUrl}\n\nIf you have not requested this email then please ignore it`;
 
   try {
     await sendEmail({
       Email: user.Email,
-      subject: "ShopWisely Password Recovery",
+      subject: "Way2Heaven Password Recovery",
       message,
     });
     res.status(200).json({
@@ -56,13 +56,13 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
     .update(req.params.token)
     .digest("hex");
 
-  const resetPasswordExpire = Date.now();
+  const resetPasswordExpire = Date.now() + 30 * 60 * 1000;
   console.log("resetToken", resetPasswordToken);
   console.log("resetToken expire", resetPasswordExpire);
 
   const user = await User.findOne({
     resetPasswordToken,
-    resetPasswordExpire: { $gt: Date.now() },
+    resetPasswordExpire,
   });
 
   console.log("user 99", req.params.token);
@@ -75,11 +75,11 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
       )
     );
   } else {
-    if (req.body.password !== req.body.confirmPassword) {
+    if (req.body.Password !== req.body.confirmPassword) {
       return next(new ErrorHandler("Password is invalid", 400));
     }
 
-    console.log(req.body.password);
+    console.log(req.body.Password);
     user.password = req.body.password;
     user.resetPasswordToken = undefined;
     user.resetPasswordExpire = undefined;
