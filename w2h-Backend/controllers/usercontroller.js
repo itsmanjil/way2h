@@ -4,6 +4,7 @@ const User = require("../models/Register");
 const sendToken = require("../utils/jwtToken");
 const sendEmail = require("../utils/sendEmail.js");
 const crypto = require("crypto");
+const generateToken = require("../utils/generateToken");
 
 //fuction for forget password
 
@@ -57,13 +58,13 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
     .digest("hex");
 
   const resetPasswordExpire = Date.now() + 30 * 60 * 1000;
-  console.log("resetToken", resetPasswordToken);
-  console.log("resetToken expire", resetPasswordExpire);
+  // console.log("resetToken", resetPasswordToken);
 
-  const user = await User.findOne({
-    resetPasswordToken,
-    resetPasswordExpire,
-  });
+  console.log("user", await User.findOne({
+    resetPasswordExpire
+  }));
+
+  const user = await User.findOne();
 
   console.log("user 99", req.params.token);
 
@@ -77,15 +78,17 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
   } else {
     if (req.body.Password !== req.body.confirmPassword) {
       return next(new ErrorHandler("Password is invalid", 400));
+    } else {
+      user.Password = req.body.Password;
+      user.resetPasswordToken = undefined;
+      user.resetPasswordExpire = undefined;
+      await user.save();
     }
 
     console.log(req.body.Password);
-    user.password = req.body.password;
-    user.resetPasswordToken = undefined;
-    user.resetPasswordExpire = undefined;
 
-    await user.save();
+    res.status(200).json({ message: "hit" });
 
-    sendToken(user, 200, res);
+    // sendToken(user, 200, res);
   }
 });

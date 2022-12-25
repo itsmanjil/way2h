@@ -27,7 +27,6 @@ const RegSchema = new Schema({
   resetPasswordExpire: Date,
 });
 
-
 RegSchema.methods.getResetPasswordToken = function () {
   //generating the token
   const resetToken = crypto.randomBytes(20).toString("hex");
