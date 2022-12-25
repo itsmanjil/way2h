@@ -154,7 +154,7 @@ const EditActivity = (props) => {
                   <input
                     type="file"
                     filename="activityImage"
-                    className="form-control-file"
+                    className="form-control-file btn"
                     onChange={onChangeFile}
                   />
                 </div>
