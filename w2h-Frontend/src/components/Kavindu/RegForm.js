@@ -108,7 +108,7 @@ export default function RegisterUser({}) {
 
       console.log("err");
     } catch (error) {
-      toast.error("error!");
+      toast.error("login error!");
       setError(error.response.data.message);
     }
   };
@@ -119,7 +119,10 @@ export default function RegisterUser({}) {
       <div className="body1 ">
         <div className="info">
           <div className="container containerabc" id="container">
-            <div className="form-container form-containerabc sign-up-container sign-up-containerabc">
+            <div
+              className="form-container form-containerabc sign-up-container sign-up-containerabc"
+              style={{ height: "400px" }}
+            >
               <form
                 onSubmit={sendData}
                 className="form12"

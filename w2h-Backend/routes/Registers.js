@@ -23,28 +23,36 @@ http: router.route("/add").post((req, res) => {
 
   // Check that password and confirmPassword match
   if (Password !== confirmPassword) {
-    return res.status(400).json({ error: "Password and confirm password do not match" });
+    return res
+      .status(400)
+      .json({ error: "Password and confirm password do not match" });
   }
 
-  const NewAdd = new Reg({
-    Name,
-    Email,
-    Password,
-    Num,
-    reward,
-  });
+  // Check if email already exists in the database
+  Reg.findOne({ Email: Email }, (err, email) => {
+    if (email) {
+      return res.status(400).json({ error: "Email already exists" });
+    }
 
-  NewAdd.save()
-    .then(() => {
-      res.json("Registration Added");
-    })
-    .catch((err) => {
-      console.log(err);
-      res.json(err);
-      console.log("reg err");
+    const NewAdd = new Reg({
+      Name,
+      Email,
+      Password,
+      Num,
+      reward,
     });
-});
 
+    NewAdd.save()
+      .then(() => {
+        res.json("Registration Added");
+      })
+      .catch((err) => {
+        console.log(err);
+        res.json(err);
+        console.log("reg err");
+      });
+  });
+});
 
 router.route("/login").post((req, res) => {
   const Email = req.body.Email;
@@ -52,24 +60,22 @@ router.route("/login").post((req, res) => {
 
   Reg.findOne({ Email: Email, Password: Password })
     .then((Registers) => {
-      if (Registers == null) {
-        success: false;
-      } else {
-        success: true;
-
-        res.json({
-          id: Registers._id,
-          Name: Registers.Name,
-          Email: Registers.Email,
-          reward: Registers.reward,
-          Password: Registers.Password,
-          Num: Registers.Num,
-          token: generateToken(Registers._id),
-        });
+      if (!Registers) {
+        return res.status(400).json({ error: "Invalid email or password" });
       }
+
+      res.json({
+        id: Registers._id,
+        Name: Registers.Name,
+        Email: Registers.Email,
+        reward: Registers.reward,
+        Password: Registers.Password,
+        Num: Registers.Num,
+        token: generateToken(Registers._id),
+      });
     })
     .catch((err) => {
-      res.json("Validation Faild");
+      res.status(500).json({ error: "Internal server error" });
     });
 });
 
