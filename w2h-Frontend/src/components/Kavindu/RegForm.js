@@ -17,6 +17,7 @@ export default function RegisterUser({}) {
   const [Email, setEmail] = useState("");
   const [Num, setNum] = useState("");
   const [Password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const [error, setError] = useState(false);
   const [loding, setLoding] = useState(false);
@@ -41,13 +42,17 @@ export default function RegisterUser({}) {
     } else if (Num === "" || Num == null || Num.length < 10) {
       alert("Number Required");
       return false;
+    } else if (Password !== confirmPassword) {
+      alert("Password and confirm password do not match");
+      return false;
     }
     const NewReg = {
       Name,
       Email,
       Password,
       Num,
-      reward : 0
+      confirmPassword,
+      reward: 0,
     };
     console.log(NewReg);
 
@@ -159,6 +164,16 @@ export default function RegisterUser({}) {
                   id="Password"
                   onChange={(e) => {
                     setPassword(e.target.value);
+                  }}
+                  required
+                />
+                <input
+                  className="inputabc"
+                  type="password"
+                  placeholder="Confirm Password"
+                  id="Password"
+                  onChange={(e) => {
+                    setConfirmPassword(e.target.value);
                   }}
                   required
                 />

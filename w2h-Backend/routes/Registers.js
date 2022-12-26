@@ -18,7 +18,13 @@ http: router.route("/add").post((req, res) => {
   const Email = req.body.Email;
   const Num = req.body.Num;
   const Password = req.body.Password;
+  const confirmPassword = req.body.confirmPassword;
   const reward = req.body.reward;
+
+  // Check that password and confirmPassword match
+  if (Password !== confirmPassword) {
+    return res.status(400).json({ error: "Password and confirm password do not match" });
+  }
 
   const NewAdd = new Reg({
     Name,
@@ -38,6 +44,7 @@ http: router.route("/add").post((req, res) => {
       console.log("reg err");
     });
 });
+
 
 router.route("/login").post((req, res) => {
   const Email = req.body.Email;
