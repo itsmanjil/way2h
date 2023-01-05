@@ -3,7 +3,11 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
+<<<<<<< Updated upstream
 // import "../../public/assets/css/style.css";
+=======
+// import "../assets/css/style.css";
+>>>>>>> Stashed changes
 
 const NavbarV3 = () => {
   const history = useHistory();
@@ -173,7 +177,11 @@ const NavbarV3 = () => {
                             </li>
                           </ul>
                         </li>
+<<<<<<< Updated upstream
                         <li>
+=======
+                        <li className="menu-icon">
+>>>>>>> Stashed changes
                           <Link to="/contactus">Contact</Link>
                         </li>
                         <li className="menu-icon">

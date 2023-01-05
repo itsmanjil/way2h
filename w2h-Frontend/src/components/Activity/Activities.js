@@ -83,13 +83,21 @@ const Activities = () => {
               {filterdActivity.map((activity) => (
                 <Col>
                   <div className="card-group py-3">
+<<<<<<< Updated upstream
                     <div className="card" style={{ borderRadius: "15px" }}>
+=======
+                    <div className="card" style={{ borderRadius: "15px",height:"70vh" }}>
+>>>>>>> Stashed changes
                       <img
                         src={`/uploads/${activity.activityImage}`}
                         alt="..."
                         style={{
                           width: "100%",
+<<<<<<< Updated upstream
                           MinHeight: "40%",
+=======
+                          height: "36%",
+>>>>>>> Stashed changes
                           borderRadius: "10px",
                         }}
                       />

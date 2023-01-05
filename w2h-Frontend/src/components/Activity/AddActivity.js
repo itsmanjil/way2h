@@ -55,19 +55,36 @@ function AddActivity() {
         style={{
           background:
             "url(https://previews.123rf.com/images/wstockstudio/wstockstudio1707/wstockstudio170700176/82195391-accessories-for-travel-top-view-on-white-wooden-background-with-copy-space-adventure-and-wanderlust-.jpg)",
+<<<<<<< Updated upstream
             height:"180vh"
+=======
+          height: "180vh",
+>>>>>>> Stashed changes
         }}
       >
         <HeaderAdmin />
         <AddActivityContainer>
+<<<<<<< Updated upstream
           <div className="info" style={{left:"550px",position:"absolute",top:"-100px"}}>
+=======
+          <div
+            className="info"
+            style={{ left: "550px", position: "absolute", top: "-100px" }}
+          >
+>>>>>>> Stashed changes
             <div
               className="container"
               style={{
                 background: "#C9C0BB",
+<<<<<<< Updated upstream
                 position:"absolute",
                 top:"110px",
                 width:"750px",
+=======
+                position: "absolute",
+                top: "110px",
+                width: "750px",
+>>>>>>> Stashed changes
               }}
             >
               &nbsp;&nbsp;
@@ -83,17 +100,44 @@ function AddActivity() {
                     className="form-control"
                     placeholder="Activity Name"
                   />
+                  <br />
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="category">Category</label>
+<<<<<<< Updated upstream
                   <input
+=======
+                  <select
+                    name="destination"
+                    id="floatingInput"
+                    className="form-control border-dark"
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}
+                    required
+                    style={{
+                      position: "relative",
+                      top: "-45px",
+                      height: "7vh",
+                    }}
+                  >
+                    <option>Select</option>
+                    <option>Sport</option>
+                    <option>Adventure</option>
+                    <option>Relaxation</option>
+                    <option>Nightlife</option>
+                    <option>Beach</option>
+                    <option>Cultural</option>
+                    <option>Landmarks</option>
+                  </select>
+                  {/* <input
+>>>>>>> Stashed changes
                     type="text"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
                     className="form-control"
                     placeholder="Category"
-                  />
+                  /> */}
                 </div>
 
                 <div className="form-group">

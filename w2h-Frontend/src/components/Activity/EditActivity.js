@@ -62,7 +62,7 @@ const EditActivity = (props) => {
   }, []);
 
   return (
-    <div >
+    <div>
       <div
         className="background"
         style={{
@@ -72,7 +72,19 @@ const EditActivity = (props) => {
       >
         <HeaderAdmin />
         <AddActivityContainer>
+<<<<<<< Updated upstream
           <div className="info" style={{position:"relative",left:"70px",top:"-230px",lineHeight:"0.5"}}>
+=======
+          <div
+            className="info"
+            style={{
+              position: "relative",
+              left: "70px",
+              top: "-230px",
+              lineHeight: "0.5",
+            }}
+          >
+>>>>>>> Stashed changes
             <div className="container" style={{ background: "#78866B" }}>
               &nbsp;&nbsp;
               <h1>Update Activity </h1>
@@ -90,13 +102,34 @@ const EditActivity = (props) => {
                 </div>
                 <div className="form-group">
                   <label htmlFor="category">Category</label>
-                  <input
-                    type="text"
+                  <select
+                    name="destination"
+                    id="floatingInput"
+                    className="form-control border-dark"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
+<<<<<<< Updated upstream
                     className="form-control"
                     placeholder="Category"
                   />
+=======
+                    required
+                    style={{
+                      position: "relative",
+                      top: "-45px",
+                      height: "7vh",
+                    }}
+                  >
+                    <option>Select</option>
+                    <option>Sport</option>
+                    <option>Adventure</option>
+                    <option>Relaxation</option>
+                    <option>Nightlife</option>
+                    <option>Beach</option>
+                    <option>Cultural</option>
+                    <option>Landmarks</option>
+                  </select>
+>>>>>>> Stashed changes
                 </div>
                 <div className="form-group">
                   <label htmlFor="mindescription">Min Description</label>
@@ -131,7 +164,7 @@ const EditActivity = (props) => {
                   <input
                     type="file"
                     filename="activityImage"
-                    className="form-control-file"
+                    className="form-control-file btn"
                     onChange={onChangeFile}
                   />
                 </div>

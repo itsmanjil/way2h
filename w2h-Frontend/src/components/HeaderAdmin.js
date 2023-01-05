@@ -1,10 +1,16 @@
 import React from "react";
 import "../Styles/AdminHeader.css";
+<<<<<<< Updated upstream
 
+=======
+import "../Styles/responsive.css";
+let publicUrl = process.env.PUBLIC_URL + "/";
+>>>>>>> Stashed changes
 
 function HeaderAdmin() {
   return (
     <div>
+<<<<<<< Updated upstream
       <div class="sidebar-container sidebar-containeradh" style={{height:"124vh",width:"230px",position:"absolute",lineHeight:"-10"}}>
         <div class="sidebar-logo sidebar-logoadh">
           <i
@@ -17,8 +23,31 @@ function HeaderAdmin() {
               color:"blue"
             }}
           ></i>
+=======
+      <div
+        class="sidebar-container sidebar-containeradh"
+        style={{
+          height: "100vh",
+          width: "230px",
+          position: "absolute",
+          lineHeight: "-10",
+        }}
+      >
+        <div
+          class="sidebar-logo sidebar-logoadh"
+          style={{ background: "white" }}
+        >
+          <img
+            src={publicUrl + "assets/img/logo.png"}
+            style={{ height: "10.6vh", background: "white" }}
+            alt="Logo"
+          />
+>>>>>>> Stashed changes
         </div>
-        <ul class="sidebar-navigation sidebar-navigationadh" style={{position:"absolute",lineHeight:"3.9"}}>
+        <ul
+          class="sidebar-navigation sidebar-navigationadh"
+          style={{ position: "absolute", lineHeight: "3.9" }}
+        >
           <center>
             {" "}
             <h2
