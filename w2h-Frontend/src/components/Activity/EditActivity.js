@@ -62,26 +62,34 @@ const EditActivity = (props) => {
   }, []);
 
   return (
-    <div>
+    <div >
       <div
         className="background"
         style={{
           background:
             "url(https://previews.123rf.com/images/wstockstudio/wstockstudio1707/wstockstudio170700176/82195391-accessories-for-travel-top-view-on-white-wooden-background-with-copy-space-adventure-and-wanderlust-.jpg)",
+            left: "10px",
+            width:"100%",
+            height:"100vh"
         }}
       >
         <HeaderAdmin />
         <AddActivityContainer>
+<<<<<<< Updated upstream
+          <div className="info" style={{position:"relative",left:"70px",top:"-230px",lineHeight:"0.5"}}>
+            <div className="container" style={{ background: "#78866B" }}>
+=======
           <div
             className="info"
             style={{
               position: "relative",
-              left: "70px",
+              left: "170px",
               top: "-230px",
               lineHeight: "0.5",
             }}
           >
-            <div className="container" style={{ background: "#78866B" }}>
+            <div className="container" style={{ background: "grey",width:"800px",right:"60px",position:"relative",height:"80vh" }}>
+>>>>>>> Stashed changes
               &nbsp;&nbsp;
               <h1>Update Activity </h1>
               <span className="message">{message}</span>
@@ -94,21 +102,25 @@ const EditActivity = (props) => {
                     onChange={(e) => setActivityName(e.target.value)}
                     className="form-control"
                     placeholder="Activity Name"
+                    style={{height:"4vh"}}
                   />
                 </div>
                 <div className="form-group">
                   <label htmlFor="category">Category</label>
-                  <select
-                    name="destination"
-                    id="floatingInput"
-                    className="form-control border-dark"
+                  <input
+                    type="text"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
+<<<<<<< Updated upstream
+                    className="form-control"
+                    placeholder="Category"
+                  />
+=======
                     required
                     style={{
                       position: "relative",
-                      top: "-45px",
-                      height: "7vh",
+                      top: "-35px",
+                      height: "6vh",
                     }}
                   >
                     <option>Select</option>
@@ -120,46 +132,92 @@ const EditActivity = (props) => {
                     <option>Cultural</option>
                     <option>Landmarks</option>
                   </select>
+>>>>>>> Stashed changes
                 </div>
                 <div className="form-group">
-                  <label htmlFor="mindescription">Min Description</label>
+                  <label htmlFor="mindescription" style={{
+                      position: "relative",
+                      top: "-35px",
+                      height: "6vh",
+                    }}>Min Description</label>
                   <textarea
                     value={mindescription}
                     onChange={(e) => setMindescription(e.target.value)}
                     className="form-control"
                     rows="3"
+                    style={{
+                      position: "relative",
+                      top: "-70px",
+                      height: "6vh",
+                    }}
                   ></textarea>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="description">Description</label>
+                  <label htmlFor="description"style={{
+                      position: "relative",
+                      top: "-70px",
+                      height: "6vh",
+                    }}>Description</label>
                   <textarea
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     className="form-control"
                     rows="5"
+                    style={{
+                      position: "relative",
+                      top: "-100px",
+                      height: "6vh",
+                    }}
                   ></textarea>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="price">Price</label>
+                  <label htmlFor="price"style={{
+                      position: "relative",
+                      top: "-104px",
+                      height: "6vh",
+                    }}>Price</label>
                   <input
                     type="text"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                     className="form-control"
                     placeholder="Price"
+                    style={{
+                      position: "relative",
+                      top: "-134px",
+                      height: "6vh",
+                    }}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="file">Choose activity image</label>
+                  <label htmlFor="file"style={{
+                      position: "relative",
+                      top: "-134px",
+                      height: "6vh",
+                    }}>Choose activity image</label>
                   <input
                     type="file"
                     filename="activityImage"
-                    className="form-control-file btn"
+                    className="form-control-file"
                     onChange={onChangeFile}
+                    style={{
+                      position: "relative",
+                      top: "-174px",
+                      height: "6vh",
+                      right:"10px"
+                    }}
                   />
                 </div>
                 <div className="flex-parent jc-center">
-                  <button type="submit" className="btnbb">
+                  <button type="submit" className="btnbb"  style={{
+                      position: "relative",
+                      top: "-219px",
+                      height: "6vh",
+                      backgroundColor:"red",
+                      color:"white"
+                      
+
+                    }}>
                     Update Activity
                   </button>
                 </div>
@@ -168,9 +226,13 @@ const EditActivity = (props) => {
                     to="/activities"
                     type="submit"
                     className="btnaa"
-                    style={{ color: "#000000" }}
+                    style={{ color: "#000000", position: "relative",
+                    top: "-294px",
+                    height: "6vh",
+                  left:"190px" }}
+                    
                   >
-                    <i class="fas fa-hand-point-left">&nbsp;Back to Activity</i>
+                    <i class="fas fa-hand-point-left">Back to Activity</i>
                   </Link>
                 </div>
                 &nbsp;&nbsp;

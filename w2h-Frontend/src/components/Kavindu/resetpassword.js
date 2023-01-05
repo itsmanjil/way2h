@@ -1,7 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { updatepasswordSchema } from "../schema/updatepasswordSchema";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
 import { instance } from "../../axiosInstance/AxiosInstance";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";

@@ -5,9 +5,6 @@ import axios from "axios";
 import { configure } from "@testing-library/react";
 import Header from "../Header";
 import Footer from "../Footer";
-import { toast } from "react-toastify";
-import { ElseIf } from "react-if-elseif-else-render";
-import NavbarV3 from "../navbar-v4";
 
 // eslint-disable-next-line no-empty-pattern
 export default function RegisterUser({}) {
@@ -17,52 +14,31 @@ export default function RegisterUser({}) {
   const [Email, setEmail] = useState("");
   const [Num, setNum] = useState("");
   const [Password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
 
   const [error, setError] = useState(false);
   const [loding, setLoding] = useState(false);
+
   useEffect(() => {
     const userInfo = localStorage.getItem("userInfo");
+
     if (userInfo) {
       history.push("/profile");
     }
   }, [history]);
 
-  function sendData(e) {
-    e.preventDefault();
-    if (Name === "" || Name === null || !isNaN(Name)) {
-      alert("Name Required. Please enter a valid name.");
-      return false;
-    } else if (Email === "" || Email.includes("@" && ".com") === false) {
-      alert("Enter Valid email Address");
-      return false;
-    } else if (Password === "" || Password == null || Password.length < 8) {
-      alert("password Required");
-      return false;
-    } else if (Num === "" || Num == null || Num.length < 10) {
-      alert("Number Required");
-      return false;
-    } else if (Password !== confirmPassword) {
-      alert("Password and confirm password do not match");
-      return false;
-    }
+  function sendData() {
     const NewReg = {
       Name,
       Email,
       Password,
       Num,
-      confirmPassword,
-      reward: 0,
     };
     console.log(NewReg);
 
     axios
       .post("http://localhost:8070/Register/add", NewReg)
       .then(() => {
-        toast.success("Register Success!");
-        history.push({
-          pathname: "/",
-        });
+        alert("success");
       })
       .catch((err) => {
         alert(err);
@@ -100,37 +76,37 @@ export default function RegisterUser({}) {
       );
       console.log(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
+<<<<<<< Updated upstream
+      localStorage.setItem("token", response.data.userInfo.token);
+
+      history.push("/profile");
+
+=======
       toast.success("Login Success!");
       history.push({
-        pathname: "/profile",
+        pathname: "/",
       });
+>>>>>>> Stashed changes
       setLoding(false);
 
       console.log("err");
     } catch (error) {
-      toast.error("login error!");
       setError(error.response.data.message);
     }
   };
 
   return (
     <div>
-      <NavbarV3 />{" "}
+      {" "}
+      <Header />
       <div className="body1 ">
         <div className="info">
           <div className="container containerabc" id="container">
-            <div
-              className="form-container form-containerabc sign-up-container sign-up-containerabc"
-              style={{ height: "400px" }}
-            >
-              <form
-                onSubmit={sendData}
-                className="form12"
-                style={{ position: "relative", lineHeight: -10 }}
-              >
+            <div className="form-container form-containerabc sign-up-container sign-up-containerabc">
+              <form onSubmit={sendData} className="form12" style={{position:"relative",lineHeight:-10}}>
                 <h1 className="h111">Create Account</h1>
 
-                <input
+                <input 
                   className="inputabc"
                   type="text"
                   placeholder="Name"
@@ -167,16 +143,6 @@ export default function RegisterUser({}) {
                   id="Password"
                   onChange={(e) => {
                     setPassword(e.target.value);
-                  }}
-                  required
-                />
-                <input
-                  className="inputabc"
-                  type="password"
-                  placeholder="Confirm Password"
-                  id="Password"
-                  onChange={(e) => {
-                    setConfirmPassword(e.target.value);
                   }}
                   required
                 />
@@ -217,7 +183,7 @@ export default function RegisterUser({}) {
               </form>
             </div>
             <div className="overlay-container overlay-containerabc">
-              <div className="overlay overlayabc">
+              <div className="overlay overlayabc" >
                 <div className="overlay-panel overlay-panelabc overlay-left overlay-leftabc">
                   <h1 className="h111">Welcome Back!</h1>
                   <p className="p123">
@@ -232,10 +198,7 @@ export default function RegisterUser({}) {
                     Sign In
                   </button>
                 </div>
-                <div
-                  className="overlay-panel overlay-panelabc overlay-right overlay-rightabc"
-                  style={{ color: "red" }}
-                >
+                <div className="overlay-panel overlay-panelabc overlay-right overlay-rightabc" style={{color:"red"}}>
                   <h1 className="h111">Hello, Friend!</h1>
                   <p className="p123">
                     Enter your personal details and start journey with us
