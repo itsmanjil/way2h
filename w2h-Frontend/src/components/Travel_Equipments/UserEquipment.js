@@ -101,7 +101,7 @@ export default class CardItemsT extends Component {
                                 <br />
                               </Card.Title>
                               <Card.Text>
-                                {equipment.description}
+                                {/* {equipment.description} */}
                                 <br /> <br />
                                 <div class="card-footer">
                                   <ul>

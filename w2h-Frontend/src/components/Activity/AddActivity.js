@@ -55,25 +55,41 @@ function AddActivity() {
         style={{
           background:
             "url(https://previews.123rf.com/images/wstockstudio/wstockstudio1707/wstockstudio170700176/82195391-accessories-for-travel-top-view-on-white-wooden-background-with-copy-space-adventure-and-wanderlust-.jpg)",
-          height: "180vh",
+<<<<<<< Updated upstream
+            height:"180vh"
+=======
+          height: "114vh",
+          left:"6px"
+>>>>>>> Stashed changes
         }}
       >
         <HeaderAdmin />
         <AddActivityContainer>
+<<<<<<< Updated upstream
+          <div className="info" style={{left:"550px",position:"absolute",top:"-100px"}}>
+=======
           <div
             className="info"
-            style={{ left: "550px", position: "absolute", top: "-100px" }}
+            style={{ left: "500px", position: "absolute", top: "-100px" }}
           >
+>>>>>>> Stashed changes
             <div
               className="container"
               style={{
                 background: "#C9C0BB",
+<<<<<<< Updated upstream
+                position:"absolute",
+                top:"110px",
+                width:"750px",
+=======
                 position: "absolute",
-                top: "110px",
+                top: "60px",
                 width: "750px",
+                height:"100vh"
+>>>>>>> Stashed changes
               }}
             >
-              &nbsp;&nbsp;
+             
               <h1>Add New Activity </h1>
               <span className="message">{message}</span>
               <form onSubmit={changeOnClick} encType="multipart/form-data">
@@ -85,12 +101,19 @@ function AddActivity() {
                     onChange={(e) => setActivityName(e.target.value)}
                     className="form-control"
                     placeholder="Activity Name"
+                    style={{position:"relative",height:"7vh"}}
                   />
-                  <br />
                 </div>
 
                 <div className="form-group">
+<<<<<<< Updated upstream
                   <label htmlFor="category">Category</label>
+                  <input
+=======
+                  <label htmlFor="category"  style={{
+                      position: "relative",
+                      top: "-65px",
+                    }}>Category</label>
                   <select
                     name="destination"
                     id="floatingInput"
@@ -100,7 +123,7 @@ function AddActivity() {
                     required
                     style={{
                       position: "relative",
-                      top: "-45px",
+                      top: "-75px",
                       height: "7vh",
                     }}
                   >
@@ -114,64 +137,69 @@ function AddActivity() {
                     <option>Landmarks</option>
                   </select>
                   {/* <input
+>>>>>>> Stashed changes
                     type="text"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
                     className="form-control"
                     placeholder="Category"
-                  /> */}
+                  />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="mindescription">Min Description</label>
+                  <label htmlFor="mindescription" style={{top:"-90px",position:"relative"}}>Min Description</label>
                   <textarea
                     value={mindescription}
                     onChange={(e) => setMindescription(e.target.value)}
                     className="form-control"
-                    rows="3"
+                    rows="1"
+                    style={{top:"-102px",position:"relative"}}
                   ></textarea>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="description">Description</label>
+                  <label htmlFor="description" style={{top:"-115px",position:"relative"}}>Description</label>
                   <textarea
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     className="form-control"
-                    rows="5"
+                    rows="1"
+                    style={{top:"-122px",position:"relative"}}
                   ></textarea>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="price">Price</label>
+                  <label htmlFor="price" style={{top:"-130px",position:"relative"}}>Price</label>
                   <input
                     type="text"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                     className="form-control"
                     placeholder="Price"
+                    style={{top:"-135px",position:"relative",height:"5vh"}}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="file">Choose activity image</label>
+                  <label htmlFor="file"style={{top:"-165px",position:"relative"}}>Choose activity image</label>
                   <input
                     type="file"
                     filename="activityImage"
                     className="form-control-file"
                     onChange={onChangeFile}
+                    style={{top:"-165px",position:"relative"}}
                   />
                 </div>
 
                 <div className="row">
-                  <div className="flex-parent jc-center">
+                  <div className="flex-parent jc-center" style={{top:"-205px",position:"relative"}}>
                     <button type="submit" className="btn btn-primary">
                       Post Activity
                     </button>
                   </div>
                   <div
                     className="flex-parent jc-center"
-                    style={{ align: "center" }}
+                    style={{ align: "center",top:"-225px",position:"relative"}}
                   >
                     <Link
                       to="/activities"

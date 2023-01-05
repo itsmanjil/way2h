@@ -26,8 +26,19 @@ const Activities = () => {
   return (
     <div>
       <Header />
+      
       <Pageheader headertitle="Activities" />
-      <div className="ltn__search-widget mb-30">
+<<<<<<< Updated upstream
+
+      <MainContainer>
+        <div className="info">
+          <div className="container">
+            <input
+=======
+      <MainContainer>
+        <div className="info">
+          <div className="container" style={{position:"relative",top:"-120px"}}>
+          <div className="ltn__search-widget mb-30">
         <form action="#">
           <input
             type="text"
@@ -40,10 +51,8 @@ const Activities = () => {
           </button>
         </form>
       </div>
-      <MainContainer>
-        <div className="info">
-          <div className="container">
             {/* <input
+>>>>>>> Stashed changes
               id="search-input form1"
               type="search"
               class="form-outline form-control"
@@ -56,7 +65,7 @@ const Activities = () => {
               }}
               placeholder="Search Activity"
               onChange={(e) => setSearch(e.target.value)}
-            /> */}
+            />
 
             <Row xs={1} md={3} className="g-4 rounded" id="by">
               {filterdActivity.map((activity) => (
@@ -76,7 +85,6 @@ const Activities = () => {
                         alt="..."
                         style={{
                           width: "100%",
-                          height: "250px",
                           minHeight: "40%",
                           hover: "hoverable",
                         }}
@@ -86,7 +94,7 @@ const Activities = () => {
                         <h6 className="card-title text-muted">
                           {activity.category}
                         </h6>
-                        <p className="card-title">{activity.mindescription}</p>
+                        {/* <p className="card-title">{activity.mindescription}</p> */}
                         <p className="card-text">
                           <i className="fas fa-tag">{activity.price}</i>
                         </p>

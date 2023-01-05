@@ -1,14 +1,21 @@
 import { orange } from "@material-ui/core/colors";
 import React from "react";
 import "../Styles/AdminHeader.css";
+import "../Styles/responsive.css"
 let publicUrl = process.env.PUBLIC_URL + "/";
-import { Link } from "react-router-dom";
+
 function HeaderAdmin() {
   return (
     <div>
-      <div class="sidebar-container sidebar-containeradh" style={{height:"100vh",width:"230px",position:"absolute",lineHeight:"-10"}}>
+<<<<<<< Updated upstream
+      <div class="sidebar-container sidebar-containeradh" style={{height:"124vh",width:"230px",position:"absolute",lineHeight:"-10"}}>
         <div class="sidebar-logo sidebar-logoadh" style={{background:"white"}}>
+=======
+      <div class="sidebar-container sidebar-containeradh" style={{height:"100vh",width:"230px",position:"absolute",lineHeight:"-10",}}>
+        <div class="sidebar-logo sidebar-logoadh" style={{background:"white",}}>
+>>>>>>> Stashed changes
         <img src={publicUrl + "assets/img/logo.png"} style={{height:"10.6vh",background:"white"}} alt="Logo" />
+       
         </div>
         <ul class="sidebar-navigation sidebar-navigationadh" style={{position:"absolute",lineHeight:"3.9"}}>
           <center>
@@ -21,67 +28,65 @@ function HeaderAdmin() {
             </h2>
           </center>
           <li>
-            {/* <Link to="/adminhome">
+            <a href="/adminhome">
               <i class="fa fa-home" aria-hidden="true"></i> Homepage
-            </Link> */}
-            <Link to="/adminhome">
-               {/* <Link> */}
-              <i class="fa fa-home" aria-hidden="true"></i> Homepage
-            {/* </Link> */}
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="/travelpackages/admin">
+            <a href="/travelpackages/admin">
               <i class="fa fa-car" aria-hidden="true"></i> Travel Package
-            </Link>
+            </a>
           </li>
+
           <li>
-            <Link to="/adminhotelpackage">
+            <a href="/adminhotelpackage">
               <i class="fa fa-hotel" aria-hidden="true"></i> Room Package
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="/activities">
+            <a href="/activities">
               <i class="fa fa-swimmer" aria-hidden="true"></i> Activity
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="/guide">
+            <a href="/guide">
               <i class="fa fa-user" aria-hidden="true"></i> Guide
-            </Link>
+            </a>
           </li>
+
           <li>
-            <Link to="/equipment/admin">
+            <a href="/equipment/admin">
               <i class="fa fa-campground" aria-hidden="true"></i> Equipment
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="/feedbacks/admin">
+            <a href="/feedbacks/admin">
               <i class="fa fa-comments" aria-hidden="true"></i> FeedBack
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="/adView">
+            <a href="/adView">
               <i class="fa fa-inbox" aria-hidden="true"></i> Inquiry
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="/contactus/admin">
+            <a href="/contactus/admin">
               <i class="fa fa-envelope" aria-hidden="true"></i> Messages
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="/get">
+            <a href="/get">
               <i class="fa fa-user" aria-hidden="true"></i> User Management
-            </Link>
+            </a>
           </li>
           <li>
-            <Link to="/payment">
+            <a href="/payment">
               <i class="fa fa-cc-visa" aria-hidden="true"></i> Payment
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
+
       <div class="main_content">
         <div class="headerh" style={{ height: "111px" }}>
           <div id="hnamed">
@@ -96,18 +101,20 @@ function HeaderAdmin() {
               Way2Heaven Admin DashBord
             </h1>
           </div>
-          {/* <div id="loginah">
-            <Link
-              to="/register"
+
+          <div id="loginah">
+            <a
+              href="/register"
               style={{ textDecoration: "none", color: "hsl(0,0%,70%,0.9)" }}
             >
               {" "}
               <i class="fas fa-user-alt"></i>{" "}
-            </Link>
-          </div> */}
+            </a>
+          </div>
         </div>
       </div>
     </div>
   );
 }
+
 export default HeaderAdmin;

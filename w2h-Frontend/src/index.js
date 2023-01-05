@@ -12,6 +12,7 @@ const options = {
   transition: transitions.SCALE,
 };
 
+
 ReactDOM.render(
   <React.StrictMode>
     <AlertProvider template={AlertTemplate} {...options}>

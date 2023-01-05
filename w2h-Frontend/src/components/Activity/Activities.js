@@ -82,14 +82,23 @@ const Activities = () => {
             <Row xs={1} md={3} className="g-4 rounded " id="by p-activities">
               {filterdActivity.map((activity) => (
                 <Col>
-                  <div className="card-group py-3">
+<<<<<<< Updated upstream
+                  <div className="card-group py-5 ">
                     <div className="card" style={{ borderRadius: "15px" }}>
+=======
+                  <div className="card-group py-3">
+                    <div className="card" style={{ borderRadius: "15px",height:"70vh" }}>
+>>>>>>> Stashed changes
                       <img
                         src={`/uploads/${activity.activityImage}`}
                         alt="..."
                         style={{
+<<<<<<< Updated upstream
+
+=======
                           width: "100%",
-                          MinHeight: "40%",
+                          height: "36%",
+>>>>>>> Stashed changes
                           borderRadius: "10px",
                         }}
                       />
@@ -99,25 +108,32 @@ const Activities = () => {
                           pathname: `/activity/${activity._id}`,
                         }}
                       >
-                        &nbsp;&nbsp;&nbsp;
-                        <h2>&nbsp;{activity.aname}</h2>
+                    
+                        <h2>{activity.aname}</h2>
                       </Link>
+<<<<<<< Updated upstream
+                      <h6>{activity.category}</h6>
+                     
+                      <p>{activity.mindescription}</p>
+                     
+=======
                       <h6>&nbsp;{activity.category}</h6>
                       <br />
-                      <p>&nbsp;{activity.mindescription}</p>
+                      {/* <p>&nbsp;{activity.mindescription}</p> */}
                       <br />
+>>>>>>> Stashed changes
                       <p>
-                        <i className="fas fa-tag">&nbsp;{activity.price}</i>
+                        <i className="fas fa-tag">{activity.price}</i>
                       </p>
 
-                      <div className="row my-3">
-                        &nbsp;&nbsp;&nbsp;
-                        <div className="col-sm-2">
+                      <div className="row my-1">
+                   
+                        <div className="col-sm-3" style={{top:"-40px"}}>
                           <Link
                             to={`/update/${activity._id}`}
-                            className="btn btn-outline-success"
+                            className="btn btn-outline-success" style={{width:"160px",height:"0vh",top:"10px",borderRadius:"20px"}}
                           >
-                            <i className="far fa-edit">
+                            <i className="far fa-edit" style={{right:"28px",position:"relative",top:"-10px "}}>
                               &nbsp;&nbsp;Edit Activity
                             </i>
                           </Link>
@@ -125,12 +141,11 @@ const Activities = () => {
                         &nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <div className="col-sm-2">
+                        <div className="col-sm-2"style={{top:"-40px"}}>
                           <button
-                            onClick={() => deleteActivity(activity._id)}
-                            className="btn btn-outline-danger"
+                            className="btn btn-outline-danger"style={{width:"160px",height:"0vh",top:"10px",borderRadius:"20px"}}
                           >
-                            <i className="far fa-trash-alt">
+                            <i className="far fa-trash-alt"style={{right:"28px",position:"relative",top:"-10px "}}>
                               &nbsp;&nbsp;Delete Activity
                             </i>
                           </button>

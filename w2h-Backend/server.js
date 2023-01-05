@@ -84,6 +84,10 @@ app.use("/guiderequest", guideRequestRouter);
 const TravlPackagereviewRoutes = require("./routes/TravelPackageRating");
 app.use("/travelpackage/review", TravlPackagereviewRoutes);
 
+
+app.get('/api/keys/paypal', (req, res) => {
+  res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
+});
 app.listen(PORT, () => {
   console.log(`The port is : ${PORT}`);
 });

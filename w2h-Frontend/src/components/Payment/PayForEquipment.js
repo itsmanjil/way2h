@@ -4,6 +4,7 @@ import "../../Styles/Payment.css";
 import Header from "../Header";
 import Footer from "../Footer";
 
+
 export default class PayForTravelPackage extends Component {
   constructor(props) {
     super(props);
@@ -98,10 +99,18 @@ export default class PayForTravelPackage extends Component {
       }
     });
   };
+  initialOptions = () => ({
+    clientId: 'AfOyAqxy3v77M6IR4lid44zAXxgcPSweF_d3f_i10bQmoqZPrmasQhNLemZkxXmgddGjJDkYDXhXPIQm',
+    currency: 'USD',
+    intent: 'capture',
+    clientToken: 'abc123xyz==',
+  });
+ 
 
   render() {
     const { ename, price, payf, method, img } = this.state;
     return (
+      
       <div>
         <Header />
         <div className="info">
@@ -367,6 +376,9 @@ export default class PayForTravelPackage extends Component {
                       >
                         <b>Pay Now</b>
                       </button>
+                      {/* <PayPalScriptProvider  >
+                        <PayPalButtons />
+                      </PayPalScriptProvider> */}
                     </form>
                   </div>
                 </div>
