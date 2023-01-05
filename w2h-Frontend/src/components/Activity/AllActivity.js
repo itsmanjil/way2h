@@ -28,31 +28,11 @@ const Activities = () => {
       <Header />
       
       <Pageheader headertitle="Activities" />
-<<<<<<< Updated upstream
 
       <MainContainer>
         <div className="info">
           <div className="container">
             <input
-=======
-      <MainContainer>
-        <div className="info">
-          <div className="container" style={{position:"relative",top:"-120px"}}>
-          <div className="ltn__search-widget mb-30">
-        <form action="#">
-          <input
-            type="text"
-            name="search"
-            placeholder="Search your keyword..."
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <button type="submit">
-            <i className="fas fa-search" />
-          </button>
-        </form>
-      </div>
-            {/* <input
->>>>>>> Stashed changes
               id="search-input form1"
               type="search"
               class="form-outline form-control"

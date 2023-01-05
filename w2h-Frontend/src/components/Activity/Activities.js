@@ -82,23 +82,12 @@ const Activities = () => {
             <Row xs={1} md={3} className="g-4 rounded " id="by p-activities">
               {filterdActivity.map((activity) => (
                 <Col>
-<<<<<<< Updated upstream
                   <div className="card-group py-5 ">
                     <div className="card" style={{ borderRadius: "15px" }}>
-=======
-                  <div className="card-group py-3">
-                    <div className="card" style={{ borderRadius: "15px",height:"70vh" }}>
->>>>>>> Stashed changes
                       <img
                         src={`/uploads/${activity.activityImage}`}
                         alt="..."
                         style={{
-<<<<<<< Updated upstream
-
-=======
-                          width: "100%",
-                          height: "36%",
->>>>>>> Stashed changes
                           borderRadius: "10px",
                         }}
                       />
@@ -111,17 +100,10 @@ const Activities = () => {
                     
                         <h2>{activity.aname}</h2>
                       </Link>
-<<<<<<< Updated upstream
                       <h6>{activity.category}</h6>
                      
                       <p>{activity.mindescription}</p>
                      
-=======
-                      <h6>&nbsp;{activity.category}</h6>
-                      <br />
-                      {/* <p>&nbsp;{activity.mindescription}</p> */}
-                      <br />
->>>>>>> Stashed changes
                       <p>
                         <i className="fas fa-tag">{activity.price}</i>
                       </p>

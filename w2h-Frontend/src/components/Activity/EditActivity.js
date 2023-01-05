@@ -75,21 +75,8 @@ const EditActivity = (props) => {
       >
         <HeaderAdmin />
         <AddActivityContainer>
-<<<<<<< Updated upstream
           <div className="info" style={{position:"relative",left:"70px",top:"-230px",lineHeight:"0.5"}}>
             <div className="container" style={{ background: "#78866B" }}>
-=======
-          <div
-            className="info"
-            style={{
-              position: "relative",
-              left: "170px",
-              top: "-230px",
-              lineHeight: "0.5",
-            }}
-          >
-            <div className="container" style={{ background: "grey",width:"800px",right:"60px",position:"relative",height:"80vh" }}>
->>>>>>> Stashed changes
               &nbsp;&nbsp;
               <h1>Update Activity </h1>
               <span className="message">{message}</span>
@@ -111,28 +98,9 @@ const EditActivity = (props) => {
                     type="text"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-<<<<<<< Updated upstream
                     className="form-control"
                     placeholder="Category"
                   />
-=======
-                    required
-                    style={{
-                      position: "relative",
-                      top: "-35px",
-                      height: "6vh",
-                    }}
-                  >
-                    <option>Select</option>
-                    <option>Sport</option>
-                    <option>Adventure</option>
-                    <option>Relaxation</option>
-                    <option>Nightlife</option>
-                    <option>Beach</option>
-                    <option>Cultural</option>
-                    <option>Landmarks</option>
-                  </select>
->>>>>>> Stashed changes
                 </div>
                 <div className="form-group">
                   <label htmlFor="mindescription" style={{
