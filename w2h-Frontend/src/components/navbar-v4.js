@@ -2,8 +2,14 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
+<<<<<<< Updated upstream
 
 class NavbarV3 extends Component {
+=======
+import { useHistory } from "react-router-dom";
+const NavbarV3 = () => {
+  const history = useHistory();
+>>>>>>> Stashed changes
 
   logout(){
 
@@ -115,6 +121,7 @@ class NavbarV3 extends Component {
                     </div>
                   </div>
                 </div>
+<<<<<<< Updated upstream
                 <div className="col header-menu-column menu-color-white">
                   <div className="header-menu d-none d-xl-block go-top">
                     <nav>
@@ -141,12 +148,42 @@ class NavbarV3 extends Component {
                               {/* <li><Link to="/contactus">Contact us</Link></li> */}
                               {/* <li><Link to="/contactus">Contact us</Link></li> */}
                               {/* <li><Link to="/portfolio">Portfolio</Link></li>
+=======
+              </div>
+              <div className="col header-menu-column menu-color-white">
+                <div className="header-menu d-none d-xl-block go-top">
+                  <nav>
+                    <div className="ltn__main-menu">
+                      <ul>
+                        <li className="menu-icon11" >
+                          <Link to="/">Home</Link>
+                        </li>
+                        <li className="menu-icon11">
+                          <Link to="/">About</Link>
+                          <ul>
+                            <li>
+                              <Link to="/aboutus">About</Link>
+                            </li>
+                            <li>
+                              <Link to="/services">Services</Link>
+                            </li>
+                            {/* <li>
+                              <Link to="/contactus">Contact us</Link>
+                            </li> */}
+                            <li>
+                              <Link to="/gallery">Gallery</Link>
+                            </li>
+                            {/* <li><Link to="/contactus">Contact us</Link></li> */}
+                            {/* <li><Link to="/contactus">Contact us</Link></li> */}
+                            {/* <li><Link to="/portfolio">Portfolio</Link></li>
+>>>>>>> Stashed changes
 										<li><Link to="/portfolio-v2">Portfolio - 02</Link></li>
 										<li><Link to="/portfolio-detlails">Portfolio Details</Link></li>
 										<li><Link to="/team">Team</Link></li>
 										<li><Link to="/team-details">Team Detais</Link></li>
 										<li><Link to="/faq">FAQ</Link></li>
 										<li><Link to="/location">Google Map Locations</Link></li> */}
+<<<<<<< Updated upstream
                             </ul>
                           </li>
                           <li className="menu-icon">
@@ -309,6 +346,47 @@ class NavbarV3 extends Component {
                             <Link to="/contact">Contact</Link>
                           </li>
                           <li className="special-link">
+=======
+                          </ul>
+                        </li>
+                        <li className="menu-icon11">
+                          <Link to="/travelpackages">Packages</Link>
+                          <ul>
+                            <li>
+                              <Link to="/travelpackages">Packages</Link>
+                            </li>
+                            <li>
+                              <Link to="/all">Activity</Link>
+                            </li>
+                            <li>
+                              <Link to="/equipment">Equipment</Link>
+                            </li>
+                            <li>
+                              <Link to="/hotelpackage">Room</Link>
+                            </li>
+                          </ul>
+                        </li>
+                        <li className="menu-icon11">
+                          <Link to="/contactus">Contact</Link>
+                          <ul>
+                            <li>
+                              <Link to="/contactus">Contact</Link>
+                            </li>
+
+                            <li>
+                              <Link to="/guide/all">Guide</Link>
+                            </li>
+                          </ul>
+                        </li>
+                        <li className="menu-icon11">
+                          {userInfo ? (
+                            <Link to="/Profile">My-account</Link>
+                          ) : (
+                            <Link to=""></Link>
+                          )}
+                        </li>
+                        <li className="special-link">
+>>>>>>> Stashed changes
                           {userInfo ? (
          <Link onClick={this.logout}>LogOut</Link>
       ) : (

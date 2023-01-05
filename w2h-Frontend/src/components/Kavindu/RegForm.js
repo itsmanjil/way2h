@@ -76,10 +76,17 @@ export default function RegisterUser({}) {
       );
       console.log(data);
       localStorage.setItem("userInfo", JSON.stringify(data));
+<<<<<<< Updated upstream
       localStorage.setItem("token", response.data.userInfo.token);
 
       history.push("/profile");
 
+=======
+      toast.success("Login Success!");
+      history.push({
+        pathname: "/",
+      });
+>>>>>>> Stashed changes
       setLoding(false);
 
       console.log("err");

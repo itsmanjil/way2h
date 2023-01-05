@@ -5702,12 +5702,18 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 
 /* Menu Icon */
-.menu-icon > a {
+/* .menu-icon > a {
   position: relative;
+<<<<<<< Updated upstream
 }
 .menu-icon > a::before {
   content: "\f067";
   font-size: 8px;
+=======
+} */
+/* .menu-icon > a::before {
+  font-size:  0px;
+>>>>>>> Stashed changes
   position: absolute;
   top: 50%;
   right: 0;
@@ -5716,7 +5722,7 @@ ul.wp-block-latest-posts.is-grid.alignwide {
   transform: translateY(-50%);
   font-family: "Font Awesome\ 5 Free";
   font-weight: 900;
-}
+} */
 
 /* Menu Item Badge */
 .menu-item-badge {

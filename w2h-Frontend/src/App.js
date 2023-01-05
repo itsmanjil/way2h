@@ -86,9 +86,13 @@ import NavbarV3 from "./components/navbar-v4";
 import PackageDetailed from "./components/Travel_Packages/details";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {
+	PayPalScriptProvider,
+} from "@paypal/react-paypal-js";
 
 function App() {
   return (
+    <PayPalScriptProvider options={{"client_id":"AWyMZpO5lQZLICtloy85n5wto96jsdsi3XjL4sX3X9Brkig8mj3B44PXnpXQEqQWv4xPY065HvwdnBnK"}}>
     <Router>
       {/* <NavbarV3 /> */}
 
@@ -270,6 +274,7 @@ function App() {
         theme="light"
       />
     </Router>
+    </PayPalScriptProvider>
   );
 }
 

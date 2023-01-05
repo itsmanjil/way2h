@@ -1,13 +1,19 @@
 import { orange } from "@material-ui/core/colors";
 import React from "react";
 import "../Styles/AdminHeader.css";
+import "../Styles/responsive.css"
 let publicUrl = process.env.PUBLIC_URL + "/";
 
 function HeaderAdmin() {
   return (
     <div>
+<<<<<<< Updated upstream
       <div class="sidebar-container sidebar-containeradh" style={{height:"124vh",width:"230px",position:"absolute",lineHeight:"-10"}}>
         <div class="sidebar-logo sidebar-logoadh" style={{background:"white"}}>
+=======
+      <div class="sidebar-container sidebar-containeradh" style={{height:"100vh",width:"230px",position:"absolute",lineHeight:"-10",}}>
+        <div class="sidebar-logo sidebar-logoadh" style={{background:"white",}}>
+>>>>>>> Stashed changes
         <img src={publicUrl + "assets/img/logo.png"} style={{height:"10.6vh",background:"white"}} alt="Logo" />
        
         </div>

@@ -123,6 +123,7 @@ export default class UserProfile extends Component {
         <a className="nav-link" href="https://www.bootdey.com/snippets/view/bs5-profile-billing-page" target="__blank">Billing</a>
         <a className="nav-link" href="https://www.bootdey.com/snippets/view/bs5-profile-security-page" target="__blank">Security</a>
         <a className="nav-link" href="https://www.bootdey.com/snippets/view/bs5-edit-notifications-page"  target="__blank">Notifications</a>
+<<<<<<< Updated upstream
     </nav>
     <hr className="mt-0 mb-4" />
     <div className="row">
@@ -137,6 +138,61 @@ export default class UserProfile extends Component {
                     <div className="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                   
                     <button className="btn btn-primary" type="button">Upload new image</button>
+=======
+    </nav> */}
+      <div style={{backgroundColor:"#776E6C"}}>
+      
+              
+      <table border="0" >
+      <tr>
+      <th>   
+         
+         <img src="https://www.toyoos.com/wp-content/uploads/2018/07/Platinum-Membership.png" width="100" height="100" style={{marginLeft:240 }}/>
+         </th>
+      
+      
+      <th>
+      <h2 style={{marginLeft:150 }}>Upgrade Your Membership Plan </h2>
+      </th>
+      <th>
+          <a
+                style={{marginLeft:150 }} type="button" class="btn btn-primary" href="/subscribe">Subscribe </a>
+      </th>
+      </tr>
+  </table>
+  </div>
+              <hr className="mt-0 mb-1" />
+              <div className="row">
+                <div className="col-xl-4">
+                  <div className="card mb-4 mb-xl-0">
+                    <div className="card-header">Profile Picture</div>
+                    <div className="card-body text-center">
+                      <img
+                        className="img-account-profile rounded-circle mb-2"
+                        src="http://bootdey.com/img/Content/avatar/avatar1.png"
+                        alt=""
+                      />
+
+                      {/* <div className="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div> */}
+                      {/* <form>
+                    <input
+                        class="form-control"
+                        type="file"
+                        id="formFile"
+                        filename="profile"
+                        name="profile"
+                        // value={profile}
+                        // onChange={} 
+                        
+                      />
+                      </form> */}
+
+                      <button className="btn btn-primary" type="button">
+                        Reward Point: {this.state.View.reward}
+                      </button>
+                    </div>
+                  </div>
+>>>>>>> Stashed changes
                 </div>
             </div>
         </div>
