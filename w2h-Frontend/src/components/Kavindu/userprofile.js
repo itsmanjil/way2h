@@ -33,29 +33,35 @@ export default class UserProfile extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  componentDidMount() {
-    const userInfo = localStorage.getItem("userInfo");
-    //alert (userInfo);
-    if (userInfo == null) {
-      alert("You Are Not Authorized User");
-      window.location.replace("/register");
-    }
-    var line = [];
+  API_URL = "http://localhost:8070/user/Details/";
 
-    for (var i = 7, p = 0; i !== 31; i++, p++) {
-      line.push(userInfo[i]);
-    }
-    const mongoid = line.join("");
-    const url = "http://localhost:8070/user/Details/";
+  MyComponent() {
+    const [userData, setUserData] = useState(null);
 
-    axios.get(url + mongoid).then((res) => {
-      if (res.data.success) {
-        this.setState({
-          View: res.data.BackendData,
+    useEffect(() => {
+      const userInfo = localStorage.getItem("userInfo");
+      if (!userInfo) {
+        alert("You Are Not Authorized User");
+        window.location.replace("/register");
+        return;
+      }
+
+      const mongoid = userInfo.slice(7, 31);
+
+      try {
+        axios.get(`${API_URL}${mongoid}`).then((res) => {
+          if (res.data.success) {
+            setUserData(res.data.BackendData);
+          } else {
+            console.log("Can't fetch user data");
+          }
         });
-        // console.log(this.state.View);
-      } else console.log("cant");
-    });
+      } catch (error) {
+        console.error(error);
+      }
+    }, []);
+
+    // Render the component
   }
 
   render() {
@@ -65,7 +71,7 @@ export default class UserProfile extends Component {
         <div>
           <Pageheader headertitle="Profile" />
           <div style={{ marginTop: "10px" }}>
-            <Sub/>
+            <Sub />
             {/*                
             <div className="body1">
                 <div className="info">

@@ -250,7 +250,12 @@ function App() {
           ></Route>
 
           <Route path="/get" exact component={Display} />
-          <Route path="/admin" exact component={admin} />
+          <PrivateRoute
+            path="/admin"
+            exact
+            component={admin}
+            isAuthenticated={isAuthenticated}
+          />
 
           <Route path="/rep" exact component={UserRepo} />
           <Route path="/equipment/add" exact component={AddEquipment} />
@@ -283,12 +288,7 @@ function App() {
             component={EditGuide}
             isAuthenticated={isAuthenticated}
           />
-          <PrivateRoute
-            path="/guide/login"
-            exact
-            component={GuideLogin}
-            isAuthenticated={isAuthenticated}
-          />
+          <Route path="/guide/login" exact component={GuideLogin} />
           <Route path="/guide/all" exact component={SelectGuide} />
           <Route path="/guide/handle/:id" exact component={GuideConfirm} />
           <Route path="/guide/request/:id" exact component={GuideRequest} />

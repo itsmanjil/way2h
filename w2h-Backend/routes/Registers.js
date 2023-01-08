@@ -80,4 +80,28 @@ router.route("/login").post((req, res) => {
     });
 });
 
+router.route("/user/:id").get((req, res) => {
+  const userId = req.params.id;
+
+  Reg.findById(userId)
+    .then((Registers) => {
+      if (!Registers) {
+        return res.status(404).json({ error: "User not found" });
+      }
+
+      res.json({
+        id: Registers._id,
+        Name: Registers.Name,
+        Email: Registers.Email,
+        reward: Registers.reward,
+        Password: Registers.Password,
+        Num: Registers.Num,
+        role: Registers.role,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({ error: "Internal server error" });
+    });
+});
+
 module.exports = router;
