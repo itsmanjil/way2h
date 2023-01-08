@@ -92,7 +92,7 @@ import PrivateRoute from "./components/private";
 
 function isAuthenticated() {
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-  return userInfo !== null;
+  return userInfo !== null && userInfo.role === "admin";
 }
 
 function App() {
