@@ -23,6 +23,10 @@ const RegSchema = new Schema({
   reward: {
     type: Number,
   },
+  role: {
+    type: String,
+    default: "user",
+  },
   resetPasswordToken: String,
   resetPasswordExpire: Date,
 });

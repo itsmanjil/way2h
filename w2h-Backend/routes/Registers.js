@@ -71,6 +71,7 @@ router.route("/login").post((req, res) => {
         reward: Registers.reward,
         Password: Registers.Password,
         Num: Registers.Num,
+        role: Registers.role,
         token: generateToken(Registers._id),
       });
     })

@@ -8,16 +8,14 @@ import Footer from "../Footer";
 import { toast } from "react-toastify";
 import { ElseIf } from "react-if-elseif-else-render";
 import NavbarV3 from "../navbar-v4";
-
 // eslint-disable-next-line no-empty-pattern
 export default function RegisterUser({}) {
   const history = useHistory();
-
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
   const [Num, setNum] = useState("");
   const [Password, setPassword] = useState("");
-
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(false);
   const [loding, setLoding] = useState(false);
   useEffect(() => {
@@ -26,7 +24,6 @@ export default function RegisterUser({}) {
       history.push("/profile");
     }
   }, [history]);
-
   function sendData(e) {
     e.preventDefault();
     if (Name === "" || Name === null || !isNaN(Name)) {
@@ -38,8 +35,11 @@ export default function RegisterUser({}) {
     } else if (Password === "" || Password == null || Password.length < 8) {
       alert("password Required");
       return false;
-    } else if (Num === "" || Num == null || Num.length <= 10) {
+    } else if (Num === "" || Num == null || Num.length <= 9) {
       alert("Number Required");
+      return false;
+    } else if (Password !== confirmPassword) {
+      alert("Password and confirm password do not match");
       return false;
     }
     const NewReg = {
@@ -47,10 +47,10 @@ export default function RegisterUser({}) {
       Email,
       Password,
       Num,
-      reward : 0
+      confirmPassword,
+      reward: 0,
     };
     console.log(NewReg);
-
     axios
       .post("http://localhost:8070/Register/add", NewReg)
       .then(() => {
@@ -63,13 +63,10 @@ export default function RegisterUser({}) {
         alert(err);
       });
   }
-
   const getData = async (e) => {
     e.preventDefault();
-
     const email = document.getElementById("logemail").value;
     const pass = document.getElementById("logpass");
-
     if (email === "" || email.includes("@" && ".com") === false) {
       alert("Enter Valid email Address");
       return false;
@@ -77,7 +74,6 @@ export default function RegisterUser({}) {
       alert("pass Required");
       return false;
     }
-
     try {
       const config = {
         headers: {
@@ -100,28 +96,28 @@ export default function RegisterUser({}) {
         pathname: "/profile",
       });
       setLoding(false);
-
       console.log("err");
     } catch (error) {
-      toast.error("error!");
+      toast.error("login error!");
       setError(error.response.data.message);
     }
   };
-
   return (
     <div>
       <NavbarV3 />{" "}
       <div className="body1 ">
         <div className="info">
           <div className="container containerabc" id="container">
-            <div className="form-container form-containerabc sign-up-container sign-up-containerabc">
+            <div
+              className="form-container form-containerabc sign-up-container sign-up-containerabc"
+              style={{ height: "400px" }}
+            >
               <form
                 onSubmit={sendData}
                 className="form12"
                 style={{ position: "relative", lineHeight: -10 }}
               >
                 <h1 className="h111">Create Account</h1>
-
                 <input
                   className="inputabc"
                   type="text"
@@ -162,7 +158,16 @@ export default function RegisterUser({}) {
                   }}
                   required
                 />
-
+                <input
+                  className="inputabc"
+                  type="password"
+                  placeholder="Confirm Password"
+                  id="Password"
+                  onChange={(e) => {
+                    setConfirmPassword(e.target.value);
+                  }}
+                  required
+                />
                 <button className="button12 " type="submit">
                   Sign Up
                 </button>
@@ -171,7 +176,6 @@ export default function RegisterUser({}) {
             <div className="form-container form-containerabc sign-in-container sign-in-containerabc">
               <form onSubmit={getData} className="form12">
                 <h1 className="h111">Sign in</h1>
-
                 <input
                   className="inputabc"
                   type="text"
@@ -195,7 +199,7 @@ export default function RegisterUser({}) {
                 <a href="/forget" className="a123">
                   Forgot your password?
                 </a>
-                <button className="button12  ">Sign In</button>
+                <button className="button123">Sign In</button>
               </form>
             </div>
             <div className="overlay-container overlay-containerabc">
