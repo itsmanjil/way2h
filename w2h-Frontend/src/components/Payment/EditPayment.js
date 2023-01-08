@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import Header from '../Header';
 import Footer from '../Footer';
+import { toast } from "react-toastify";
+
 
 export default class EditPayment extends Component{
 
@@ -62,6 +64,8 @@ export default class EditPayment extends Component{
 
     onSubmit= (e)=>{
       e.preventDefault();
+      const luhn = require("luhn");
+
 
       const id = this.props.match.params.id;
       console.log('Payment Added');
@@ -74,6 +78,28 @@ export default class EditPayment extends Component{
         time,
         no,
         amount}=this.state;
+
+        if (!method) {
+          this.setState({ error: "Please select a payment method." });
+          toast.error("Please select a payment method.");
+          return;
+        }
+        if (!card) {
+          console.log("Card number is required");
+          toast.error("Card number is required");
+          return;
+        }
+        if (!luhn.validate(card)) {
+          console.log("Invalid card number");
+          toast.error("Invalid card number");
+          return;
+        }
+        if (isNaN(no)) {
+          console.log("Invalid no");
+          toast.error("Invalid CVV");
+          // Display an error message or do something else to alert the user that their no is invalid
+          return;
+        }
 
         const data={
       reference:reference,
@@ -173,7 +199,7 @@ export default class EditPayment extends Component{
            <div className="form-group" style={{marginBottom:'15px'}}>
              <label style={{marginBottom:'5px'}}>Card Number</label>
              <input type="text" className="form-control" name="reference" placeholder="Edit Card Number"
-             value={this.state.card} onChange={this.onChangeCard} maxLength="9" disabled/>
+             value={this.state.card} onChange={this.onChangeCard} maxLength="16" disabled/>
            </div>
            <div className="form-group" style={{marginBottom:'15px'}}>
              <label style={{marginBottom:'5px'}}>Date</label>

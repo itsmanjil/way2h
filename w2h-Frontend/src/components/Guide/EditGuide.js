@@ -88,9 +88,9 @@ const EditGuide = () => {
                                     onChange={e=>onInputChange(e)}
                                     required = "required"> 
                                     <option>Select</option>
-                                    <option>Nepali</option>
+                                    <option>Sinhala</option>
                                     <option>English</option>
-                                    <option>Hindi</option>
+                                    <option>Tamil</option>
                                 </select> 
                             </div>
 

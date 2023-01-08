@@ -14,7 +14,7 @@ const Services = () => {
           class="container-fluid mx-auto mt-5 mb-5 col-12"
           style={{ textAlign: "center" }}
         >
-          <div class="hd" style={{fontSize:"20px",fontWeight:"bold",fontFamily:"cursive"}}>Way2Heaven</div>
+          <div class="hd">Dream Travelers Services</div>
           <p>
             <small class="text-muted">
               Always render more and better service than <br />

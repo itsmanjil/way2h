@@ -116,29 +116,29 @@ export default class SelectGuide extends Component{
                                                             <div class="card-body pt-0">
                                                                 <table class="table table-bordered">
                                                                     <tr>
-                                                                      <th width="30%" style={{color:"black"}}>Name</th>
+                                                                      <th width="30%">Name</th>
                                                                       <td width="2%">:</td>
-                                                                      <td style={{color:"blue"}}>{guide.name}</td>
+                                                                      <td>{guide.name}</td>
                                                                     </tr>
                                                                     <tr>
-                                                                      <th width="30%" style={{color:"black"}}>Address</th>
+                                                                      <th width="30%">Address</th>
                                                                       <td width="2%">:</td>
-                                                                      <td style={{color:"blue"}}>{guide.address}</td>
+                                                                      <td>{guide.address}</td>
                                                                     </tr>
                                                                     <tr>
-                                                                      <th width="30%" style={{color:"black"}}>Language</th>
+                                                                      <th width="30%">Language</th>
                                                                       <td width="2%">:</td>
-                                                                      <td style={{color:"blue"}}>{guide.language}</td>
+                                                                      <td>{guide.language}</td>
                                                                     </tr>
                                                                     <tr>
-                                                                      <th width="30%" style={{color:"black"}}>E-Mail</th>
+                                                                      <th width="30%">E-Mail</th>
                                                                       <td width="2%">:</td>
-                                                                      <td style={{color:"blue"}}>{guide.email}</td>
+                                                                      <td>{guide.email}</td>
                                                                     </tr>
                                                                     <tr>
-                                                                      <th width="30%"style={{color:"black"}}>Contact Number</th>
+                                                                      <th width="30%">Contact Number</th>
                                                                       <td width="2%">:</td>
-                                                                      <td style={{color:"blue"}}>{guide.phone}</td>
+                                                                      <td>{guide.phone}</td>
                                                                     </tr>
                                                                   </table>
                                                                 </div>

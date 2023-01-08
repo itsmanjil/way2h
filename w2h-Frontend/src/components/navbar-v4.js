@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
-// import "../assets/css/style.css";
 
 const NavbarV3 = () => {
   const history = useHistory();
@@ -177,12 +176,13 @@ const NavbarV3 = () => {
                           <Link to="/contactus">Contact</Link>
                           <ul>
                             <li>
-                              <Link to="/contactus">Contact</Link>
+                            <Link to="/contactus">Contact</Link>
                             </li>
-
+                            
                             <li>
                               <Link to="/guide/all">Guide</Link>
                             </li>
+                           
                           </ul>
                         </li>
                         <li className="menu-icon">

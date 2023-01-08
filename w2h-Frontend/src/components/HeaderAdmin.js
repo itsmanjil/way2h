@@ -1,104 +1,87 @@
 import { orange } from "@material-ui/core/colors";
 import React from "react";
 import "../Styles/AdminHeader.css";
-import "../Styles/responsive.css";
 let publicUrl = process.env.PUBLIC_URL + "/";
-
+import { Link } from "react-router-dom";
 function HeaderAdmin() {
   return (
     <div>
-      <div
-        class="sidebar-container sidebar-containeradh"
-        style={{
-          height: "124vh",
-          width: "230px",
-          position: "absolute",
-          lineHeight: "-10",
-        }}
-      >
-        <div
-          class="sidebar-logo sidebar-logoadh"
-          style={{ background: "white" }}
-        >
-          <img
-            src={publicUrl + "assets/img/logo.png"}
-            style={{ height: "10.6vh", background: "white" }}
-            alt="Logo"
-          />
+      <div class="sidebar-container sidebar-containeradh" style={{height:"100vh",width:"230px",position:"absolute",lineHeight:"-10"}}>
+        <div class="sidebar-logo sidebar-logoadh" style={{background:"white"}}>
+        <img src={publicUrl + "assets/img/logo.png"} style={{height:"10.6vh",background:"white"}} alt="Logo" />
         </div>
-        <ul
-          class="sidebar-navigation sidebar-navigationadh"
-          style={{ position: "absolute", lineHeight: "3.9" }}
-        >
+        <ul class="sidebar-navigation sidebar-navigationadh" style={{position:"absolute",lineHeight:"3.9"}}>
           <center>
             {" "}
             <h2
               class="headerad"
-              style={{ fontSize: "17px", color: "black", paddingTop: "15px" }}
+              style={{ fontSize: "17px", color: "black" , paddingTop: "15px" }}
             >
               <b>Way2Heaven</b>
             </h2>
           </center>
           <li>
-            <a href="/adminhome">
+            {/* <Link to="/adminhome">
               <i class="fa fa-home" aria-hidden="true"></i> Homepage
-            </a>
+            </Link> */}
+            <Link to="/adminhome">
+               {/* <Link> */}
+              <i class="fa fa-home" aria-hidden="true"></i> Homepage
+            {/* </Link> */}
+            </Link>
           </li>
           <li>
-            <a href="/travelpackages/admin">
+            <Link to="/travelpackages/admin">
               <i class="fa fa-car" aria-hidden="true"></i> Travel Package
-            </a>
+            </Link>
           </li>
-
           <li>
-            <a href="/adminhotelpackage">
+            <Link to="/adminhotelpackage">
               <i class="fa fa-hotel" aria-hidden="true"></i> Room Package
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/activities">
+            <Link to="/activities">
               <i class="fa fa-swimmer" aria-hidden="true"></i> Activity
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/guide">
+            <Link to="/guide">
               <i class="fa fa-user" aria-hidden="true"></i> Guide
-            </a>
+            </Link>
           </li>
-
           <li>
-            <a href="/equipment/admin">
+            <Link to="/equipment/admin">
               <i class="fa fa-campground" aria-hidden="true"></i> Equipment
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/feedbacks/admin">
+            <Link to="/feedbacks/admin">
               <i class="fa fa-comments" aria-hidden="true"></i> FeedBack
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/adView">
+            <Link to="/adView">
               <i class="fa fa-inbox" aria-hidden="true"></i> Inquiry
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/contactus/admin">
+            <Link to="/contactus/admin">
               <i class="fa fa-envelope" aria-hidden="true"></i> Messages
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/get">
+            <Link to="/get">
               <i class="fa fa-user" aria-hidden="true"></i> User Management
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/payment">
+            <Link to="/payment">
               <i class="fa fa-cc-visa" aria-hidden="true"></i> Payment
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
-
       <div class="main_content">
         <div class="headerh" style={{ height: "111px" }}>
           <div id="hnamed">
@@ -113,20 +96,18 @@ function HeaderAdmin() {
               Way2Heaven Admin DashBord
             </h1>
           </div>
-
-          <div id="loginah">
-            <a
-              href="/register"
+          {/* <div id="loginah">
+            <Link
+              to="/register"
               style={{ textDecoration: "none", color: "hsl(0,0%,70%,0.9)" }}
             >
               {" "}
               <i class="fas fa-user-alt"></i>{" "}
-            </a>
-          </div>
+            </Link>
+          </div> */}
         </div>
       </div>
     </div>
   );
 }
-
 export default HeaderAdmin;

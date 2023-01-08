@@ -68,9 +68,6 @@ const EditActivity = (props) => {
         style={{
           background:
             "url(https://previews.123rf.com/images/wstockstudio/wstockstudio1707/wstockstudio170700176/82195391-accessories-for-travel-top-view-on-white-wooden-background-with-copy-space-adventure-and-wanderlust-.jpg)",
-            left: "10px",
-            width:"100%",
-            height:"100vh"
         }}
       >
         <HeaderAdmin />
@@ -89,7 +86,6 @@ const EditActivity = (props) => {
                     onChange={(e) => setActivityName(e.target.value)}
                     className="form-control"
                     placeholder="Activity Name"
-                    style={{height:"4vh"}}
                   />
                 </div>
                 <div className="form-group">
@@ -103,89 +99,44 @@ const EditActivity = (props) => {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="mindescription" style={{
-                      position: "relative",
-                      top: "-35px",
-                      height: "6vh",
-                    }}>Min Description</label>
+                  <label htmlFor="mindescription">Min Description</label>
                   <textarea
                     value={mindescription}
                     onChange={(e) => setMindescription(e.target.value)}
                     className="form-control"
                     rows="3"
-                    style={{
-                      position: "relative",
-                      top: "-70px",
-                      height: "6vh",
-                    }}
                   ></textarea>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="description"style={{
-                      position: "relative",
-                      top: "-70px",
-                      height: "6vh",
-                    }}>Description</label>
+                  <label htmlFor="description">Description</label>
                   <textarea
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     className="form-control"
                     rows="5"
-                    style={{
-                      position: "relative",
-                      top: "-100px",
-                      height: "6vh",
-                    }}
                   ></textarea>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="price"style={{
-                      position: "relative",
-                      top: "-104px",
-                      height: "6vh",
-                    }}>Price</label>
+                  <label htmlFor="price">Price</label>
                   <input
                     type="text"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                     className="form-control"
                     placeholder="Price"
-                    style={{
-                      position: "relative",
-                      top: "-134px",
-                      height: "6vh",
-                    }}
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="file"style={{
-                      position: "relative",
-                      top: "-134px",
-                      height: "6vh",
-                    }}>Choose activity image</label>
+                  <label htmlFor="file">Choose activity image</label>
                   <input
                     type="file"
                     filename="activityImage"
                     className="form-control-file"
                     onChange={onChangeFile}
-                    style={{
-                      position: "relative",
-                      top: "-174px",
-                      height: "6vh",
-                      right:"10px"
-                    }}
                   />
                 </div>
                 <div className="flex-parent jc-center">
-                  <button type="submit" className="btnbb"  style={{
-                      position: "relative",
-                      top: "-219px",
-                      height: "6vh",
-                      backgroundColor:"red",
-                      color:"white"
-                      
-
-                    }}>
+                  <button type="submit" className="btnbb">
                     Update Activity
                   </button>
                 </div>
@@ -194,13 +145,9 @@ const EditActivity = (props) => {
                     to="/activities"
                     type="submit"
                     className="btnaa"
-                    style={{ color: "#000000", position: "relative",
-                    top: "-294px",
-                    height: "6vh",
-                  left:"190px" }}
-                    
+                    style={{ color: "#000000" }}
                   >
-                    <i class="fas fa-hand-point-left">Back to Activity</i>
+                    <i class="fas fa-hand-point-left">&nbsp;Back to Activity</i>
                   </Link>
                 </div>
                 &nbsp;&nbsp;

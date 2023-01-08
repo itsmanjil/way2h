@@ -2,15 +2,13 @@ import React from "react";
 import "../../Styles/HeaderFooter.css";
 import HeaderAdmin from "../HeaderAdmin";
 import "../../Styles/AdminHeader.css";
-import "../../Styles/responsive.css";
-
 
 function AdminHome() {
   return (
     <div>
       <HeaderAdmin />
 
-      <div className="image"
+      <div
         style={{
           backgroundColor: "hsla(90, 100%, 89%, 0.55)",
         }}

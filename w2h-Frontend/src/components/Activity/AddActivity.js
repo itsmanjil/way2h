@@ -70,7 +70,7 @@ function AddActivity() {
                 width:"750px",
               }}
             >
-             
+              &nbsp;&nbsp;
               <h1>Add New Activity </h1>
               <span className="message">{message}</span>
               <form onSubmit={changeOnClick} encType="multipart/form-data">
@@ -82,7 +82,6 @@ function AddActivity() {
                     onChange={(e) => setActivityName(e.target.value)}
                     className="form-control"
                     placeholder="Activity Name"
-                    style={{position:"relative",height:"7vh"}}
                   />
                 </div>
 
@@ -98,59 +97,55 @@ function AddActivity() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="mindescription" style={{top:"-90px",position:"relative"}}>Min Description</label>
+                  <label htmlFor="mindescription">Min Description</label>
                   <textarea
                     value={mindescription}
                     onChange={(e) => setMindescription(e.target.value)}
                     className="form-control"
-                    rows="1"
-                    style={{top:"-102px",position:"relative"}}
+                    rows="3"
                   ></textarea>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="description" style={{top:"-115px",position:"relative"}}>Description</label>
+                  <label htmlFor="description">Description</label>
                   <textarea
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     className="form-control"
-                    rows="1"
-                    style={{top:"-122px",position:"relative"}}
+                    rows="5"
                   ></textarea>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="price" style={{top:"-130px",position:"relative"}}>Price</label>
+                  <label htmlFor="price">Price</label>
                   <input
                     type="text"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                     className="form-control"
                     placeholder="Price"
-                    style={{top:"-135px",position:"relative",height:"5vh"}}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="file"style={{top:"-165px",position:"relative"}}>Choose activity image</label>
+                  <label htmlFor="file">Choose activity image</label>
                   <input
                     type="file"
                     filename="activityImage"
                     className="form-control-file"
                     onChange={onChangeFile}
-                    style={{top:"-165px",position:"relative"}}
                   />
                 </div>
 
                 <div className="row">
-                  <div className="flex-parent jc-center" style={{top:"-205px",position:"relative"}}>
+                  <div className="flex-parent jc-center">
                     <button type="submit" className="btn btn-primary">
                       Post Activity
                     </button>
                   </div>
                   <div
                     className="flex-parent jc-center"
-                    style={{ align: "center",top:"-225px",position:"relative"}}
+                    style={{ align: "center" }}
                   >
                     <Link
                       to="/activities"

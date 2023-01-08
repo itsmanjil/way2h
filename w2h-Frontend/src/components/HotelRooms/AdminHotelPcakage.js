@@ -40,9 +40,9 @@ export default class AdminHotelBooking extends Component {
         <HeaderAdmin />
         <br></br>
         <br></br>
-        <div className="infoadmin" style={{ position: "absolute", left: "30px" }}>
+        <div className="infoadmin" style={{position:"absolute",left:"30px"}}>
           <div classname="addbttn">
-            <button className="btn btn-success" style={{ position: "relative", height: "7vh" }}>
+            <button className="btn btn-success"  style={{position:"relative",height:"7vh"}}>
               <a
                 href="/adminaddhotelpackage"
                 style={{ textDecoration: "none", color: "white" }}
@@ -51,7 +51,7 @@ export default class AdminHotelBooking extends Component {
               </a>
             </button>
             &nbsp;
-            <button className="btn btn-warning" style={{ position: "relative", height: "7vh" }}>
+            <button className="btn btn-warning"  style={{position:"relative",height:"7vh"}}>
               <a
                 href="/adminhotelbooking"
                 style={{ textDecoration: "none", color: "white" }}
@@ -62,62 +62,51 @@ export default class AdminHotelBooking extends Component {
           </div>
           <br></br>
           <br></br>
-          <Row xs={1} md={3} className="g-1 " id="by" class="rounded" style={{ position: "relative", right: "180px", marginLeft: "90px" }} >
-            {this.state.posts.map((posts, index) => (
-              <section classname="ad" >
-                <figure classname="adcard" style={{ border: '3px solid black' }}>
-                  <div classname="ad_card">
-                    <img
-                      classname="card_img" style={{ position: "relative", width: "590px", height: "30vh", display: "flex" }}
-                      src={`/uploads/${posts.packageImage}`}
-                    />
+          <Row xs={1} md={3} className="g-4 " id="by" class="rounded" >
+          {this.state.posts.map((posts, index) => (
+            <section classname="ad">
+              <figure classname="adcard">
+                <div classname="ad_card">
+                  <img  
+                    classname="card_img" style={{position:"relative",width:"590px",height:"30vh",display:"flex"}}
+                    src={`/uploads/${posts.packageImage}`}
+                  />
+                </div>
+                <div classname="ad_content">
+                  <div classname="card_info">
+                    <h4
+                      classname="cardtopic"
+                      style={{ fontFamily: "Calibri", fontSize: "28px" }}
+                    >
+                      {posts.roomType}
+                    </h4>
+                    <p classname="cardprice">Per Day: Rs {posts.price}</p>
+                    <p classname="cardmax">max Person: {posts.maxCapacity}</p>
                   </div>
-                  <div classname="ad_content">
-                    <div classname="card_info">
-                      <h4
-                        classname="cardtopic"
-                        style={{ fontFamily: "Calibri", fontSize: "28px" }}
+                  <div classname="cd_bttn">
+                    <button classname="btn btn-dark">
+                      <a
+                        href={`/adminhotelpackagedetails/${posts._id}`}
+                        style={{ textDecoration: "none", color: "red" }}
                       >
-                        {posts.roomType}
-                      </h4>
-                      <p classname="cardprice">Per Day: Rs {posts.price}</p>
-                      <p classname="cardmax">max Person: {posts.maxCapacity}</p>
-                    </div>
-                    <div classname="cd_bttn">
-                      <button classname="btn btn-dark">
-                        <a
-                          href={`/adminhotelpackagedetails/${posts._id}`}
-                          style={{
-                            textDecoration: "none", color: "red", display: "inline-block", borderRadius: "4px"
-                            , backgroundColor: " #f4511e", border: "none",
-                            color: "#FFFFFF",
-                            textAlign: "center",
-                            fontSize: "28px",
-                            Padding: "20px",
-                            width: "100px",
-                            transition: "all 0.5s",
-                            cursor: "pointer",
-                            margin: "5px",
-                          }}
-                        >
-                          Details
-                        </a>
-                      </button>
-                    </div>
+                        Details
+                      </a>
+                    </button>
                   </div>
-                </figure>
-              </section>
-
-            ))}{" "}
+                </div>
+              </figure>
+            </section>
+            
+          ))}{" "}
           </Row>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-      </div >
-
-
+      
+      
     );
   }
 }

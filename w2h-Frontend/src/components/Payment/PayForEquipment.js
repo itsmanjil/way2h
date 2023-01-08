@@ -3,12 +3,11 @@ import axios from "axios";
 import "../../Styles/Payment.css";
 import Header from "../Header";
 import Footer from "../Footer";
-
-
+import { toast } from "react-toastify";
+import { useHistory, useParams } from "react-router-dom";
 export default class PayForTravelPackage extends Component {
   constructor(props) {
     super(props);
-
     this.onChangeReference = this.onChangeReference.bind(this);
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangePay = this.onChangePay.bind(this);
@@ -17,7 +16,6 @@ export default class PayForTravelPackage extends Component {
     this.onChangeTime = this.onChangeTime.bind(this);
     this.onChangeNo = this.onChangeNo.bind(this);
     this.onChangeAmount = this.onChangeAmount.bind(this);
-
     this.state = {
       ename: "",
       price: "",
@@ -32,7 +30,6 @@ export default class PayForTravelPackage extends Component {
       amount: "",
     };
   }
-
   componentDidMount() {
     const id = this.props.match.params.id;
     axios.get(`http://localhost:8070/equipment/get/${id}`).then((res) => {
@@ -45,7 +42,6 @@ export default class PayForTravelPackage extends Component {
       }
     });
   }
-
   onChangeReference(e) {
     this.setState({ reference: e.target.value });
   }
@@ -58,7 +54,6 @@ export default class PayForTravelPackage extends Component {
   onChangeMethod(e) {
     this.setState({ method: e.target.value });
   }
-
   onChangeCard(e) {
     this.setState({ card: e.target.value });
   }
@@ -71,16 +66,34 @@ export default class PayForTravelPackage extends Component {
   onChangeAmount(e) {
     this.setState({ amount: e.target.value });
   }
-
   onSubmit = (e) => {
+    const luhn = require("luhn");
     e.preventDefault();
-
     console.log("Payment Added");
-
     const { ename, price } = this.state;
     const { reference, name, payf, method, card, time, no, amount } =
       this.state;
-
+    if (!method) {
+      this.setState({ error: "Please select a payment method." });
+      toast.error("Please select a payment method.");
+      return;
+    }
+    if (!card) {
+      console.log("Card number is required");
+      toast.error("Card number is required");
+      return;
+    }
+    if (!luhn.validate(card)) {
+      console.log("Invalid card number");
+      toast.error("Invalid card number");
+      return;
+    }
+    if (isNaN(no)) {
+      console.log("Invalid no");
+      toast.error("Invalid Cvv");
+      // Display an error message or do something else to alert the user that their no is invalid
+      return;
+    }
     const data = {
       reference: ename,
       name: name,
@@ -91,26 +104,24 @@ export default class PayForTravelPackage extends Component {
       no: no,
       amount: price,
     };
-
     console.log(data);
     axios.post("http://localhost:8070/payment/add", data).then((res) => {
       if (res.data.success) {
+        toast.success("Payment Successful");
         this.setState(window.location.replace("/confirm/payment"));
       }
     });
   };
   initialOptions = () => ({
-    clientId: 'AfOyAqxy3v77M6IR4lid44zAXxgcPSweF_d3f_i10bQmoqZPrmasQhNLemZkxXmgddGjJDkYDXhXPIQm',
-    currency: 'USD',
-    intent: 'capture',
-    clientToken: 'abc123xyz==',
+    clientId:
+      "AfOyAqxy3v77M6IR4lid44zAXxgcPSweF_d3f_i10bQmoqZPrmasQhNLemZkxXmgddGjJDkYDXhXPIQm",
+    currency: "USD",
+    intent: "capture",
+    clientToken: "abc123xyz==",
   });
- 
-
   render() {
     const { ename, price, payf, method, img } = this.state;
     return (
-      
       <div>
         <Header />
         <div className="info">
@@ -140,7 +151,6 @@ export default class PayForTravelPackage extends Component {
                         </div>
                       </center>
                     </div>
-
                     <hr />
                     <div class="row lower">
                       &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
@@ -157,7 +167,6 @@ export default class PayForTravelPackage extends Component {
                     </p>
                   </div>
                 </div>
-
                 <div class="col-md-7">
                   <div
                     class="lefta border"
@@ -210,7 +219,6 @@ export default class PayForTravelPackage extends Component {
                             />
                           </div>
                         </div>
-
                         <div class="col">
                           <div class="input-group mb-3">
                             <div class="input-group-prepend">
@@ -236,7 +244,6 @@ export default class PayForTravelPackage extends Component {
                           </div>
                         </div>
                       </div>
-
                       <div class="d-flex flex-row align-items-center mb-3">
                         <label class="form-label fw-bold mr-4">
                           <i class="fas fa-plane mr-3"></i> Pay For &nbsp;{" "}
@@ -252,7 +259,6 @@ export default class PayForTravelPackage extends Component {
                           />
                         </div>
                       </div>
-
                       <div class="d-flex flex-row align-items-center mb-4">
                         <label class="form-label fw-bold">
                           <i class="fas fa-plane mr-2"></i> Enter Name &nbsp;{" "}
@@ -270,7 +276,6 @@ export default class PayForTravelPackage extends Component {
                           />
                         </div>
                       </div>
-
                       <div class="d-flex flex-row align-items-center mb-4">
                         <label class="form-label fw-bold">
                           {" "}
@@ -312,7 +317,6 @@ export default class PayForTravelPackage extends Component {
                           </label>
                         </div>
                       </div>
-
                       <div class="d-flex flex-row align-items-center mb-4">
                         <label class="form-label fw-bold">
                           {" "}
@@ -327,12 +331,11 @@ export default class PayForTravelPackage extends Component {
                             placeholder="Enter Card Number"
                             value={this.state.card}
                             onChange={this.onChangeCard}
-                            maxLength="12"
+                            maxLength="16"
                             required="required"
                           />
                         </div>
                       </div>
-
                       <div class="d-flex flex-row align-items-center mb-4">
                         <label class="form-label fw-bold">
                           {" "}
@@ -368,7 +371,6 @@ export default class PayForTravelPackage extends Component {
                           />{" "}
                         </div>
                       </div>
-
                       <button
                         type="submit"
                         class="btn btn-danger btn-lg btn-block"
