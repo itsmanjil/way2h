@@ -87,220 +87,253 @@ import ResetPassword from "./components/Kavindu/resetpassword";
 import PackageDetailed from "./components/Travel_Packages/details";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {
-	PayPalScriptProvider,
-} from "@paypal/react-paypal-js";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import PrivateRoute from "./components/private";
+
+function isAuthenticated() {
+  const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+  return userInfo !== null;
+}
 
 function App() {
   return (
-    <PayPalScriptProvider options={{"client_id":"AWyMZpO5lQZLICtloy85n5wto96jsdsi3XjL4sX3X9Brkig8mj3B44PXnpXQEqQWv4xPY065HvwdnBnK"}}>
-    <Router>
-      {/* Token xa ra  || xaina  */}
-      <Route>
-        {/* <NavbarV3 /> */}
-        <Route path="/Register" exact component={RegisterUser} />
-        <Route path="/" exact component={Home_V5}></Route>
-        <Route path="/gallery" exact component={Gallery} />
-        <Route path="/aboutus" exact component={Aboutus} />
-        <Route path="/contactus" exact component={ContactUs} />
-        <Route path="/travelpackages" exact component={AllPackages}></Route>
-        <Route
-          path="/travelpackages/travelpackage/:id"
-          exact
-          component={PackageDetails}
-        ></Route>
-        <Route
-          exact
-          path="/Register/password/reset/:token"
-          component={ResetPassword}
+    <PayPalScriptProvider
+      options={{
+        client_id:
+          "AWyMZpO5lQZLICtloy85n5wto96jsdsi3XjL4sX3X9Brkig8mj3B44PXnpXQEqQWv4xPY065HvwdnBnK",
+      }}
+    >
+      <Router>
+        {/* Token xa ra  || xaina  */}
+        <Route>
+          {/* <NavbarV3 /> */}
+          <Route path="/Register" exact component={RegisterUser} />
+          <Route path="/" exact component={Home_V5}></Route>
+          <Route path="/gallery" exact component={Gallery} />
+          <Route path="/aboutus" exact component={Aboutus} />
+          <Route path="/contactus" exact component={ContactUs} />
+          <Route path="/travelpackages" exact component={AllPackages}></Route>
+          <Route
+            path="/travelpackages/travelpackage/:id"
+            exact
+            component={PackageDetails}
+          ></Route>
+          <Route
+            exact
+            path="/Register/password/reset/:token"
+            component={ResetPassword}
+          />
+          <Route
+            path="/bookingpackage/:id"
+            exact
+            component={PackageBooking}
+          ></Route>
+          <Route path="/payment/add-package/:id" exact component={PayForTP} />
+          <Route path="/all" exact component={AllActivity} />
+          <Route path="/view-activity/:id" exact component={ViewActivity} />
+          <Route path="/activity-user/:id" exact component={ActivityUser} />
+          <Route
+            path="/payment/add-activity/:id"
+            exact
+            component={PayForActivity}
+          />
+          <Route path="/confirm/payment/" exact component={PaymentConfirm} />
+          <Route path="/payment/view/" exact component={PaymentView} />
+          <Route path="/payment/edit/:id" exact component={EditPayment} />
+          <Route path="/payment/details/:id" exact component={PaymentDetails} />
+          <Route path="/equipment" exact component={UserEquipment} />
+          <Route
+            path="/payment/add-equipment/:id"
+            exact
+            component={PayForEquipment}
+          />
+          <Route path="/hotelpackage" exact component={hotelpackage}></Route>
+          <Route
+            path="/hotelpackagedetails/:id"
+            exact
+            component={hotelpackagedetails}
+          />
+          <Route
+            path="/addnewhotelbooking/:id"
+            exact
+            component={addnewhotelbooking}
+          ></Route>
+          <Route path="/payment/add-room/:id" exact component={PayForRoom} />
+          <Route path="/Profile" exact component={UserProfile} />
+          <Route path="/edit/:id" exact component={EditDetails} />
+          <Route path="/services" exact component={Services} />
+          <Route path="/activities" exact component={Activities} />
+          <Route path="/forget" exact component={forget} />
+          <Route path="/reset/:id" exact component={resetpass} />
+          <Route path="/subscribe" component={pay}></Route>
+          <Route
+            path="/userhotelbooking/View"
+            exact
+            component={SearchHotelBooking}
+          ></Route>
+          <Route
+            path="/UserHotelBookingDetails/:id"
+            exact
+            component={UserHotelBookingDetails}
+          ></Route>
+
+          {/*sab user path */}
+        </Route>
+
+        <div>
+          {/* <Route path="/" exact component={PackageDetailed}></Route> */}
+
+          <Route
+            path="/travelpackages/admin"
+            exact
+            component={AllPackagesAdmin}
+          ></Route>
+          <Route
+            path="/travelpackage/admin/add"
+            exact
+            component={CreatePackage}
+          ></Route>
+
+          <Route
+            path="/travelpackages/travelpackage/admin/:id"
+            exact
+            component={PackageDetailsAdmin}
+          ></Route>
+          <Route
+            path="/travelpackage/admin/edit/:id"
+            exact
+            component={EditPackage}
+          ></Route>
+
+          <Route path="/allbooking" exact component={AllBooking}></Route>
+          <Route
+            path="/adminhotelbooking"
+            exact
+            component={adminhotelbooking}
+          ></Route>
+          <Route
+            path="/userhotelbooking/hotelbookingdetails/:id"
+            exact
+            component={hotelbookingdetails}
+          ></Route>
+
+          <Route
+            path="/edithotelbooking/:id"
+            exact
+            component={edithotelbooking}
+          ></Route>
+
+          <Route
+            path="/adminhotelpackage"
+            exact
+            component={adminhotelpackage}
+          ></Route>
+          <Route
+            path="/adminaddhotelpackage"
+            exact
+            component={adminaddhotelpackage}
+          ></Route>
+          <Route
+            path="/adminedithotelpackage/:id"
+            exact
+            component={adminedithotelpackage}
+          ></Route>
+          <Route
+            path="/adminhotelpackagedetails/:id"
+            exact
+            component={adminhotelpackagedetails}
+          ></Route>
+          <Route
+            path="/travelpackage/admin/delete/:id"
+            exact
+            component={DeletePackage}
+          ></Route>
+
+          <Route path="/get" exact component={Display} />
+          <Route path="/admin" exact component={admin} />
+
+          <Route path="/rep" exact component={UserRepo} />
+          <Route path="/equipment/add" exact component={AddEquipment} />
+          <Route path="/equipment/edit/:id" exact component={EditEquipment} />
+          <Route path="/equipment/admin" exact component={AdminEquipment} />
+
+          <Route path="/feedback" exact component={AddFeedback} />
+          <Route path="/feedbacks/admin" exact component={AllFeedback} />
+          <Route path="/contactus/admin" exact component={ContactUsAdmin} />
+
+          <Route path="/payment/" exact component={AllPayments} />
+
+          <PrivateRoute
+            path="/adminhome"
+            exact
+            component={AdminHome}
+            isAuthenticated={isAuthenticated}
+          />
+          <Route path="/equipment/report" exact component={EquipmentReport} />
+          <Route path="/guide" exact component={AllGuideDetails} />
+          <PrivateRoute
+            path="/guide/add"
+            exact
+            component={AddGuide}
+            isAuthenticated={isAuthenticated}
+          />
+          <PrivateRoute
+            path="/guide/edit/:id"
+            exact
+            component={EditGuide}
+            isAuthenticated={isAuthenticated}
+          />
+          <PrivateRoute
+            path="/guide/login"
+            exact
+            component={GuideLogin}
+            isAuthenticated={isAuthenticated}
+          />
+          <Route path="/guide/all" exact component={SelectGuide} />
+          <Route path="/guide/handle/:id" exact component={GuideConfirm} />
+          <Route path="/guide/request/:id" exact component={GuideRequest} />
+          <Route path="/guide/allrequests" exact component={AllRequests} />
+
+          <Route path="/activity/:id" exact component={Activity} />
+          <Route path="/activity-details" exact component={ActivityDetails} />
+
+          <Route path="/update/:id" exact component={EditActivity} />
+          <PrivateRoute path="/add-activity" exact component={AddActivity} />
+
+          <Route path="/activity-select" exact component={ActivitySelect} />
+
+          <Route path="/add" exact component={CreateInquiry}></Route>
+          <Route path="/editinq/:id" component={EditInquiry}></Route>
+          <Route path="/allinq" component={InquiryAll}></Route>
+          <Route path="/admin/:id" component={AdminRep}></Route>
+          <Route path="/inqD/:id" component={InqDetails}></Route>
+          <Route path="/view" component={InqView}></Route>
+          <Route path="/adView/" component={AdminView}></Route>
+          <Route path="/report" component={ComponentToPrint}></Route>
+          <Route path="/userDoc/:id" component={ComponentToPrint1}></Route>
+
+          <Route path="/edittpackage/:id" component={EditTPackage}></Route>
+          <Route path="/inqmail/:id" component={Inqmail}></Route>
+          {/* <Route path="/adminDet/:id" component={AdminDetails}></Route> */}
+          <PrivateRoute
+            path="/adminDet/:id"
+            component={AdminDetails}
+            isAuthenticated={isAuthenticated}
+          />
+        </div>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
         />
-        <Route
-          path="/bookingpackage/:id"
-          exact
-          component={PackageBooking}
-        ></Route>
-        <Route path="/payment/add-package/:id" exact component={PayForTP} />
-        <Route path="/all" exact component={AllActivity} />
-        <Route path="/view-activity/:id" exact component={ViewActivity} />
-        <Route path="/activity-user/:id" exact component={ActivityUser} />
-        <Route
-          path="/payment/add-activity/:id"
-          exact
-          component={PayForActivity}
-        />
-        <Route path="/confirm/payment/" exact component={PaymentConfirm} />
-        <Route path="/payment/view/" exact component={PaymentView} />
-        <Route path="/payment/edit/:id" exact component={EditPayment} />
-        <Route path="/payment/details/:id" exact component={PaymentDetails} />
-        <Route path="/equipment" exact component={UserEquipment} />
-        <Route
-          path="/payment/add-equipment/:id"
-          exact
-          component={PayForEquipment}
-        />
-        <Route path="/hotelpackage" exact component={hotelpackage}></Route>
-        <Route
-          path="/hotelpackagedetails/:id"
-          exact
-          component={hotelpackagedetails}
-        />
-        <Route
-          path="/addnewhotelbooking/:id"
-          exact
-          component={addnewhotelbooking}
-        ></Route>
-        <Route path="/payment/add-room/:id" exact component={PayForRoom} />
-        <Route path="/Profile" exact component={UserProfile} />
-        <Route path="/edit/:id" exact component={EditDetails} />
-        <Route path="/services" exact component={Services} />
-        <Route path="/activities" exact component={Activities} />
-        <Route path="/forget" exact component={forget} />
-        <Route path="/reset/:id" exact component={resetpass} />
-        <Route path="/subscribe" component={pay}></Route>
-        <Route
-          path="/userhotelbooking/View"
-          exact
-          component={SearchHotelBooking}
-        ></Route>
-        <Route
-          path="/UserHotelBookingDetails/:id"
-          exact
-          component={UserHotelBookingDetails}
-        ></Route>
-
-        {/*sab user path */}
-      </Route>
-
-      <div>
-        {/* <Route path="/" exact component={PackageDetailed}></Route> */}
-
-        <Route
-          path="/travelpackages/admin"
-          exact
-          component={AllPackagesAdmin}
-        ></Route>
-        <Route
-          path="/travelpackage/admin/add"
-          exact
-          component={CreatePackage}
-        ></Route>
-
-        <Route
-          path="/travelpackages/travelpackage/admin/:id"
-          exact
-          component={PackageDetailsAdmin}
-        ></Route>
-        <Route
-          path="/travelpackage/admin/edit/:id"
-          exact
-          component={EditPackage}
-        ></Route>
-
-        <Route path="/allbooking" exact component={AllBooking}></Route>
-        <Route
-          path="/adminhotelbooking"
-          exact
-          component={adminhotelbooking}
-        ></Route>
-        <Route
-          path="/userhotelbooking/hotelbookingdetails/:id"
-          exact
-          component={hotelbookingdetails}
-        ></Route>
-
-        <Route
-          path="/edithotelbooking/:id"
-          exact
-          component={edithotelbooking}
-        ></Route>
-
-        <Route
-          path="/adminhotelpackage"
-          exact
-          component={adminhotelpackage}
-        ></Route>
-        <Route
-          path="/adminaddhotelpackage"
-          exact
-          component={adminaddhotelpackage}
-        ></Route>
-        <Route
-          path="/adminedithotelpackage/:id"
-          exact
-          component={adminedithotelpackage}
-        ></Route>
-        <Route
-          path="/adminhotelpackagedetails/:id"
-          exact
-          component={adminhotelpackagedetails}
-        ></Route>
-        <Route
-          path="/travelpackage/admin/delete/:id"
-          exact
-          component={DeletePackage}
-        ></Route>
-
-        <Route path="/get" exact component={Display} />
-        <Route path="/admin" exact component={admin} />
-
-        <Route path="/rep" exact component={UserRepo} />
-        <Route path="/equipment/add" exact component={AddEquipment} />
-        <Route path="/equipment/edit/:id" exact component={EditEquipment} />
-        <Route path="/equipment/admin" exact component={AdminEquipment} />
-
-        <Route path="/feedback" exact component={AddFeedback} />
-        <Route path="/feedbacks/admin" exact component={AllFeedback} />
-        <Route path="/contactus/admin" exact component={ContactUsAdmin} />
-
-        <Route path="/payment/" exact component={AllPayments} />
-
-        <Route path="/adminhome" exact component={AdminHome} />
-
-        <Route path="/equipment/report" exact component={EquipmentReport} />
-        <Route path="/guide" exact component={AllGuideDetails} />
-        <Route path="/guide/add" exact component={AddGuide} />
-        <Route path="/guide/edit/:id" exact component={EditGuide} />
-        <Route path="/guide/login" exact component={GuideLogin} />
-        <Route path="/guide/all" exact component={SelectGuide} />
-        <Route path="/guide/handle/:id" exact component={GuideConfirm} />
-        <Route path="/guide/request/:id" exact component={GuideRequest} />
-        <Route path="/guide/allrequests" exact component={AllRequests} />
-
-        <Route path="/activity/:id" exact component={Activity} />
-        <Route path="/activity-details" exact component={ActivityDetails} />
-
-        <Route path="/update/:id" exact component={EditActivity} />
-        <Route path="/add-activity" exact component={AddActivity} />
-
-        <Route path="/activity-select" exact component={ActivitySelect} />
-
-        <Route path="/add" exact component={CreateInquiry}></Route>
-        <Route path="/editinq/:id" component={EditInquiry}></Route>
-        <Route path="/allinq" component={InquiryAll}></Route>
-        <Route path="/admin/:id" component={AdminRep}></Route>
-        <Route path="/inqD/:id" component={InqDetails}></Route>
-        <Route path="/view" component={InqView}></Route>
-        <Route path="/adView/" component={AdminView}></Route>
-        <Route path="/report" component={ComponentToPrint}></Route>
-        <Route path="/userDoc/:id" component={ComponentToPrint1}></Route>
-
-        <Route path="/edittpackage/:id" component={EditTPackage}></Route>
-        <Route path="/inqmail/:id" component={Inqmail}></Route>
-        <Route path="/adminDet/:id" component={AdminDetails}></Route>
-      </div>
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="dark"
-      />
-    </Router>
+      </Router>
     </PayPalScriptProvider>
   );
 }
