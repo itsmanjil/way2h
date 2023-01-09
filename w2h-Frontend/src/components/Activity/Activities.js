@@ -104,7 +104,7 @@ const Activities = () => {
                       </Link>
                       <h6>&nbsp;{activity.category}</h6>
                       <br />
-                      <p>&nbsp;{activity.mindescription}</p>
+                      {/* <p>&nbsp;{activity.mindescription}</p> */}
                       <br />
                       <p>
                         <i className="fas fa-tag">&nbsp;{activity.price}</i>

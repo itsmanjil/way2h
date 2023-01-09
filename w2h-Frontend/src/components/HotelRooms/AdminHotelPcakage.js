@@ -65,8 +65,8 @@ export default class AdminHotelBooking extends Component {
           <Row xs={1} md={3} className="g-4 " id="by" class="rounded" >
           {this.state.posts.map((posts, index) => (
             <section classname="ad">
-              <figure classname="adcard">
-                <div classname="ad_card">
+              <figure classname="adcard"style={{border:"5px solid black",right:"150px",position:"relative"}}>
+                <div classname="ad_card" >
                   <img  
                     classname="card_img" style={{position:"relative",width:"590px",height:"30vh",display:"flex"}}
                     src={`/uploads/${posts.packageImage}`}

@@ -52,7 +52,7 @@ const AdminEquipment = () => {
     <div class="col-md-10">
       <div class="card-body"> <br/>
         <h5 class="card-title">{equipment.name}</h5> 
-        <p class="card-text">{equipment.description}</p>
+        {/* <p class="card-text">{equipment.description}</p> */}
 
 
 
@@ -73,8 +73,8 @@ const AdminEquipment = () => {
                   >
                     Delete
                   </Link>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <Link style={{top:"115px",position:"absolute",right:"90px"}}
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <Link style={{top:"73px",position:"absolute",right:"110px"}}
                     class="btn btn-outline-primary mr-3"
                     to={`/equipment/edit/${equipment._id}`}
                   >

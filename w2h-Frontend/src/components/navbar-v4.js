@@ -20,23 +20,17 @@ const NavbarV3 = () => {
   }, [userInfo]);
   console.log(userInfo);
 
-  const LOGOUT_PATHNAME = "/register";
-
   const logout = () => {
-    if (window.confirm("You Want To LogOut")) {
-      try {
-        localStorage.clear();
+    if (window.confirm("You Want To LogOut ")) {
+      const dat = localStorage.clear();
+      if (dat == null) {
         toast.success("logout succesfully");
         history.push({
-          pathname: LOGOUT_PATHNAME,
+          pathname: "/register",
         });
-      } catch (error) {
-        console.error(error);
-        toast.error("An error occurred while logging out");
       }
     }
   };
-
   let publicUrl = process.env.PUBLIC_URL + "/";
   let imgattr = "logo";
   let anchor = "#";
@@ -132,10 +126,10 @@ const NavbarV3 = () => {
                   <nav>
                     <div className="ltn__main-menu">
                       <ul>
-                        <li className="menu-icon">
+                        <li className="menu-icon1">
                           <Link to="/">Home</Link>
                         </li>
-                        <li className="menu-icon">
+                        <li className="menu-icon1">
                           <Link to="/">About</Link>
                           <ul>
                             <li>
@@ -161,7 +155,7 @@ const NavbarV3 = () => {
 										<li><Link to="/location">Google Map Locations</Link></li> */}
                           </ul>
                         </li>
-                        <li className="menu-icon">
+                        <li className="menu-icon1">
                           <Link to="/travelpackages">Packages</Link>
                           <ul>
                             <li>
@@ -178,19 +172,27 @@ const NavbarV3 = () => {
                             </li>
                           </ul>
                         </li>
-                        <li className="menu-icon">
+                        <li className="menu-icon1">
                           <Link to="/contactus">Contact</Link>
                           <ul>
                             <li>
-                              <Link to="/contactus">Contact</Link>
+                            <Link to="/contactus">Contact</Link>
                             </li>
-
+                            <li>
+                            <Link to="/feedback">Feedback</Link>
+                            </li>
+                           
+                            <li>
+                            <Link to="/allinq">Inquiry</Link>
+                            </li>
+                            
                             <li>
                               <Link to="/guide/all">Guide</Link>
                             </li>
+                           
                           </ul>
                         </li>
-                        <li className="menu-icon">
+                        <li className="menu-icon1">
                           {userInfo ? (
                             <Link to="/Profile">My-account</Link>
                           ) : (

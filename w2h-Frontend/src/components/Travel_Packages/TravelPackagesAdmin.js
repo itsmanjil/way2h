@@ -116,6 +116,7 @@ export default class AllPackagesAdmin extends Component {
                     style={{
                       backgroundColor: "hsl(0,0%,100%,0.9)",
                       borderColor: "black",
+                      right:"120px"
                     }}
                   >
                     <div class="card-body">
