@@ -107,6 +107,7 @@ router.put("/admin/update/:id", upload.single("packageImage"), (req, res) => {
       package.noofnights = req.body.noofnights;
       package.vehical = req.body.vehical;
       package.perperson = req.body.perperson;
+      package.packageImage=req.file.originalname;
       package
         .save()
         .then(() => res.json("The TravelPackage is UPDATED successfully"))

@@ -89,12 +89,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import PrivateRoute from "./components/private";
-
 function isAuthenticated() {
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   return userInfo !== null && userInfo.role === "admin";
 }
-
 function App() {
   return (
     <PayPalScriptProvider
@@ -132,10 +130,11 @@ function App() {
           <Route path="/all" exact component={AllActivity} />
           <Route path="/view-activity/:id" exact component={ViewActivity} />
           <Route path="/activity-user/:id" exact component={ActivityUser} />
-          <Route
+          <PrivateRoute
             path="/payment/add-activity/:id"
             exact
             component={PayForActivity}
+            isAuthenticated={isAuthenticated}
           />
           <Route path="/confirm/payment/" exact component={PaymentConfirm} />
           <Route path="/payment/view/" exact component={PaymentView} />
@@ -162,7 +161,8 @@ function App() {
           <Route path="/Profile" exact component={UserProfile} />
           <Route path="/edit/:id" exact component={EditDetails} />
           <Route path="/services" exact component={Services} />
-          <Route path="/activities" exact component={Activities} />
+          <PrivateRoute path="/activities" exact component={Activities} isAuthenticated={isAuthenticated}
+/>
           <Route path="/forget" exact component={forget} />
           <Route path="/reset/:id" exact component={resetpass} />
           <Route path="/subscribe" component={pay}></Route>
@@ -176,79 +176,79 @@ function App() {
             exact
             component={UserHotelBookingDetails}
           ></Route>
-
           {/*sab user path */}
         </Route>
-
         <div>
           {/* <Route path="/" exact component={PackageDetailed}></Route> */}
-
-          <Route
+          <PrivateRoute
             path="/travelpackages/admin"
             exact
             component={AllPackagesAdmin}
-          ></Route>
-          <Route
+            isAuthenticated={isAuthenticated}
+          ></PrivateRoute>
+          <PrivateRoute
             path="/travelpackage/admin/add"
             exact
             component={CreatePackage}
-          ></Route>
-
-          <Route
+            isAuthenticated={isAuthenticated}
+          ></PrivateRoute>
+          <PrivateRoute
             path="/travelpackages/travelpackage/admin/:id"
             exact
             component={PackageDetailsAdmin}
-          ></Route>
-          <Route
+            isAuthenticated={isAuthenticated}
+          ></PrivateRoute>
+          <PrivateRoute
             path="/travelpackage/admin/edit/:id"
             exact
             component={EditPackage}
-          ></Route>
-
+            isAuthenticated={isAuthenticated}
+          ></PrivateRoute>
           <Route path="/allbooking" exact component={AllBooking}></Route>
-          <Route
+          <PrivateRoute
             path="/adminhotelbooking"
             exact
             component={adminhotelbooking}
-          ></Route>
+            isAuthenticated={isAuthenticated}
+          ></PrivateRoute>
           <Route
             path="/userhotelbooking/hotelbookingdetails/:id"
             exact
             component={hotelbookingdetails}
           ></Route>
-
           <Route
             path="/edithotelbooking/:id"
             exact
             component={edithotelbooking}
           ></Route>
-
-          <Route
+          <PrivateRoute
             path="/adminhotelpackage"
             exact
             component={adminhotelpackage}
-          ></Route>
-          <Route
+            isAuthenticated={isAuthenticated}
+          ></PrivateRoute>
+          <PrivateRoute
             path="/adminaddhotelpackage"
             exact
             component={adminaddhotelpackage}
-          ></Route>
+            isAuthenticated={isAuthenticated}
+          ></PrivateRoute>
           <Route
             path="/adminedithotelpackage/:id"
             exact
             component={adminedithotelpackage}
           ></Route>
-          <Route
+          <PrivateRoute
             path="/adminhotelpackagedetails/:id"
             exact
             component={adminhotelpackagedetails}
-          ></Route>
+            isAuthenticated={isAuthenticated}
+          ></PrivateRoute>
           <Route
             path="/travelpackage/admin/delete/:id"
             exact
             component={DeletePackage}
           ></Route>
-
           <Route path="/get" exact component={Display} />
           <PrivateRoute
             path="/admin"
@@ -256,18 +256,14 @@ function App() {
             component={admin}
             isAuthenticated={isAuthenticated}
           />
-
           <Route path="/rep" exact component={UserRepo} />
-          <Route path="/equipment/add" exact component={AddEquipment} />
-          <Route path="/equipment/edit/:id" exact component={EditEquipment} />
-          <Route path="/equipment/admin" exact component={AdminEquipment} />
-
+          <PrivateRoute path="/equipment/add" exact component={AddEquipment}  isAuthenticated={isAuthenticated} />
+          <PrivateRoute path="/equipment/edit/:id" exact component={EditEquipment}  isAuthenticated={isAuthenticated} />
+          <PrivateRoute path="/equipment/admin" exact component={AdminEquipment} isAuthenticated={isAuthenticated}/>
           <Route path="/feedback" exact component={AddFeedback} />
-          <Route path="/feedbacks/admin" exact component={AllFeedback} />
-          <Route path="/contactus/admin" exact component={ContactUsAdmin} />
-
-          <Route path="/payment/" exact component={AllPayments} />
-
+          <PrivateRoute path="/feedbacks/admin" exact component={AllFeedback} isAuthenticated={isAuthenticated}  />
+          <PrivateRoute path="/contactus/admin" exact component={ContactUsAdmin} isAuthenticated={isAuthenticated}  />
+          <PrivateRoute path="/payment/" exact component={AllPayments} isAuthenticated={isAuthenticated}  />
           <PrivateRoute
             path="/adminhome"
             exact
@@ -293,25 +289,20 @@ function App() {
           <Route path="/guide/handle/:id" exact component={GuideConfirm} />
           <Route path="/guide/request/:id" exact component={GuideRequest} />
           <Route path="/guide/allrequests" exact component={AllRequests} />
-
           <Route path="/activity/:id" exact component={Activity} />
           <Route path="/activity-details" exact component={ActivityDetails} />
-
           <Route path="/update/:id" exact component={EditActivity} />
-          <PrivateRoute path="/add-activity" exact component={AddActivity} />
-
+          <PrivateRoute path="/add-activity" exact component={AddActivity}  isAuthenticated={isAuthenticated} />
           <Route path="/activity-select" exact component={ActivitySelect} />
-
           <Route path="/add" exact component={CreateInquiry}></Route>
           <Route path="/editinq/:id" component={EditInquiry}></Route>
           <Route path="/allinq" component={InquiryAll}></Route>
           <Route path="/admin/:id" component={AdminRep}></Route>
           <Route path="/inqD/:id" component={InqDetails}></Route>
           <Route path="/view" component={InqView}></Route>
-          <Route path="/adView/" component={AdminView}></Route>
+          <PrivateRoute path="/adView/" component={AdminView}  isAuthenticated={isAuthenticated} ></PrivateRoute>
           <Route path="/report" component={ComponentToPrint}></Route>
           <Route path="/userDoc/:id" component={ComponentToPrint1}></Route>
-
           <Route path="/edittpackage/:id" component={EditTPackage}></Route>
           <Route path="/inqmail/:id" component={Inqmail}></Route>
           {/* <Route path="/adminDet/:id" component={AdminDetails}></Route> */}
@@ -337,5 +328,4 @@ function App() {
     </PayPalScriptProvider>
   );
 }
-
 export default App;

@@ -68,6 +68,9 @@ const EditActivity = (props) => {
         style={{
           background:
             "url(https://previews.123rf.com/images/wstockstudio/wstockstudio1707/wstockstudio170700176/82195391-accessories-for-travel-top-view-on-white-wooden-background-with-copy-space-adventure-and-wanderlust-.jpg)",
+            left:"2px",
+            width:"100%",
+            height:"140vh"
         }}
       >
         <HeaderAdmin />

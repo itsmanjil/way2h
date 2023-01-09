@@ -55,12 +55,13 @@ function AddActivity() {
         style={{
           background:
             "url(https://previews.123rf.com/images/wstockstudio/wstockstudio1707/wstockstudio170700176/82195391-accessories-for-travel-top-view-on-white-wooden-background-with-copy-space-adventure-and-wanderlust-.jpg)",
-            height:"180vh"
+            height:"100%",
+            left:"2px"
         }}
       >
         <HeaderAdmin />
         <AddActivityContainer>
-          <div className="info" style={{left:"550px",position:"absolute",top:"-100px"}}>
+          <div className="info" style={{left:"500px",position:"absolute",top:"-140px"}}>
             <div
               className="container"
               style={{
@@ -68,13 +69,14 @@ function AddActivity() {
                 position:"absolute",
                 top:"110px",
                 width:"750px",
+                height:"90vh"
               }}
             >
               &nbsp;&nbsp;
               <h1>Add New Activity </h1>
               <span className="message">{message}</span>
               <form onSubmit={changeOnClick} encType="multipart/form-data">
-                <div className="form-group">
+                <div className="form-group"style={{position:"relative",top:"-23px"}}>
                   <label htmlFor="aname">Activity Name</label>
                   <input
                     type="text"
@@ -82,10 +84,11 @@ function AddActivity() {
                     onChange={(e) => setActivityName(e.target.value)}
                     className="form-control"
                     placeholder="Activity Name"
+                    style={{position:"relative",top:"-10px",height:"6vh"}}
                   />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group"style={{position:"relative",top:"-53px"}}>
                   <label htmlFor="category">Category</label>
                   <input
                     type="text"
@@ -93,30 +96,33 @@ function AddActivity() {
                     onChange={(e) => setCategory(e.target.value)}
                     className="form-control"
                     placeholder="Category"
+                    style={{position:"relative",top:"-10px",height:"6vh"}}
                   />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group"style={{position:"relative",top:"-73px"}}>
                   <label htmlFor="mindescription">Min Description</label>
                   <textarea
                     value={mindescription}
                     onChange={(e) => setMindescription(e.target.value)}
                     className="form-control"
                     rows="3"
+                    style={{position:"relative",top:"-10px",height:"6vh"}}
                   ></textarea>
                 </div>
 
-                <div className="form-group">
+                <div className="form-group"style={{position:"relative",top:"-83px"}}>
                   <label htmlFor="description">Description</label>
                   <textarea
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     className="form-control"
                     rows="5"
+                    style={{position:"relative",top:"-10px",height:"6vh"}}
                   ></textarea>
                 </div>
 
-                <div className="form-group">
+                <div className="form-group"style={{position:"relative",top:"-93px"}}>
                   <label htmlFor="price">Price</label>
                   <input
                     type="text"
@@ -124,10 +130,11 @@ function AddActivity() {
                     onChange={(e) => setPrice(e.target.value)}
                     className="form-control"
                     placeholder="Price"
+                    style={{position:"relative",top:"-10px",height:"6vh"}}
                   />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group"style={{position:"relative",top:"-118px"}}>
                   <label htmlFor="file">Choose activity image</label>
                   <input
                     type="file"
@@ -139,13 +146,13 @@ function AddActivity() {
 
                 <div className="row">
                   <div className="flex-parent jc-center">
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className="btn btn-primary"style={{position:"relative",top:"-153px"}}>
                       Post Activity
                     </button>
                   </div>
                   <div
                     className="flex-parent jc-center"
-                    style={{ align: "center" }}
+                    style={{position:"relative",top:"-173px",align: "center" }}
                   >
                     <Link
                       to="/activities"

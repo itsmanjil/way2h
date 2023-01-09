@@ -85,7 +85,7 @@ const EditPackage = (props) => {
 
       <div className="infoadmin">
         <div className="bodyaa" id="bodytbc">
-          <div style={{position:"relative",top:"-50px"}}>
+          <div style={{position:"relative",top:"-70px"}}>
             <div>
               <form
                 class="signup-form signup-formtr"
@@ -143,7 +143,7 @@ const EditPackage = (props) => {
                     </select>
                   </div>
 
-                  <div class="horizontal-group horizontal-grouptr">
+                  <div class="horizontal-group horizontal-grouptr" style={{position:"relative",top:"-52px"}}>
                     <div class="form-group form-grouptr left">
                       <lable class="label-title">
                         <b>Discription *</b>
@@ -175,7 +175,7 @@ const EditPackage = (props) => {
                     </div>
                   </div>
 
-                  <div class="horizontal-group horizontal-grouptr">
+                  <div class="horizontal-group horizontal-grouptr" style={{position:"relative",top:"-82px"}}>
                     <div class="form-group form-grouptr left">
                       <lable class="label-title">
                         <b>No of Days *</b>
@@ -209,7 +209,7 @@ const EditPackage = (props) => {
                     </div>
                   </div>
 
-                  <div class="horizontal-group horizontal-grouptr">
+                  <div class="horizontal-group horizontal-grouptr"style={{position:"relative",top:"-112px"}}>
                     <div class="form-group form-grouptr left">
                       <lable class="label-title">
                         <b>Vehical *</b>
@@ -242,7 +242,7 @@ const EditPackage = (props) => {
                     </div>
                   </div>
 
-                  {/* <lable class="label-title">
+                  <lable class="label-title"style={{position:"relative",top:"-152px"}}>
                     <b>Edit Image*</b>
                     <div class="mb-3">
                       <input
@@ -253,9 +253,9 @@ const EditPackage = (props) => {
                         onChange={onChangeFile}
                       />
                     </div>
-                  </lable> */}
+                  </lable>
 
-                  <div class="form-footer" style={{position:"relative",backgroundColor:"transparent",top:"-50px",height:"2vh"}}>
+                  <div class="form-footer" style={{position:"relative",backgroundColor:"transparent",top:"-150px",height:"2vh"}}>
                     <input
                       type="submit"
                       name="submit"

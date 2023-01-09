@@ -8,98 +8,69 @@ import "../../Styles/profilepage.css";
 import { Link } from "react-router-dom";
 import NavbarV3 from "../navbar-v4";
 import Pageheader from "../Travel_Packages/page-header";
-
 export default class UserProfile extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       View: [],
     };
   }
-
   logout() {
     if (window.confirm("You Want To LogOut ")) {
       const dat = localStorage.removeItem("userInfo");
-
       if (dat == null) {
         alert("log  Out Success ");
         window.location.replace("/");
       }
     }
   }
-
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
-
-  API_URL = "http://localhost:8070/user/Details/";
-
-  MyComponent() {
-    const [userData, setUserData] = useState(null);
-
-    useEffect(() => {
-      const userInfo = localStorage.getItem("userInfo");
-      if (!userInfo) {
-        alert("You Are Not Authorized User");
-        window.location.replace("/register");
-        return;
-      }
-
-      const mongoid = userInfo.slice(7, 31);
-
-      try {
-        axios.get(`${API_URL}${mongoid}`).then((res) => {
-          if (res.data.success) {
-            setUserData(res.data.BackendData);
-          } else {
-            console.log("Can't fetch user data");
-          }
+  componentDidMount() {
+    const userInfo = localStorage.getItem("userInfo");
+    const userdetails = JSON.parse(userInfo);
+    console.log(userdetails);
+    const url = "http://localhost:8070/user/Details/" + userdetails.id;
+    
+    axios.get(url).then((res) => {
+      if (res.data.success) {
+        this.setState({
+          View: res.data.BackendData,
         });
-      } catch (error) {
-        console.error(error);
-      }
-    }, []);
-
-    // Render the component
+        // console.log(this.state.View);
+      } else console.log("cant");
+    });
   }
-
   render() {
+    console.log(this.state.View)
     return (
       <div>
         <NavbarV3 />
         <div>
           <Pageheader headertitle="Profile" />
           <div style={{ marginTop: "10px" }}>
-            <Sub />
+            {/* <Sub/> */}
             {/*                
             <div className="body1">
                 <div className="info">
-            <div style={{marginLeft:300}}> 
+            <div style={{marginLeft:300}}>
                  <button className="button12" onClick={this.logout} >Log out</button>
-                 </div>        
-              
-            
+                 </div>
                <form className="form12">
-               <h2> {this.state.View.Name}'s profile </h2> 
+               <h2> {this.state.View.Name}'s profile </h2>
               <hr/>
                <input className="inputabc" id="Email" type="text" value={this.state.View.Name} />
                <input className="inputabc" id="Name" type="text" value={this.state.View.Email} />
                <input className="inputabc" id="Num" type="text" value={this.state.View.Num} />
                <input className="inputabc" id="Password" type="Password" value={this.state.View.Password} />
-
-              
                <a className="btn btn-danger a123"  href={"edit/" + this.state.View._id}>
                                 <i className ="fas fa-edit"></i>&nbsp;Edit My Details
                             </a>
-        
-                            </form> 
-                           
+                            </form>
                             </div>
                 </div> */}
-
             {/* <Footer/> */}
-
             <div className="container-xl px-4 mt-4">
               {/* <nav className="nav nav-borders">
         <a className="nav-link active ms-0" href="https://www.bootdey.com/snippets/view/bs5-edit-profile-account-details" target="__blank">Profile</a>
@@ -118,7 +89,6 @@ export default class UserProfile extends Component {
                         src="http://bootdey.com/img/Content/avatar/avatar1.png"
                         alt=""
                       />
-
                       {/* <div className="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div> */}
                       {/* <form>
                     <input
@@ -129,10 +99,8 @@ export default class UserProfile extends Component {
                         name="profile"
                         // value={profile}
                         // onChange={} 
-                        
                       />
                       </form> */}
-
                       <button className="btn btn-primary" type="button">
                         Reward Point: {this.state.View.reward}
                       </button>
@@ -158,7 +126,6 @@ export default class UserProfile extends Component {
                             onChange={(e) => onInputChange(e)}
                           />
                         </div>
-
                         <div className="row gx-3 mb-3">
                           <div className="col-md-6">
                             <label>Name</label>
@@ -170,7 +137,6 @@ export default class UserProfile extends Component {
                               onChange={(e) => onInputChange(e)}
                             />
                           </div>
-
                           <div className="col-md-6">
                             <label>Number</label>
                             <input
@@ -182,7 +148,6 @@ export default class UserProfile extends Component {
                             />
                           </div>
                         </div>
-
                         <div className="row gx-3 mb-3">
                           <div className="col-md-6">
                             <label>Password</label>
@@ -194,25 +159,20 @@ export default class UserProfile extends Component {
                               onChange={(e) => onInputChange(e)}
                             />
                           </div>
-
                           {/* <div className="col-md-6">
                                 <label className="small mb-1" for="inputLocation">Location</label>
                                 <input className="inputabc" id="inputLocation" type="text" placeholder="Enter your location" value="San Francisco, CA" />
                             </div> */}
                         </div>
-
                         {/* <div className="mb-3">
                             <label className="small mb-1" for="inputEmailAddress">Email address</label>
                             <input className="inputabc" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com" />
                         </div>
-                       
                         <div className="row gx-3 mb-3">
-                           
                             <div className="col-md-6">
                                 <label className="small mb-1" for="inputPhone">Phone number</label>
                                 <input className="inputabc" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567" />
                             </div>
-                          
                             <div className="col-md-6">
                                 <label className="small mb-1" for="inputBirthday">Birthday</label>
                                 <input className="inputabc" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988" />

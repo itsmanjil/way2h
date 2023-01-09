@@ -103,19 +103,7 @@ export default class PayForTravelPackage extends Component {
     });
   };
   onSubmit = (e) => {
-    // const userInfo = localStorage.getItem('userInfo');
-    const userInfo = localStorage.getItem("userInfo");
-    //alert (userInfo);
-    // if (userInfo == null) {
-    //   alert("You Are Not Authorized User");
-    //   window.location.replace("/register");
-    // }
-    // var line = [];
-    // for (var i = 7, p = 0; i !== 31; i++, p++) {
-    //   line.push(userInfo[i]);
-    // }
-    // const mongoid = line.join("");
-    // const reward =(price * 2)/100;
+    // const userInfo = localStorage.getItem("userInfo");
     console.log(this.state.View);
     const previousReward = this.state.View.reward;
     console.log(previousReward);
@@ -135,6 +123,7 @@ export default class PayForTravelPackage extends Component {
           Password: password,
           Num: num,
           reward: currentReward,
+          role:"user"
         };
         // localStorage.setItem('userInfo', JSON.stringify(Registers))
         console.log(Registers);
@@ -156,6 +145,7 @@ export default class PayForTravelPackage extends Component {
           Password: password,
           Num: num,
           reward: newReward,
+          role:"user"
         };
         // localStorage.removeItem("userInfo");
         // localStorage.setItem("userInfo", JSON.stringify(Registers));
