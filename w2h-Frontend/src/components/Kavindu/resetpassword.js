@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import PageHeader from "../Travel_Packages/page-header";
 import { useHistory } from "react-router-dom";
+import NavbarV3 from "../navbar-v4";
 
 const ResetPassword = () => {
   const [Password, setPassword] = useState("");
@@ -16,6 +17,31 @@ const ResetPassword = () => {
   const resetPasswordSubmit = (e) => {
     e.preventDefault();
 
+    // Validation checks
+    if (Password === "" || confirmPassword === "") {
+      toast.error("Password and confirm password fields cannot be empty");
+      return;
+    }
+    if (Password !== confirmPassword) {
+      toast.error("Password and confirm password fields do not match");
+      return;
+    }
+    if (Password.length < 8) {
+      toast.error("Password must be at least 8 characters long");
+      return;
+    }
+    if (
+      !/\d/.test(Password) ||
+      !/[a-z]/.test(Password) ||
+      !/[A-Z]/.test(Password) ||
+      !/[!@#\$%\^&\*]/.test(Password)
+    ) {
+      toast.error(
+        "Password must contain at least one number, one lowercase letter, one uppercase letter, and one special character"
+      );
+      return;
+    }
+
     const Reset = {
       Password,
       confirmPassword,
@@ -23,7 +49,7 @@ const ResetPassword = () => {
     instance
       .put(`Register/password/reset/${tokenRest}`, Reset)
       .then((response) => {
-        toast.success("passowrd updated Success!");
+        toast.success("Password updated successfully!");
         console.log(response);
         history.push({
           pathname: "/",
@@ -37,6 +63,7 @@ const ResetPassword = () => {
 
   return (
     <Fragment>
+      <NavbarV3 />
       <PageHeader headertitle="Reset Password" />
       <div className="resetPasswordContainer">
         <div className="resetPasswordBox">

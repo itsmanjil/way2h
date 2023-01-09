@@ -26,6 +26,18 @@ export default function RegisterUser({}) {
   }, [history]);
   function sendData(e) {
     e.preventDefault();
+    if (
+      !/\d/.test(Password) ||
+      !/[a-z]/.test(Password) ||
+      !/[A-Z]/.test(Password) ||
+      !/[!@#\$%\^&\*]/.test(Password)
+    ) {
+      toast.error(
+        "Password must contain at least one number, one lowercase letter, one uppercase letter, and one special character"
+      );
+      return;
+    }
+
     if (Name === "" || Name === null || !isNaN(Name)) {
       alert("Name Required. Please enter a valid name.");
       return false;
@@ -42,6 +54,7 @@ export default function RegisterUser({}) {
       alert("Password and confirm password do not match");
       return false;
     }
+
     const NewReg = {
       Name,
       Email,

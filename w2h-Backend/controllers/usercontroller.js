@@ -11,7 +11,7 @@ const generateToken = require("../utils/generateToken");
 exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
   const user = await User.findOne({ Email: req.body.Email });
 
-  console.log("user", user);
+  // console.log("user", user);
 
   if (!user) {
     return next(new ErrorHandler("User not found", 404));
@@ -20,12 +20,13 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
   //get reset pasword token
   const resetToken = user.getResetPasswordToken();
 
-  console.log("token", resetToken);
+  // console.log("token", resetToken);
 
   await user.save({ validateBeforeSave: false });
 
   // const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
   const resetPasswordUrl = `${process.env.FRONTEND_URL}/Register/password/reset/${resetToken}`;
+  console.log("resetPasswordUrl", resetPasswordUrl);
 
   const message = `Your Password Reset Token is ttemp: -\n\n${resetPasswordUrl}\n\nIf you have not requested this email then please ignore it`;
 
@@ -60,9 +61,12 @@ exports.resetPassword = catchAsyncErrors(async (req, res, next) => {
   const resetPasswordExpire = Date.now() + 30 * 60 * 1000;
   // console.log("resetToken", resetPasswordToken);
 
-  console.log("user", await User.findOne({
-    resetPasswordExpire
-  }));
+  console.log(
+    "user",
+    await User.findOne({
+      resetPasswordExpire,
+    })
+  );
 
   const user = await User.findOne();
 
