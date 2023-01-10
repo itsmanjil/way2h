@@ -44,6 +44,23 @@ const ActivitySelect = (props) => {
     const { aName, aprice, name, phone, content } = post;
     const { aname, price } = tactivity;
 
+    if (name === "" || phone === "" || content === "") {
+      alert("All fields are required");
+      return;
+    }
+    if (!isNaN(name)) {
+      alert("Name is invalid");
+      return;
+    }
+    if (!/^\d+$/.test(phone) || phone.length <= 9) {
+      alert("Phone number is invalid");
+      return;
+    }
+    if (content <= 0) {
+      alert("Quantity must be a positive number");
+      return;
+    }
+
     const data = {
       aName: aname,
       aprice: price,

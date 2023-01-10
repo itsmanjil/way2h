@@ -60,6 +60,37 @@ const PackageBooking = () => {
         post;
       const { packageName, perperson } = tpackage;
 
+      // Validation checks
+      if (
+        name === "" ||
+        name === null ||
+        !isNaN(name) ||
+        phone === "" ||
+        phone === null ||
+        address === "" ||
+        email === "" ||
+        joinplace === "" ||
+        !isNaN(joinplace)
+      ) {
+        alert("invalid fields");
+        return;
+      } else if (!/^[0-9\b]+$/.test(phone) || phone.length !== 10) {
+        alert("Invalid phone number");
+        return;
+      } else if (!isNaN(address) || !isNaN(joinplace)) {
+        alert("Invalid address or join place");
+        return;
+      }
+      else 
+      if (
+        !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(
+          email
+        )
+      ) {
+        alert("Email is invalid");
+        return;
+      }
+
       const data = {
         packagename: packageName,
         price: perperson,
@@ -71,7 +102,7 @@ const PackageBooking = () => {
       };
 
       await axios.post("http://localhost:8070/packagebooking/add", data);
-      alert("Booking Added Successfull. Click Ok to Pay");
+      alert("Booking Added Successfully. Click Ok to Pay");
       history.push(`/payment/add-package/${id}`);
     }
     setValidated(true);
