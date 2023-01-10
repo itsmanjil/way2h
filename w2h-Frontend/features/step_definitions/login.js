@@ -24,9 +24,5 @@ Then('I should be redirected to the dashboard', async function() {
   assert(url.includes('/'));
 });
 
-// Then('I should see a welcome message', async function() {
-//   let alert = await driver.findElement(By.css('.alert-success')).getText();
-//   assert(alert.includes('Welcome, testuser!'));
-// });
 
 
