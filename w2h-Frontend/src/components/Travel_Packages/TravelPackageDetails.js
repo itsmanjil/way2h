@@ -221,7 +221,6 @@ export default class PackageDetails extends Component {
               </div>
             </div>
           </div>
-          <Footer />
         </div>
         <Footer />
       </>
