@@ -6,6 +6,7 @@ import HeaderAdmin from "../HeaderAdmin";
 import "react-toastify/dist/ReactToastify.min.css";
 import { Auth } from "../notify";
 import { ToastContainer, toast } from "react-toastify";
+import PlacesAutocomplete from "react-places-autocomplete";
 
 const CreatePackage = () => {
   let history = useHistory();
@@ -27,6 +28,38 @@ const CreatePackage = () => {
 
   const changeOnClick = (e) => {
     e.preventDefault();
+
+    // Validation checks
+    if (packageName === "" || !isNaN(packageName)) {
+      alert("Package name is invalid");
+      return;
+    }
+    if (
+      destination === "" ||
+      discription === "" ||
+      date === "" ||
+      noofdays === "" ||
+      noofnights === "" ||
+      vehical === "" ||
+      perperson === "" ||
+      packageImage === ""
+    ) {
+      alert("All fields are required");
+      return;
+    }
+    if (typeof packageName !== "string") {
+      alert("Package name is invalid");
+      return;
+    }
+
+    if (!/^\d+$/.test(noofdays) || !/^\d+$/.test(noofnights)) {
+      alert("Number of days and nights must be positive integers");
+      return;
+    }
+    if (perperson <= 0) {
+      alert("Price per person must be a positive number");
+      return;
+    }
 
     const formData = new FormData();
     formData.append("packageName", packageName);
@@ -95,7 +128,6 @@ const CreatePackage = () => {
                       style={{ position: "relative", top: "-5px" }}
                     />
                   </div>
-
                   <div class="form-group form-grouptr">
                     <lable
                       class="label-title"
@@ -117,26 +149,27 @@ const CreatePackage = () => {
                       }}
                     >
                       <option>Select Destination</option>
+
                       <option>Pokara</option>
                       <option>Kathmandu</option>
-                      <option>chitwan</option>
+                      <option>Chitwan</option>
                       <option>Bhaktapur</option>
-                      <option>solukhumbu</option>
+                      <option>Solukhumbu</option>
                       <option>Gorkha</option>
                       <option>Lumbini</option>
-                      <option>solukhumbu</option>
+                      <option>Nuwakot</option>
+                      <option>Dhading</option>
+                      <option>Makwanpur</option>
+                      <option>Ramechhap</option>
+                      <option>Dolakha</option>
+                      <option>Sindhupalchowk</option>
+                      <option>Kavrepalanchowk</option>
+                      <option>Lalitpur</option>
+                      <option>Rasuwa</option>
+                      <option>Sindhuli</option>
+                      <option>Rupandehi</option>
+                      <option>Dang</option>
                     </select>
-
-                    {/* <input
-                      type="text"
-                      name="destination"
-                      class="form-input"
-                      placeholder="destination"
-                      value={destination}
-                      onChange={(e) => setDestination(e.target.value)}
-                      required="required"
-                    />
-                    <br /> */}
                   </div>
 
                   <div class="horizontal-group horizontal-grouptr">

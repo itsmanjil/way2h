@@ -6,7 +6,6 @@ import Header from "../Header";
 import Footer from "../Footer";
 import { toast } from "react-toastify";
 
-
 export default class PayForActivity extends Component {
   constructor(props) {
     super(props);
@@ -78,13 +77,11 @@ export default class PayForActivity extends Component {
     e.preventDefault();
     const luhn = require("luhn");
 
-
     console.log("Payment Added");
 
     const { activityName, price } = this.state;
     const { reference, name, payf, method, card, time, no, amount } =
       this.state;
-
     if (!method) {
       this.setState({ error: "Please select a payment method." });
       toast.error("Please select a payment method.");

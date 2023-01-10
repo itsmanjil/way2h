@@ -24,6 +24,33 @@ const EditPackage = (props) => {
 
   const changeOnClick = (e) => {
     e.preventDefault();
+    // Validation checks
+    if (packageName === "" || !isNaN(packageName)) {
+      alert("Package name is invalid");
+      return;
+    }
+    if (
+      destination === "" ||
+      discription === "" ||
+      date === "" ||
+      noofdays === "" ||
+      noofnights === "" ||
+      vehical === "" ||
+      perperson === "" ||
+      packageImage === ""
+    ) {
+      alert("All fields are required");
+      return;
+    }
+
+    if (!/^\d+$/.test(noofdays) || !/^\d+$/.test(noofnights)) {
+      alert("Number of days and nights must be positive integers");
+      return;
+    }
+    if (perperson <= 0) {
+      alert("Price per person must be a positive number");
+      return;
+    }
 
     const formData = new FormData();
     formData.append("packageName", packageName);
@@ -85,7 +112,7 @@ const EditPackage = (props) => {
 
       <div className="infoadmin">
         <div className="bodyaa" id="bodytbc">
-          <div style={{position:"relative",top:"-70px"}}>
+          <div style={{ position: "relative", top: "-70px" }}>
             <div>
               <form
                 class="signup-form signup-formtr"
@@ -131,19 +158,31 @@ const EditPackage = (props) => {
                         height: "7vh",
                       }}
                     >
-                      <option>Select</option>
                       <option>Pokara</option>
                       <option>Kathmandu</option>
-                      <option>chitwan</option>
+                      <option>Chitwan</option>
                       <option>Bhaktapur</option>
-                      <option>solukhumbu</option>
+                      <option>Solukhumbu</option>
                       <option>Gorkha</option>
                       <option>Lumbini</option>
-                      <option>solukhumbu</option>
+                      <option>Nuwakot</option>
+                      <option>Dhading</option>
+                      <option>Makwanpur</option>
+                      <option>Ramechhap</option>
+                      <option>Dolakha</option>
+                      <option>Sindhupalchowk</option>
+                      <option>Kavrepalanchowk</option>
+                      <option>Lalitpur</option>
+                      <option>Rasuwa</option>
+                      <option>Sindhuli</option>
+                      <option>Rupandehi</option>
                     </select>
                   </div>
 
-                  <div class="horizontal-group horizontal-grouptr" style={{position:"relative",top:"-52px"}}>
+                  <div
+                    class="horizontal-group horizontal-grouptr"
+                    style={{ position: "relative", top: "-52px" }}
+                  >
                     <div class="form-group form-grouptr left">
                       <lable class="label-title">
                         <b>Discription *</b>
@@ -175,7 +214,10 @@ const EditPackage = (props) => {
                     </div>
                   </div>
 
-                  <div class="horizontal-group horizontal-grouptr" style={{position:"relative",top:"-82px"}}>
+                  <div
+                    class="horizontal-group horizontal-grouptr"
+                    style={{ position: "relative", top: "-82px" }}
+                  >
                     <div class="form-group form-grouptr left">
                       <lable class="label-title">
                         <b>No of Days *</b>
@@ -209,7 +251,10 @@ const EditPackage = (props) => {
                     </div>
                   </div>
 
-                  <div class="horizontal-group horizontal-grouptr"style={{position:"relative",top:"-112px"}}>
+                  <div
+                    class="horizontal-group horizontal-grouptr"
+                    style={{ position: "relative", top: "-112px" }}
+                  >
                     <div class="form-group form-grouptr left">
                       <lable class="label-title">
                         <b>Vehical *</b>
@@ -242,7 +287,10 @@ const EditPackage = (props) => {
                     </div>
                   </div>
 
-                  <lable class="label-title"style={{position:"relative",top:"-152px"}}>
+                  <lable
+                    class="label-title"
+                    style={{ position: "relative", top: "-152px" }}
+                  >
                     <b>Edit Image*</b>
                     <div class="mb-3">
                       <input
@@ -255,7 +303,15 @@ const EditPackage = (props) => {
                     </div>
                   </lable>
 
-                  <div class="form-footer" style={{position:"relative",backgroundColor:"transparent",top:"-150px",height:"2vh"}}>
+                  <div
+                    class="form-footer"
+                    style={{
+                      position: "relative",
+                      backgroundColor: "transparent",
+                      top: "-150px",
+                      height: "2vh",
+                    }}
+                  >
                     <input
                       type="submit"
                       name="submit"

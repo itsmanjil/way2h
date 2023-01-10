@@ -20,6 +20,23 @@ const EditActivity = (props) => {
   const changeOnClick = (e) => {
     e.preventDefault();
 
+    // Validation checks
+    if (
+      aname === "" ||
+      category === "" ||
+      mindescription === "" ||
+      description === "" ||
+      price === "" ||
+      fileName === ""
+    ) {
+      alert("All fields are required");
+      return;
+    }
+    if (price <= 0) {
+      alert("Price must be a positive number");
+      return;
+    }
+
     const formData = new FormData();
 
     formData.append("aname", aname);
@@ -62,20 +79,28 @@ const EditActivity = (props) => {
   }, []);
 
   return (
-    <div >
+    <div>
       <div
         className="background"
         style={{
           background:
             "url(https://previews.123rf.com/images/wstockstudio/wstockstudio1707/wstockstudio170700176/82195391-accessories-for-travel-top-view-on-white-wooden-background-with-copy-space-adventure-and-wanderlust-.jpg)",
-            left:"2px",
-            width:"100%",
-            height:"140vh"
+          left: "2px",
+          width: "100%",
+          height: "140vh",
         }}
       >
         <HeaderAdmin />
         <AddActivityContainer>
-          <div className="info" style={{position:"relative",left:"70px",top:"-230px",lineHeight:"0.5"}}>
+          <div
+            className="info"
+            style={{
+              position: "relative",
+              left: "70px",
+              top: "-230px",
+              lineHeight: "0.5",
+            }}
+          >
             <div className="container" style={{ background: "#78866B" }}>
               &nbsp;&nbsp;
               <h1>Update Activity </h1>
@@ -122,7 +147,7 @@ const EditActivity = (props) => {
                 <div className="form-group">
                   <label htmlFor="price">Price</label>
                   <input
-                    type="text"
+                    type="number"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                     className="form-control"
