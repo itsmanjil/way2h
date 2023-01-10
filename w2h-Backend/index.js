@@ -12,17 +12,17 @@ app.use(bodyParser.json());
 
 const URL = process.env.MONGODB_URL;
 
-mongoose.connect("mongodb://127.0.0.1:27017/Way2Heaven", {
-  useCreateIndex: true,
-  useFindAndModify: false,
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+// mongoose.connect("mongodb://127.0.0.1:27017/Way2Heaven", {
+//   useCreateIndex: true,
+//   useFindAndModify: false,
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
 
-const connection = mongoose.connection;
-connection.once("open", () => {
-  console.log("Mongodb connection success!");
-});
+// const connection = mongoose.connection;
+// connection.once("open", () => {
+//   console.log("Mongodb connection success!");
+// });
 
 const equipmentRouter = require("./routes/equipment.js");
 app.use("/equipment", equipmentRouter);
@@ -91,3 +91,5 @@ app.get('/api/keys/paypal', (req, res) => {
 app.listen(PORT, () => {
   console.log(`The port is : ${PORT}`);
 });
+
+module.exports = app;
